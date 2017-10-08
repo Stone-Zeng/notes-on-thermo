@@ -17,27 +17,37 @@
 \documentclass[a4paper]{book}
 \PassOptionsToPackage{no-math}{fontspec}
 \usepackage[UTF8, heading=true, fontset=none]{ctex}
-\usepackage{amsmath,mathtools,unicode-math}
+\usepackage{amsmath,mathtools,physics,unicode-math}
 \usepackage[thmmarks, amsmath]{ntheorem}
 \usepackage[ntheorem]{empheq}
 \usepackage[stable, perpage, bottom]{footmisc}
 \usepackage{geometry,fancyhdr,enumitem,graphicx,array,tabularx,booktabs,%
   caption,siunitx,hyperref}
 
+%% 字体
 
-\setmainfont{XITS}
-\setsansfont{TeX Gyre Heros}
-\setmonofont{TeX Gyre Cursor}
-\setmathfont{XITS Math}
+%\setmainfont{XITS}
+%\setsansfont{TeX Gyre Heros}
+%\setmonofont{TeX Gyre Cursor}
+%\setmathfont{XITS Math}
+\setmainfont{Libertinus Serif}
+\setsansfont{Source Sans Pro Semibold}[BoldFont = Source Sans Pro Bold]
+\setmathfont{Libertinus Math}
 
-\setCJKmainfont{FZShuSong-Z01}[BoldFont = FZHei-B01, ItalicFont = FZKai-Z03]
-\setCJKsansfont{FZHei-B01}[BoldFont = FZHei-B01, ItalicFont = FZKai-Z03]
-\setCJKmonofont{FZFangSong-Z02}[BoldFont = FZHei-B01, ItalicFont = FZKai-Z03]
-\newCJKfontfamily\kaishu{FZKai-Z03}
 
-\geometry{left = 2.54 cm, right  = 2.54 cm, top  = 3.18 cm, bottom = 3.18 cm}
+\setCJKmainfont{Source Han Serif SC}%
+  [ItalicFont = FZKai-Z03, BoldItalicFont = FZKai-Z03]
+\setCJKsansfont{Source Han Sans SC Medium}%
+  [BoldFont = Source Han Sans SC Bold, ItalicFont = FZKai-Z03, BoldItalicFont = FZKai-Z03]
 
-\setcounter{secnumdepth}{4}
+%\setCJKmainfont{FZShuSong-Z01}[BoldFont = FZHei-B01, ItalicFont = FZKai-Z03]
+%\setCJKsansfont{FZHei-B01}[BoldFont = FZHei-B01, ItalicFont = FZKai-Z03]
+%\setCJKmonofont{FZFangSong-Z02}[BoldFont = FZHei-B01, ItalicFont = FZKai-Z03]
+\newCJKfontfamily\kaishu{FZKai-Z03}[ItalicFont = FZKai-Z03]
+\newCJKfontfamily\fangsong{FZFangSong-Z02}%
+  [BoldFont = FZFangSong-Z02, ItalicFont = FZFangSong-Z02, BoldItalicFont = FZFangSong-Z02]
+
+%% 版式
 \ctexset{
   part = {
     format = {\bfseries \Huge \centering},
@@ -56,33 +66,18 @@
     number = \chinese{subsection},
   }
 }
+%\setcounter{secnumdepth}{4}
 
+\geometry{left = 2.54 cm, right  = 2.54 cm, top  = 3.18 cm, bottom = 3.18 cm}
 
 \fancyhf{}
 \fancyhead[EL]{\nouppercase{\kaishu \leftmark}}
 \fancyhead[OR]{\nouppercase{\kaishu \rightmark}}
 \fancyfoot[C]{\thepage}
-\renewcommand{\headrulewidth}{0 pt}
+\renewcommand\headrulewidth{0 pt}
 \pagestyle{fancy}
 
-\sisetup{
-  number-math-rm = \ensuremath,
-  inter-unit-product = \ensuremath{{}\cdot{}},
-  group-digits = integer,
-  group-minimum-digits = 4,
-  group-separator = \text{~}
-}
-
-
-\hypersetup{
-  bookmarksdepth     = 4,
-  bookmarksnumbered  = true,
-  bookmarksopen      = true,
-  bookmarksopenlevel = 1,
-  colorlinks         = true,
-  hyperfootnotes     = false
-}
-
+%% 脚注
 \makeatletter\ExplSyntaxOn
 \RenewDocumentCommand \thefootnote { }
   { $ \__my_footnote_symbol:n { \c@footnote } $ }
@@ -105,16 +100,106 @@
   }
 \ExplSyntaxOff\makeatother
 
+%% 数学
+
+\begingroup
+  \theoremstyle{empty}
+  \theorembodyfont{\rmfamily\fangsong}
+  \theoremsymbol{\ensuremath{\mdlgblksquare}} % U+25A0
+  \newtheorem{proof}{}
+\endgroup
+
+\begingroup
+  \theoremstyle{empty}
+  \theoremheaderfont{\sffamily}
+  \theorembodyfont{\rmfamily\kaishu}
+  \theoremprework{%
+    \list{}{%
+      \setlength{\rightmargin}{2em}%
+      \setlength{\leftmargin}{2em}}%
+    \item\relax}
+  \theorempostwork{\endlist\vspace*{1ex}}
+  \newtheorem{theorem}{}
+\endgroup
+
+%\newenvironment{theorem}[1]
+%  {\begin{_myThm}[\hskip 2 em #1]}
+%  {\end{_myThm}}
+
+
+%\theoremstyle{plain} %带编号
+%\theoremheaderfont{\myHeavy}
+%\theorembodyfont{\normalfont}
+%\theoremsymbol{}
+%\theoremsymbol{\ensuremath{\triangleleft}}
+%\newtheorem{myExample}{例}[chapter]
+
+
+%%%\newenvironment{myThm}[1]
+%%%  {\begin{_myThm}[\hskip 2 em #1]}
+%%%  {\end{_myThm}}
+%%%\newenvironment{myThm*}
+%%%  {\begin{_myThm} \hskip 2 em}
+%%%  {\end{_myThm}}
+%%%%自定义证明（说明）
+%%%\newenvironment{myProof}
+%%%  {\begin{_myProof} \normalfont \small \CJKfamily{仿宋} \hskip 2 em}
+%%%  {\end{_myProof}}
+
 
 
 \numberwithin{equation}{section}
 %\renewcommand{\theequation}{\thesection.\arabic{equation}} %公式编号样式x.x.x
-\newcommand\cmark{cmark}%{\ding{51}}
-\newcommand\xmark{xmark}%{\ding{55}}
 
 
-\newcommand{\emphA}[1]{\textsf{#1}}
-\newcommand{\emphB}[1]{\textit{#1}}
+\newenvironment{boxedEq}
+  {\empheq[box=\fbox]{equation}}
+  {\endempheq}
+
+%% 杂项
+\sisetup{
+  number-math-rm = \ensuremath,
+  inter-unit-product = \ensuremath{{}\cdot{}},
+  group-digits = integer,
+  group-minimum-digits = 4,
+  group-separator = \text{~}
+}
+
+\hypersetup{
+  bookmarksdepth     = 4,
+  bookmarksnumbered  = true,
+  bookmarksopen      = true,
+  bookmarksopenlevel = 1,
+  colorlinks         = true,
+  hyperfootnotes     = false
+}
+
+
+%% 命令
+
+%\newcommand\cmark{cmark}%{\ding{51}}
+%\newcommand\xmark{xmark}%{\ding{55}}
+\newcommand\cmark{\symbol{"2714}}
+\newcommand\xmark{\symbol{"2718}}
+
+%\newcommand{\emphA}[1]{\textsf{#1}}
+%\newcommand{\emphB}[1]{\textit{#1}}
+\newcommand\kwd[1]{\textsf{#1}}
+
+
+
+%\newcommand\pp{\piup} %圆周率
+%\newcommand\ee{\mathrm{e}} %自然对数基
+%\newcommand\ii{\mathrm{i}} %虚数单位
+%\newcommand\hb{\hbar} %约化Planck常数
+\newcommand\kB{k_{\symrm{B}}} %Boltzmann常数
+%\newcommand\pfs{\e_0} %真空介电常数 Permittivity of Free Space
+
+
+%\newcommand\comma{\text{，}}
+%\newcommand\fullstop{\text{．}}
+%\newcommand\semicolon{\text{；}}
+\newcommand\const{\text{const.}}
 
 
 
@@ -220,23 +305,7 @@
 %%%
 %%%%定理类环境
 %%%%\usepackage[thmmarks, amsmath]{ntheorem}
-%%%  \theoremstyle{empty} %不带编号
-%%%  \theoremsymbol{\ensuremath{\Box}}
-%%%    \newtheorem{_myProof}{}
-%%%  
-%%%  \theoremstyle{empty} %不带编号
-%%%  \theoremheaderfont{\myHeavy}
-%%%  \theorembodyfont{\CJKfamily{楷体}}
-%%%  \theoremsymbol{}
-%%%% \theoremindent \parindent
-%%%    \newtheorem{_myThm}{}
-%%%  
-%%%  \theoremstyle{plain} %带编号
-%%%  \theoremheaderfont{\myHeavy}
-%%%  \theorembodyfont{\normalfont}
-%%%  \theoremsymbol{}
-%%%% \theoremsymbol{\ensuremath{\triangleleft}}
-%%%    \newtheorem{myExample}{例}[chapter]
+
 %%%
 %%%%表格
 %%%%\usepackage{array}
@@ -408,12 +477,6 @@
 %%%\newcommand{\W}{\varOmega}
 %%%
 %%%%常数
-%%%\newcommand{\p}{\piup} %圆周率
-%%%\newcommand{\ee}{\mathrm{e}} %自然对数基
-%%%\newcommand{\ii}{\mathrm{i}} %虚数单位
-%%%\newcommand{\hb}{\hbar} %约化Planck常数
-%%%\newcommand{\kB}{k_{\mathrm{B}}} %Boltzmann常数
-%%%\newcommand{\pfs}{\e_0} %真空介电常数 Permittivity of Free Space
 %%%
 %%%%数学修饰符号
 %%%\newcommand{\vecb}[1]{\bm{#1}} %矢量用斜体，根据ISO 80000-2/2009
@@ -450,7 +513,7 @@
 %%%%公式用标点、文字
 %%%\newcommand{\comma}{\text{，}}
 %%%\newcommand{\fullstop}{\text{．}}
-%%%\newcommand{\semicomma}{\text{；}}
+%%%\newcommand{\semicolon}{\text{；}}
 %%%\newcommand{\const}{\text{const.}}
 %%%
 %%%%正文用符号
@@ -494,7 +557,7 @@
 \date{\kaishu\today}
 
 \begin{document}
-\maketitle
+%\maketitle
 %
 %\frontmatter
 %\chapter{绪论}
@@ -506,7 +569,7 @@
 %
 %\mainmatter
 %\part{热力学}
-\chapter{热力学基础}
+%%\chapter{热力学基础}
 \include{chapters/1}
 %\chapter{均匀系统的平衡特性}
 %\include{chapters/2}
@@ -526,3 +589,122 @@
 %\include{chapters/8}
 
 \end{document}
+
+
+%% Symbols.tex
+
+% %大写正体字母
+% \newcommand{\rmY}{\mathrm{Y}}
+% 
+% %大写手写体字母
+% \newcommand{\scF}{\mathcal{F}}
+% \newcommand{\scH}{\mathcal{H}}
+% \newcommand{\scI}{\mathcal{I}}
+% \newcommand{\scJ}{\mathcal{J}}
+% \newcommand{\scL}{\mathcal{L}}
+% \newcommand{\scP}{\mathcal{P}}
+% \newcommand{\scR}{\mathcal{R}}
+% \newcommand{\scS}{\mathcal{S}}
+% 
+% %小写希腊字母
+% \renewcommand{\a}{\alpha}
+% \renewcommand{\b}{\beta}
+% \newcommand{\g}{\gamma}
+% \renewcommand{\d}{\delta}
+% \newcommand{\e}{\epsilon}
+% \newcommand{\ve}{\varepsilon}
+% \newcommand{\z}{\zeta}
+% \newcommand{\h}{\eta}
+% \newcommand{\q}{\theta}
+% \renewcommand{\th}{\theta}
+% \newcommand{\vq}{\vartheta}
+% \newcommand{\vth}{\vartheta}
+% \renewcommand{\i}{\iota}
+% \renewcommand{\k}{\varkappa} %这两个是相反的
+% \newcommand{\vk}{\kappa} %这两个是相反的
+% \renewcommand{\l}{\lambda}
+% \renewcommand{\m}{\mu}
+% \newcommand{\n}{\nu}
+% \newcommand{\x}{\xi}
+% %\renewcommand{\p}{\pi} %\p 已定义为正体π
+% \newcommand{\vp}{\varpi}
+% \renewcommand{\r}{\rho}
+% \newcommand{\vr}{\varrho}
+% \newcommand{\s}{\sigma}
+% \newcommand{\vs}{\varsigma}
+% \renewcommand{\t}{\tau}
+% \renewcommand{\u}{\upsilon}
+% \newcommand{\f}{\phi}
+% \renewcommand{\j}{\varphi}
+% \newcommand{\vf}{\varphi}
+% \renewcommand{\c}{\chi}
+% \newcommand{\y}{\psi}
+% \renewcommand{\o}{\omega}
+% \newcommand{\w}{\omega}
+% 
+% %大写希腊字母
+% \renewcommand{\G}{\varGamma}
+% \newcommand{\D}{\varDelta}
+% \newcommand{\Q}{\varTheta}
+% \newcommand{\Th}{\varTheta}
+% \renewcommand{\L}{\varLambda}
+% \newcommand{\X}{\varXi}
+% \renewcommand{\P}{\varPi}
+% \let \secSymbol = \S
+% \renewcommand{\S}{\varSigma}
+% \renewcommand{\U}{\varUpsilon}
+% \newcommand{\F}{\varPhi}
+% \newcommand{\Y}{\varPsi}
+% \renewcommand{\O}{\varOmega}
+% \newcommand{\W}{\varOmega}
+% 
+% %常数
+% \newcommand{\p}{\piup} %圆周率
+% \newcommand{\ee}{\mathrm{e}} %自然对数基
+% \newcommand{\ii}{\mathrm{i}} %虚数单位
+% \newcommand{\hb}{\hbar} %约化Planck常数
+% \newcommand{\kB}{k_{\mathrm{B}}} %Boltzmann常数
+% \newcommand{\pfs}{\e_0} %真空介电常数 Permittivity of Free Space
+% 
+% %数学修饰符号
+% \newcommand{\vecb}[1]{\bm{#1}} %矢量用斜体，根据ISO 80000-2/2009
+% \renewcommand{\bar}[1]{\overline{#1}} %上横线
+% \newcommand{\tl}[1]{\widetilde{#1}} %弯号
+% \newcommand{\op}[1]{\hat{#1}} %量子力学算符
+% 
+% %数学函数
+% \newcommand{\abs}[1]{\left\lvert #1 \right\rvert} %绝对值
+% 
+% %算子、算符
+% %已经调整好前后间距
+% \DeclareMathOperator{\incr}{\Delta\!}
+% \DeclareMathOperator{\dd}{\mathrm{d}\!} %微分 Differential D
+% \DeclareMathOperator{\db}{{\mkern2.5mu\mathchar'26\mkern-11mu\mathrm{d}}\!} %不完全微分 Inexact Differential D; Only % for "Adobe Garamond" font!
+% \DeclareMathOperator{\pd}{\partial\!} %偏微分 Partial D
+% \DeclareMathOperator{\vd}{\deltaup\!} %变分 Variational D
+% \DeclareMathOperator{\laplac}{\nabla^2\!} %Laplace算子
+% 
+% %复合数学符号
+% \newcommand{\infint}{\int_{-\infty}^{+\infty}} %上下限无穷的积分
+% \newcommand{\iTonSum}{\sum_{i = 1}^{n}} %求和 i=1..n
+% \newcommand{\iToNSum}{\sum_{i = 1}^{N}} %求和 i=1..N
+% \newcommand{\nEnum}[2]{#1 = 1, \, 2, \, \dots, \, #2} %如x=1,2,...,n
+% %\newcommand{\coordinateLabel}[2]{#1\text{-}#2} %如p-V坐标
+% \newcommand{\myPartial}[3]{\left( \frac{\pd #1}{\pd #2} \right)_{#3}} %带括号的偏微分
+% \newcommand{\myPartialDisplay}[3]{\left( \dfrac{\pd #1}{\pd #2} \right)_{#3}}
+% 
+% %重定义符号
+% \newcommand{\approach}{\rightarrow} %趋向于
+% \newcommand{\eqdef}{\equiv} %定义等号（三线）
+% \newcommand{\dotTimes}{\cdot} %点乘
+% 
+% %公式用标点、文字
+% \newcommand{\comma}{\text{，}}
+% \newcommand{\fullstop}{\text{．}}
+% \newcommand{\semicolon}{\text{；}}
+% \newcommand{\const}{\text{const.}}
+% 
+% %正文用符号
+% %\catcode`\。 = \active
+% %\newcommand{。}{．} %句号用句点代替，已用xeCJK的Mapping代替
+% %\newcommand{\mySec}{{\fontspec{Times New Roman} \S \,}} %TODO：20160302 冲突；章节符号，Garamond 字体不好看
