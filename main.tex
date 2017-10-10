@@ -74,8 +74,9 @@
 \fancyhead[EL]{\nouppercase{\kaishu \leftmark}}
 \fancyhead[OR]{\nouppercase{\kaishu \rightmark}}
 \fancyfoot[C]{\thepage}
-\renewcommand\headrulewidth{0 pt}
+\renewcommand\headrulewidth{0pt}
 \pagestyle{fancy}
+\renewcommand\sectionmark[1]{\markright{\CTEXthesection\negthinspace\quad#1}}
 
 %% 脚注
 \makeatletter\ExplSyntaxOn
@@ -106,17 +107,7 @@
 %  {\enumerate [label = \alph*), align = leftalignwithindent, leftmargin = 0 pt, itemsep = 10 pt, parsep = 0 pt, listparindent = 2 em]}
 %  {\end{enumerate}}
 
-
-%\begingroup
-%  \theoremstyle{empty}
-%  \theorembodyfont{\rmfamily\fangsong}
-%  \theoremsymbol{\ensuremath{\mdlgblksquare}} % U+25A0
-%  \theoremprework{\leavevmode\hskip2em}
-%  \newtheorem{proof}{}
-%\endgroup
-
-\newenvironment{proof}%
-  {\par\mbox{}\par\small}{\par\mbox{}\par}
+\newenvironment{proof}{\par\mbox{}\par\small}{\par\mbox{}\par}
 
 \begingroup
   \theoremstyle{empty}
@@ -131,37 +122,19 @@
   \newtheorem{theorem}{}
 \endgroup
 
-%\newenvironment{theorem}[1]
-%  {\begin{_myThm}[\hskip 2 em #1]}
-%  {\end{_myThm}}
-
-
-%\theoremstyle{plain} %带编号
-%\theoremheaderfont{\myHeavy}
-%\theorembodyfont{\normalfont}
-%\theoremsymbol{}
-%\theoremsymbol{\ensuremath{\triangleleft}}
-%\newtheorem{myExample}{例}[chapter]
-
-
-%%%\newenvironment{myThm}[1]
-%%%  {\begin{_myThm}[\hskip 2 em #1]}
-%%%  {\end{_myThm}}
-%%%\newenvironment{myThm*}
-%%%  {\begin{_myThm} \hskip 2 em}
-%%%  {\end{_myThm}}
-%%%%自定义证明（说明）
-%%%\newenvironment{myProof}
-%%%  {\begin{_myProof} \normalfont \small \CJKfamily{仿宋} \hskip 2 em}
-%%%  {\end{_myProof}}
-
+\begingroup
+  \theoremstyle{plain}
+  \theoremheaderfont{\sffamily}
+  \theorembodyfont{\normalfont}
+  \theoremsymbol{}
+  \newtheorem{example}{例}[chapter]
+\endgroup
 
 
 \numberwithin{equation}{section}
 %\renewcommand{\theequation}{\thesection.\arabic{equation}} %公式编号样式x.x.x
 
-
-\newenvironment{boced}
+\newenvironment{boxeq}
   {\empheq[box=\fbox]{equation}}
   {\endempheq}
 
@@ -208,42 +181,33 @@
 
 %% 命令
 
-%\newcommand\cmark{cmark}%{\ding{51}}
-%\newcommand\xmark{xmark}%{\ding{55}}
 \newcommand\cmark{\symbol{"2714}}
 \newcommand\xmark{\symbol{"2718}}
 
-%\newcommand{\emphA}[1]{\textsf{#1}}
-%\newcommand{\emphB}[1]{\textit{#1}}
 \newcommand\kwd[1]{\textsf{#1}}
-
 
 \def\V#1{\symbf{#1}}
 \def\T#1{\symbf{#1}}
 
+%% see `physics.sty`
 \def\diffdbar{\mbox{đ}} % U+0111
-\DeclareDocumentCommand\dbar{ o g d() }{ % Differential 'd'
-  % o: optional n for nth differential
-  % g: optional argument for readability and to control spacing
-  % d: long-form as in d(cos x)
-  \IfNoValueTF{#2}{
-    \IfNoValueTF{#3}
-      {\diffdbar\IfNoValueTF{#1}{}{^{#1}}}
-      {\mathinner{\diffdbar\IfNoValueTF{#1}{}{^{#1}}\argopen(#3\argclose)}}
-    }
-    {\mathinner{\diffdbar\IfNoValueTF{#1}{}{^{#1}}#2} \IfNoValueTF{#3}{}{(#3)}}
+\DeclareDocumentCommand\dbar{ o g d() }{%
+  \IfNoValueTF{#2}{%
+    \IfNoValueTF{#3}%
+      {\diffdbar\IfNoValueTF{#1}{}{^{#1}}}%
+      {\mathinner{\diffdbar\IfNoValueTF{#1}{}{^{#1}}\argopen(#3\argclose)}}%
+    }%
+    {\mathinner{\diffdbar\IfNoValueTF{#1}{}{^{#1}}#2}\IfNoValueTF{#3}{}{(#3)}}%
   }
 
 \def\incr{\increment}
 \def\defeq{\equiv}
 
-
-%\newcommand\pp{\piup} %圆周率
-%\newcommand\ee{\mathrm{e}} %自然对数基
-%\newcommand\ii{\mathrm{i}} %虚数单位
-%\newcommand\hb{\hbar} %约化Planck常数
-\def\kB{k_{\symrm{B}}} %Boltzmann常数
-\newcommand\pfs{\epsilon_0} %真空介电常数 Permittivity of Free Space
+\def\ee{\symrm{e}}
+\def\ii{\symrm{i}}
+\def\pp{\symrm{\pi}}
+\def\kB{k_{\symrm{B}}} % Boltzmann constant
+\def\pfs{\epsilon_0}   % Permittivity of free space
 
 
 %\newcommand\comma{\text{，}}
@@ -251,6 +215,10 @@
 %\newcommand\semicolon{\text{；}}
 \def\const{\text{const.}}
 
+
+\def\secref#1{\S\ref{#1}}
+\def\subsecref#1{第\ref{#1}小节}
+%\def\egref#1{例 \ref{#1}}
 
 
 %FIXME：防止PDF书签报错（LaTeX入门 p173）
@@ -443,7 +411,7 @@
 %%%  {\endsubequations
 %%%  \ignorespacesafterend}
 %%%%带框公式
-%%%\newenvironment{boced}
+%%%\newenvironment{boxeq}
 %%%  {\empheq[box = \fbox]{equation}}
 %%%  {\endempheq}
 %%%%大括号公式

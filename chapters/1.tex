@@ -61,34 +61,35 @@
 
 \subsection{物态方程}
 
-温度与其他状态参量 \footnote{即独立的状态变量。}
-的函数关系称为\kwd{物态方程}：
+温度与其他状态参量 \footnote{即独立的状态变量。} 的函数关系称为\kwd{物态方程}：
 \begin{equation}
-  T = f(p, V)
+  T = f(p, \, V)
 \end{equation}
 或
 \begin{equation}
-  g(p, V, T) = 0.
+  g(p, \, V, \, T) = 0.
 \end{equation}
 
 Boyle 和 Mariotte 分别于 1662 年和 1676 年各自确立了\kwd{Boyle--Mariotte定律}：
 \begin{equation}
-  p V = p_0 V_0 \qc\qif* T = \const;
+  pV = p_0 V_0 \qc\qif* T = \const;
 \end{equation}
-1802年，Gay-Lussac 确立了\kwd{Gay-Lussac定律} \footnote{事实上，在 1787 年，
-  Charles 就已经发现了这一定律，只是当时未发表，也未被人注意。}：
+1802年，Gay-Lussac 确立了\kwd{Gay-Lussac定律}
+\footnote{事实上，在 1787 年，Charles 就已经发现了这一定律，只是当时未发表，
+  也未被人注意。}：
 \begin{equation}
   \frac{V}{T} = \frac{V_0}{T_0} \qc\qif* p = \const
 \end{equation}
-综合两式，可得 \footnote{该式中常数的值显然与物质的量 $n$ 有关，故用带引号的
+综合两式，可得
+\footnote{该式中常数的值显然与物质的量 $n$ 有关，故用带引号的
   $\text{``const.''}$ 表示。}
 \begin{equation} \label{eq:ideal-gas-law-a}
   \frac{p V}{T} = \frac{p_0 V_0}{T_0} = \text{``const.''} = n R,
 \end{equation}
 即\kwd{理想气体物态方程}
-\begin{boced} \label{eq:ideal-gas-law-b}
-  p V = n R T = N \kB T
-\end{boced}
+\begin{equation} \label{eq:ideal-gas-law-b}
+  \boxed{pV = nRT = N \kB T}
+\end{equation}
 
 \begin{proof}
   式~\eqref{eq:ideal-gas-law-a} 的推导如下。
@@ -324,9 +325,9 @@ $y_i$ 是\kwd{广义坐标}，如体积 $V$、电位移 $\V{D}$、磁感应强�
   U_2 - U_1 = W + Q.
 \end{equation}
 写成微分形式，为
-\begin{boced} \label{eq:first-law-differential}
-  \dd{U} = \dbar{W} + \dbar{Q}.
-\end{boced}
+\begin{equation} \label{eq:first-law-differential-form}
+  \boxed{\dd{U} = \dbar{W} + \dbar{Q}}
+\end{equation}
 这实际上就是热力学第一定律最常用的表述。
 
 设两个全同系统内能分别为 $U_1$、$U_2$。则总内能 $U_\text{total}$ 除了
@@ -504,8 +505,9 @@ $\incr{U}=0$。假设内能是温度和体积的函数，即
   \label{eq:C_p-C_V-for-ideal-gas}
 \end{equation}
 
-定义\kwd{热容比} \footnote{也称为\kwd{绝热指数}，原因见第%
-  \ref{subsec:adiabatic-process}小节。} $\gamma$ 为 $C_p$ 与 $C_V$ 之比：
+定义\kwd{热容比}
+\footnote{也称为\kwd{绝热指数}，原因见第\ref{subsec:adiabatic-process}小节。}
+$\gamma$ 为 $C_p$ 与 $C_V$ 之比：
 \begin{equation} \label{eq:heat-capacity-ratio}
   \gamma \defeq \frac{C_p}{C_V}.
 \end{equation}
@@ -527,11 +529,11 @@ $\incr{U}=0$。假设内能是温度和体积的函数，即
 \end{braced}
 其中的 $U_0$ 和 $H_0$ 是积分常数。将上式写成微分形式，为
 \begin{braced}
-  \dd{U} &= C_V(T) \dd{T}, \label{eq:dU-for-ideal-gas} \\ %\label{EQ_dU=Cv*dT_IDEAL_GAS}
-  \dd{H} &= C_p(T) \dd{T}. \label{eq:dH-for-ideal-gas}    %\label{EQ_dH=Cp*dT_IDEAL_GAS}
+  & \dd{U} = C_V(T) \dd{T}, \label{eq:dU-for-ideal-gas} \\
+  & \dd{H} = C_p(T) \dd{T}. \label{eq:dH-for-ideal-gas}
 \end{braced}
 
-\subsection{绝热过程的过程方程} \label{subsec:adiabatic-process} %\label{subsec:绝热过程的过程方程}
+\subsection{绝热过程的过程方程} \label{subsec:adiabatic-process}
 
 \emph{本节叙述均只针对理想气体。}
 
@@ -569,447 +571,497 @@ $\incr{U}=0$。假设内能是温度和体积的函数，即
 \end{equation}
 的形式。
 
-%    \begin{myExample}[海拔与气温的关系]
-%      下面推导\emph{气温垂直递减率}。首先考虑\emph{干燥空气}的温度\emph{绝热}递减率。假设空气是理想气体。
-%      
-%      因为是绝热过程，因此
-%      \begin{equation}
-%        p^{(1 - \g) / \g} T = \const
-%      \end{equation}
-%      两边求微分，得
-%      \begin{equation}
-%        \frac{1 - \g}{\g} p^{\frac{1 - \g}{\g} - 1} T \dd p + p^{\frac{1 - \g}{\g} - 1} \dd T = 0 \comma
-%      \end{equation}
-%      即
-%      \begin{equation} \label{EQ_dT/dp_IN_EXAMPLE_OF_LAPSE_RATE}
-%        \frac{\dd T}{\dd p} = \frac{1 - \g}{\g} \frac{T}{p} \fullstop
-%      \end{equation}
-%      
-%      假设大气处于平衡状态，则有
-%      \begin{equation}
-%        \dd p = -\r g \dd z \comma
-%      \end{equation}
-%      其中的 $\r$ 是空气密度，
-%      \begin{equation}
-%        \r = \frac{m}{V} = \frac{n M}{n R T / p} = \frac{p M}{R T} \comma
-%      \end{equation}
-%      这里的 $M$ 是空气的平均摩尔质量， $g$ 是重力加速度，$m$、$V$ 分别是一定量空气的质量和体积。代入 \eqref{EQ_dT/dp_IN_EXAMPLE_OF_LAPSE_RATE} 式，可得
-%      \begin{equation}
-%        \frac{\dd T}{\dd z} = -\frac{1 - \g}{\g} \frac{\r g T}{p} = -\frac{1 - \g}{\g} \frac{M g}{R} \fullstop
-%      \end{equation}
-%      代入空气的热容比 $\g = 1.4$、平均摩尔质量 $M = \SI{28.8e-3}{\kg\per\mol}$ 等数值，可得
-%      \begin{equation}
-%        \frac{\dd T}{\dd z} = \SI{-9.7}{\kelvin\per\km} \fullstop
-%      \end{equation}
-%      
-%      \blankline
-%      
-%      若为水汽饱和的湿空气，有下面的近似公式：%TODO：20160315 参考文献
-%      \begin{equation} \label{EQ_SATURATED_ADIABATIC_LAPSE_RATE}
-%        \frac{\dd T}{\dd z}
-%        = -g \, \frac{1 + \dfrac{L_\text{vap} r}{R_\text{s,\,dry} T}}{c_{p,\,\text{dry}} + \dfrac{L_\text{vap}^2 r}{R_\text{s,\,water} T^2}}
-%        = -g \, \frac{1 + \dfrac{L_\text{vap} r}{R_\text{s,\,dry} T}}{c_{p,\,\text{dry}} + \dfrac{L_\text{vap}^2 r \e}{R_\text{s,\,dry} T^2}} \comma
-%      \end{equation}
-%      式中的各符号见表~\ref{TAB_SYMBOLS_IN_SATURATED_ADIABATIC_LAPSE_RATE}。%FIXME：20160401 qed位置
-%      
-%      \begin{myTable}{Mcc}{式~\eqref{EQ_SATURATED_ADIABATIC_LAPSE_RATE} 中所用到的符号}{TAB_SYMBOLS_IN_SATURATED_ADIABATIC_LAPSE_RATE}
-%        \toprule
-%        \text{\kwd{符号}} & \kwd{说明} & \kwd{数值} \\%HACK：20160330 表格首行加粗
-%        \midrule
-%        g & 重力加速度 & \SI{9.8076}{\metre\per\second\squared} \\
-%        L_\text{vap} & 水的汽化热 & \SI{2257}{\kilo\joule\per\kg} \\
-%        c_{p,\,\text{dry}} & 干燥空气的定压比热容 & \SI{1003.5}{\joule\per\kg\per\kelvin} \\
-%        R_\text{s,\,dry} & 干燥空气的气体常数 & \SI{287}{\joule\per\kg\per\kelvin} \\
-%        R_\text{s,\,water} & 水蒸气的气体常数 & \SI{461.5}{\joule\per\kg\per\kelvin} \\
-%        \e = R_\text{s,\,dry} / R_\text{s,\,water} & 干燥空气与水蒸气的气体常数之比 & 0.622 \\
-%        e & 饱和空气的水蒸气分压 & —— \\
-%        p & 饱和空气的气压 & —— \\
-%        r = \e e / (p - e) & 水蒸气的质量与干燥空气质量的混合比例 & —— \\
-%        T & 饱和空气的温度 & —— \\
-%        \bottomrule
-%      \end{myTable}
-%    \end{myExample}
-%    
-%\section{理想气体与Carnot循环；热力学第二定律} \label{sec:理想气体与Carnot循环_热力学第二定律}
-%  \subsection{Carnot循环} \label{subsec:Carnot循环}
-%    \kwd{Carnot循环}分为四个过程，如图~\ref{FIG_CARNOT_CYCLE} 所示。
-%    \begin{myEnum2}
-%      \item 等温膨胀：$(T_\text{H}, \, V_1) \rightarrow (T_\text{H}, \, V_2)$，
-%      \item 绝热膨胀：$(T_\text{H}, \, V_2) \rightarrow (T_\text{C}, \, V_3)$，
-%      \item 等温压缩：$(T_\text{C}, \, V_3) \rightarrow (T_\text{C}, \, V_4)$，
-%      \item 绝热压缩：$(T_\text{C}, \, V_4) \rightarrow (T_\text{H}, \, V_1)$，
-%    \end{myEnum2}
-%    这里的 $T_\text{H}$ 和 $T_\text{C}$ 分别指高温和低温，并且还有 $V_1 < V_2$，$V_4 < V_3$。
-%    
-%    \begin{figure}[h]
-%      \begin{asy}
-%        import graph;
-%        pair O = (0, 0), x_axes = (10, 0), y_axes = (0, 10);
-%        draw(Label("$V$", EndPoint), O--x_axes, Arrow);
-%        draw(Label("$p$", EndPoint), O--y_axes, Arrow);
-%        
-%        real gamma = 2.5;
-%        real x1 = 2, x4 = 9;
-%        real c1 = 10, c2 = 18;
-%        real c3 = c2*x1^(gamma-1), c4 = c1*x4^(gamma-1);
-%        real x2 = x1*(c1/c2)^(1/(1-gamma)), x3 = x4*(c2/c1)^(1/(1-gamma));
-%        
-%        path path1 = graph(new real(real x) {return c2/x;}, x1, x3);
-%        path path2 = graph(new real(real x) {return c4/x^gamma;}, x3, x4);
-%        path path3 = reverse(graph(new real(real x) {return c1/x;}, x2, x4));
-%        path path4 = reverse(graph(new real(real x) {return c3/x^gamma;}, x1, x2));
-%        //path path_TH = graph(new real(real x) {return c2/x;}, x3, 8);
-%        //path path_TC = graph(new real(real x) {return c1/x;}, 1.7, x2);
-%        
-%        pair p1 = (x1, c2/x1), p2 = (x3, c2/x3), p3 = (x4, c1/x4), p4 = (x2, c1/x2);
-%        
-%        pen pen1 = linewidth(1)+color1;
-%        
-%        fill(path1 & path2 & path3 & path4 & cycle, color1+opacity(0.2));
-%        
-%        //draw(path_TH, dashed + color1);
-%        //draw(path_TC, dashed + color1);
-%        draw(path1, pen1, Arrow(position = Relative(0.7), arrowhead = HookHead, size = 4));
-%        draw(path2, pen1, Arrow(position = Relative(0.5), arrowhead = HookHead, size = 4));
-%        draw(path3, pen1, Arrow(position = Relative(0.7), arrowhead = HookHead, size = 4));
-%        draw(path4, pen1, Arrow(position = Relative(0.45), arrowhead = HookHead, size = 4));
-%        
-%        draw(Label("$V_1$", EndPoint, black), p1--(p1.x, 0), dashed + color1);
-%        draw(Label("$V_2$", EndPoint, black), p2--(p2.x, 0), dashed + color1);
-%        draw(Label("$V_3$", EndPoint, black), p3--(p3.x, 0), dashed + color1);
-%        draw(Label("$V_4$", EndPoint, black), p4--(p4.x, 0), dashed + color1);
-%        
-%        label("状态1", p1, N);
-%        label("状态2", p2, NE);
-%        label("状态3", p3, E);
-%        label("状态4", p4, SW, Fill(white));
-%        
-%        label("I", path1, align = Relative(W));
-%        label("II", path2, align = Relative(W));
-%        label("III", path3, align = Relative(W));
-%        label("IV", path4, align = Relative(W), Fill(white));
-%      \end{asy}
-%      \caption{Carnot循环示意图}
-%      \label{FIG_CARNOT_CYCLE}
-%    \end{figure}
-%    
-%    利用热力学第一定律，有
-%    \begin{equation}
-%      \oint \dd U = \oint \dbar Q + \oint \dbar W = 0 \comma
-%    \end{equation}
-%    其中的“$\oint$”代表沿循环过程的积分。
-%    
-%    整个过程中对外做的净功（它等于图~\ref{FIG_CARNOT_CYCLE} 中曲线包围起来的面积）
-%    \begin{equation}
-%      W' = -\oint \dbar W = \oint \dbar Q = Q_\text{H} + Q_\text{C} \comma
-%    \end{equation}
-%    其中的 $Q_\text{H}$ 和 $Q_\text{C}$ 分别为高温和低温时吸收的热量（可以有正负）。
-%    
-%    若工作物质为理想气体，则有
-%    \begin{align}
-%      Q_\text{H} &= \incr U_\text{I} - W_\text{I} \myTag{热力学第一定律}\\
-%      &= 0 - W_\text{I} \notag \\
-%      &= \int_{V_1}^{V_2} p \dd V \notag \\
-%      &= n R T_\text{H} \int_{V_1}^{V_2} \frac{\dd V}{V} \myTag{根据 $p V = n R T$} \\
-%      &= n R T_\text{H} \ln \frac{V_2}{V_1}
-%      > 0 \label{EQ_Q_H_IN_CARNOT_CYCLE} \fullstop
-%    \end{align}
-%    同理，还有
-%    \begin{equation} \label{EQ_Q_C_IN_CARNOT_CYCLE}
-%      Q_\text{C} = -n R T_\text{C} \ln \frac{V_3}{V_4} < 0 \fullstop
-%    \end{equation}
-%    
-%    根据绝热过程的过程方程~\eqref{eq:equation-of-adiabatic-process-in-T-V},有
-%    \begin{mySubEq}
-%      \begin{empheq}[left=\empheqlbrace]{align}
-%        & T_\text{H} V_2^{\g - 1} = T_\text{C} V_3^{\g - 1} \comma \\
-%        & T_\text{H} V_1^{\g - 1} = T_\text{C} V_4^{\g - 1} \comma
-%    \end{empheq}
-%    \end{mySubEq}
-%    两边分别相除，得
-%    \begin{equation} \label{EQ_V2/V1_IN_CARNOT_CYCLE}
-%      \frac{V_2}{V_1} = \frac{V_3}{V_4} \fullstop
-%    \end{equation}
-%    
-%    定义\kwd{热机效率}
-%    \begin{equation}
-%      \h \defeq \frac{W'}{Q_\text{H}} 
-%      = \frac{Q_\text{H} - \abs{Q_\text{C}}}{Q_\text{H}} 
-%      = 1 - \frac{\abs{Q_\text{C}}}{Q_\text{H}} \fullstop
-%    \end{equation}
-%    对于理想气体，代入式~\eqref{EQ_Q_H_IN_CARNOT_CYCLE} 和 \eqref{EQ_Q_C_IN_CARNOT_CYCLE}，并利用式~\eqref{EQ_V2/V1_IN_CARNOT_CYCLE}，可得
-%    \begin{align}
-%      \h &= 1 - \frac{T_\text{C}}{T_\text{H}} \frac{\ln (V_3 / V_4)}{\ln (V_2 / V_1)} \notag \\
-%      &= 1 - \frac{T_\text{C}}{T_\text{H}} \label{EQ_CARNOT_CYCLE_EFFICIENCY_WITH_IDEAL_GAS} \fullstop
-%    \end{align}%TODO：20160320 非理想气体的情况，见作业
-%    
-%    若Carnot循环反向进行，就成为\kwd{Carnot制冷机}。其\emph{制冷效率}定义为
-%    \begin{equation}
-%      \ve = \frac{Q_\text{C}}{W}
-%      = \frac{Q_\text{C}}{Q_\text{H} - Q_\text{C}}
-%      = \frac{T_\text{C}}{T_\text{H} - T_\text{C}} \comma
-%    \end{equation}
-%    它通常是大于 $1$ 的。
-%    
-%  \subsection{热力学第二定律}
-%    \kwd{热力学第二定律}解决了有关过程\emph{方向性}的问题，它的主要建立者有Carnot、Clausius、Kelvin等。
-%    
-%    \begin{myThm}{热力学第二定律（Kelvin表述）}
-%      不可能从单一热源吸热使之完全变为有用的功而不产生其他影响，即第二类永动机不可能实现。
-%    \end{myThm}
-%    \begin{myThm}{热力学第二定律（Clausius表述）}
-%      不可能把热量从低温物体传到高温物体而不产生其他影响。
-%    \end{myThm}
-%    
-%    \begin{proof}%TODO：20160318 图片
-%      Kelvin表述 $\implies$ Clausius表述：
-%      
-%      采用反证法，即证明 $\neg \, (\text{Clausius表述}) \implies \neg \, (\text{Kelvin表述})$。
-%      
-%      Carnot热机A工作于高温热源 $T_\text{H}$ 和低温热源 $T_\text{C}$ 之间。它从 $T_\text{H}$ 处吸收热量 $Q_\text{H}$，向 $T_\text{C}$ 放出热量 $Q_\text{C}$，%并做功 $W = Q_\text{H} - Q_\text{C}$。假设Clausius表述不成立，就可以在不产生其他影响的前提下，使低温热源获得的热量 $Q_\text{C}$ 重新回到高温热源。净结果%便是从单一热源 $T_\text{H}$ 吸收了热量 $Q_\text{H} - Q_\text{C}$，并将其完全转化为功，这就违背了Kelvin表述。因此原假设不成立，即有 $\neg \, (\text%{Clausius表述}) \implies \neg \, (\text{Kelvin表述})$。
-%      
-%      \blankline
-%      
-%      Clausius表述 $\implies$ Kelvin表述：
-%      
-%      同样采用反证法，即证明 $\neg \, (\text{Kelvin表述}) \implies \neg \, (\text{Clausius表述})$。
-%      
-%      假设Kelvin表述不成立，就可以在不产生其他影响的前提下，从单一热源 $T_\text{H}$ 吸热 $Q_\text{H}$ 并将其完全转化为有用功 $W = Q_\text{H}$。它可以推动%Carnot制冷机从低温热源 $T_\text{CH}$ 吸收 $Q_\text{C}$ 的热量并传给高温热源 $Q_\text{H} + Q_\text{C}$ 的热量。净结果是热量 $Q_\text{C}$ 从低温热源传给了%高温热源，却没有产生其他影响，这就违背了Clausius表述。因此原假设不成立，即有 $\neg \, (\text{Kelvin表述}) \implies \neg \, (\text{Clausius表述})$。
-%    \end{proof}
-%    
-%    热力学第二定律的核心内容可以概括为：自然界一切热现象过程都是不可逆的。
-%    
-%\section{热力学第二定律的数学解释；熵}
-%  \subsection{Carnot定理}
-%    \begin{myThm}{Carnot定理}
-%      工作于两个确定温度之间的所有热机中，可逆热机效率最高。
-%    \end{myThm}
-%    
-%    设两个热机A、B工作于高温热源 $\th_\text{H}$ 和低温热源 $\th_\text{C}$ 之间\footnote{
-%      这里用 $\th$ 表示温度，而不是像前文一样使用 $T$，原因见下一小节。
-%    }，它们分别从 $\th_\text{H}$ 吸收 $Q_\text{H,\,A}$ 与 $Q_\text{H,\,B}$ 的热量，向 $\th_\text{C}$ 放出 $Q_\text{C,\,A}$ 与 $Q_\text{C,\,B}$ 的热量，并对外%做功 $W_\text{A}$ 与 $W_\text{B} \,$\footnote{
-%      前文用撇号表示系统（热机）对外界做功，这里方便起见直接用 $W$。但需注意，$W_\text{A}$ 与 $W_\text{B}$ 均大于 $0$。
-%    }。根据定义，其效率分别为
-%    \begin{equation}
-%      \h_\text{A} = \frac{W_\text{A}}{Q_\text{H,\,A}} \comma \, \h_\text{B} = \frac{W_\text{B}}{Q_\text{H,\,}} \fullstop
-%    \end{equation}
-%    设A是一个可逆热机，因此我们把 $\h_\text{A}$ 写成 $\h_\text{rev,\,A}$。根据Carnot定理，有
-%    \begin{equation}
-%      \h_\text{rev,\,A} \geqslant \h_\text{B} \fullstop
-%    \end{equation}
-%    
-%    \begin{proof}
-%      下面利用反证法证明Carnot定理，即假设 $\h_\text{rev,\,A} < \h_\text{B}$。因此
-%      \begin{equation}
-%        \frac{W_\text{A}}{Q_\text{H,\,A}} < \frac{W_\text{B}}{Q_\text{H,\,B}} \fullstop
-%      \end{equation}
-%      令A、B从高温热源 $\th_\text{H}$ 处吸收相同的热量，即 $Q_\text{H,\,A} = Q_\text{H,\,B}$，那么就有 $W_\text{A} < W_\text{B}$。因为A是可逆热机，所以不妨让B%热机输出功的一部分 $W_\text{A}$ 推动A热机逆向运行（此时A就是一个制冷机）。此时，B热机还可以输出功 $W_\text{B} - W_\text{A}$。
-%      
-%      根据热力学第一定律，有
-%      \begin{mySubEq}
-%        \begin{empheq}[left=\empheqlbrace]{align}
-%          & W_\text{A} = Q_\text{H,\,A} - Q_\text{C,\,A} \comma \\
-%          & W_\text{B} = Q_\text{H,\,B} - Q_\text{C,\,B} \comma
-%        \end{empheq}
-%      \end{mySubEq}
-%      因此
-%      \begin{equation}
-%        W_\text{B} - W_\text{A} = Q_\text{C,\,A} - Q_\text{C,\,B} \fullstop
-%      \end{equation}
-%      
-%      若A、B联合运行，其净结果便是从低温热源 $\th_\text{C}$ 处吸收 $Q_\text{C,\,A} - Q_\text{C,\,B}$ 的热量，并对外做了 $W_\text{B} - W_\text{A}$ 的功，即在不%产生其他影响的情况下完全把热转化为了功。这显然违背了热力学第二定律的Kelvin表述。因此原假设不成立，于是Carnot定理得证。
-%    \end{proof}
-%    
-%    由Carnot定理，可以得到如下推论：
-%    \begin{myThm*}
-%      所有工作于两个确定温度之间的可逆热机效率均相等。
-%    \end{myThm*}
-%    
-%  \subsection{热力学温标}
-%    \kwd{温标（scale of temperature）}，是以量化数值，配以温度单位来表示温度的方法。它包含三个要素：
-%    \begin{myEnum2}
-%      \item \emph{测温质}与\emph{测温参量}；
-%      \item 测温参量与温度的\emph{函数关系}；
-%      \item \emph{温度标准点}的选定。
-%    \end{myEnum2}
-%    
-%    常用的经验温标有摄氏温标、华氏温标等。利用理想气体状态方程，可以定义\kwd{理想气体温标}：
-%    \begin{equation}
-%      T \defeq \frac{1}{n R} \lim\limits_{p \approach 0} p V \comma
-%    \end{equation}
-%    同时需要规定水的三相点温度 $T_\text{tr} \defeq \SI{273.16}{\kelvin}$。
-%    
-%    在 \secref{sec:理想气体与Carnot循环_热力学第二定律} \subsecref{subsec:Carnot循环} 中，我们使用 $T$ 表示温度。实际上，那里的“温度”是用\emph{理想气体温标}%表示的值。
-%    
-%    \blankline
-%    
-%    根据Carnot定理，可逆热机的效率只与两个热源的温度有关，而与工作物质的性质、吸放热多少、做功多少均无关。因此，可逆热机的效率是两个温度 $\th_\text{H}$、%$\th_\text{C}$ 的\emph{普适函数}。根据定义，热机的效率
-%    \begin{equation}
-%      \h = \frac{W}{Q_\text{H}} = 1 - \frac{Q_\text{C}}{Q_\text{H}} \fullstop
-%    \end{equation}
-%    因此有
-%    \begin{equation}
-%      \frac{Q_\text{C}}{Q_\text{H}} = F(\th_\text{H}, \, \th_\text{C}) \comma
-%    \end{equation}
-%    其中的 $F(\th_\text{H}, \, \th_\text{C})$ 是 $\th_\text{H}$ 与 $\th_\text{C}$ 的普适函数。
-%    
-%    下面证明
-%    \begin{equation}
-%      F(\th_\text{H}, \, \th_\text{C}) = \frac{f(\th_\text{C})}{f(\th_\text{H})} \comma
-%    \end{equation}
-%    其中的 $f$ 是另一个普适函数。%TODO：20160322 热力学温标证明
-%    
-%    由式~\eqref{EQ_CARNOT_CYCLE_EFFICIENCY_WITH_IDEAL_GAS}，理想气体Carnot热机效率为
-%    \begin{equation}
-%      1 - \frac{T^*_\text{C}}{T^*_\text{H}} \comma
-%    \end{equation}
-%    这里用带 $^*$ 的 $T$ 表示理想气体温标下的温度。这与式 是相同的，即温度尺度相同。又因为理想气体温标也规定在水的三相点处 $T^*_\text{tr} = \SI{273.16}%{\kelvin}$，因此，理想气体温标与热力学温标是相同的。
-%    
-%  \subsection{Clausius不等式}
-%    根据Carnot定理，工作于两个确定温度之间的所有热机，其效率均满足
-%    \begin{equation}
-%      \h = 1 - \frac{Q_2}{Q_1} \leqslant 1 - \frac{T_2}{T_1} \comma \footnote{
-%        以后均直接用 $T$ 表示温度。
-%      }
-%    \end{equation}
-%    对于可逆热机，取等号；对于不可逆热机，则取小于号。
-%    
-%    上式稍作变形，可得
-%    \begin{align}
-%      &\mathrel{\phantom{\implies}} \frac{Q_2}{Q_1} \geqslant \frac{T_2}{T_1} \\
-%      &\implies \frac{Q_1}{T_1} - \frac{Q_2}{T_2} \leqslant 0 \fullstop
-%    \end{align}
-%    约定 $Q$ 始终表示吸收的热量，则放热应写作 $-Q$。于是
-%    \begin{equation}
-%      \frac{Q_1}{T_1} + \frac{Q_2}{T_2} \leqslant 0 \fullstop
-%    \end{equation}
-%    假设系统先后与温度分别为 $T_1, \, T_2 \, \dots, \, T_n$ 的 $n$ 个热源接触，又分别吸热 $Q_1, \, Q_2 \, \dots, \, Q_n$，则可以证明\kwd{Clausius不等式}：
-%    \begin{equation}
-%      \iTonSum \frac{Q_i}{T_i} \leqslant 0 \fullstop
-%    \end{equation}
-%    
-%    \begin{proof}
-%      设有程%TODO：20160322 证明过程没写
-%    \end{proof}
-%    
-%    在 $n \approach \infty$ 的极限下，Clausius不等式过渡到积分形式：
-%    \begin{equation} \label{EQ_CLAUSISU_INEQUALITY_IN_INTEGRAL}
-%      \lim\limits_{n \approach \infty} \iTonSum \frac{Q_i}{T_i} \leqslant 0 \approach \oint \frac{\dbar Q}{T} \leqslant 0 \fullstop
-%    \end{equation}
-%    
-%  \subsection{熵的定义}
-%    对于可逆循环，根据式~\eqref{EQ_CLAUSISU_INEQUALITY_IN_INTEGRAL}，有
-%    \begin{equation}
-%      \oint \frac{\dbar Q_\text{rev}}{T} = 0 \fullstop
-%    \end{equation}
-%    如图%TODO：20160323 图片
-%    可以表示成两段路径之和：
-%    \begin{equation}
-%      \underset{C_1\phantom{M}}{\int_{(P_0)}^{(P)}} \, \frac{\dbar Q_\text{rev}}{T}
-%      + \underset{C_2\phantom{M}}{\int_{(P)}^{(P_0)}} \, \frac{\dbar Q_\text{rev}}{T} = 0 \comma
-%    \end{equation}
-%    即
-%    \begin{equation}
-%      \underset{C_1\phantom{M}}{\int_{(P_0)}^{(P)}} \, \frac{\dbar Q_\text{rev}}{T}
-%      = \underset{C_2\phantom{M}}{\int_{(P_0)}^{(P)}} \, \frac{\dbar Q_\text{rev}}{T} = \const
-%    \end{equation}
-%    可以看出，$\dbar Q_\text{rev} / T$ 是一个与路径无关的量。由此，定义一个新的状态函数——\kwd{熵（entropy）}：
-%    \begin{equation}
-%      S - S_0 = \int_{(P_0)}^{(P)} \, \frac{\dbar Q_\text{rev}}{T} \fullstop
-%    \end{equation}
-%    
-%  \subsection{不可逆过程的数学表述}
-%    \begin{myEnum1}
-%      \myItem{初终态均是平衡态}
-%        根据Clausius不等式，有
-%        \begin{align}
-%          &\mathrel{\phantom{\implies}} \underset{\text{irrev} + \text{rev}}{\oint} \frac{\dbar Q}{T} < 0 \notag \\
-%          &\implies \int_{(P_0)}^{(P)} \, \frac{\dbar Q_\text{irrev}}{T} + \int_{(P)}^{(P_0)} \, \frac{\dbar Q_\text{rev}}{T} < 0 \notag \\
-%          &\implies S - S_0 > \int_{(P_0)}^{(P)} \, \frac{\dbar Q_\text{irrev}}{T} \fullstop
-%        \end{align}
-%        
-%      \myItem{初终态均是非平衡态}
-%        采用\emph{局域平衡近似}，仍旧可以推得
-%        \begin{equation}
-%          S - S_0 > \int_{(P_0)}^{(P)} \, \frac{\dbar Q_\text{irrev}}{T} \fullstop
-%        \end{equation} %TODO：20160323 局域平衡近似的证明
-%    \end{myEnum1}
-%    
-%    \blankline
-%    
-%    把对可逆过程与不可逆过程的表述合起来，就有
-%    \begin{equation} \label{EQ_2ND_LAW_IN_INTEGRAL_FORM}
-%      \incr S = S - S_0 \geqslant \int_{(P_0)}^{(P)} \, \frac{\dbar Q}{T} \semicolon
-%    \end{equation}
-%    写成微分形式，为
-%    \begin{boced} \label{EQ_2ND_LAW_IN_DIFFERENTIAL_FORM}
-%      \dd S \geqslant \frac{\dbar Q}{T}
-%    \end{boced}
-%    以上两式中，“$=$”适用于可逆过程，“$>$”适用于不可逆过程。这两式实际上便是热力学第二定律的数学表述。
-%    
-%  \subsection{熵的性质}
-%    这里小结一下熵的性质。
-%    
-%    \begin{myEnum2}
-%      \item 熵是\emph{状态函数}。
-%      \item 熵是\emph{广延量}。
-%      \item 对微小的\emph{可逆}过程，$\dd S = \dbar Q / T$。因此有
-%      \begin{equation} \label{EQ_dQ=TdS}
-%        \dbar Q = T \dd S \fullstop
-%      \end{equation}
-%      对于\emph{绝热}过程，有 $\dbar Q = 0$，因此
-%      \begin{equation} \label{EQ_dS=0_FOR_ADIABATIC_REVERSIBLE_PROCESS}
-%        \dd S = 0 \fullstop
-%      \end{equation}
-%    \end{myEnum2}%TODO：20160323 卡诺循环的TS表述
-%    
-%  \subsection{热力学基本方程}
-%    热力学第一定律式~\eqref{EQ_1ST_LAW_IN_DIFFERENTIAL_FORM}：
-%    \begin{equation}
-%      \dd U = \dbar Q + \dbar W \semicolon
-%    \end{equation}
-%    由热力学第二定律，得可逆过程微热量的表达式 \eqref{EQ_dQ=TdS}：
-%    \begin{equation}
-%      \dbar Q = T \dd S \semicolon
-%    \end{equation}
-%    微功的一般表示式~\eqref{eq:work-general}：
-%    \begin{equation}
-%      \dbar W = \iTonSum Y_i \dd y_i \fullstop
-%    \end{equation}
-%    联立以上三式，可得
-%    \begin{equation} \label{EQ_FUNDAMENTAL_EQUATION_OF_THERMODYNAMICS}
-%      \dd U = T \dd S + \iTonSum Y_i \dd y_i \fullstop
-%    \end{equation}
-%    这就是\kwd{热力学基本微分方程}。
-%    
-%    对于 $p\text{-}V\text{-}T$ 系统，上式可简化为
-%    \begin{equation} \label{EQ_FUNDAMENTAL_EQUATION_FOR_PVT_SYSTEM}
-%      \dd U = T \dd S - p \dd V \fullstop
-%    \end{equation}
-%    
-%    \begin{myExample}[理想气体的熵]
-%      下面推导不同过程下理想气体的熵。
-%      \begin{myEnum1}
-%        \myItem{等容过程}
-%          根据式~\eqref{EQ_dU=Cv*dT_IDEAL_GAS}，有
-%          \begin{equation}
-%            \dd U = C_V \dd T \fullstop
-%          \end{equation}
-%          根据热力学基本微分方程式~\eqref{EQ_FUNDAMENTAL_EQUATION_FOR_PVT_SYSTEM}，
-%          \begin{align}
-%            &\mathrel{\phantom{\implies}} T \dd S = \dd U + p \dd V \notag \\
-%            &\implies \dd S = \frac{\dd U}{T} + \frac{p \dd V}{T} \notag \\
-%            &\implies S = \frac{C_V}{T} \dd T + \frac{}{}
-%          \end{align}%TODO：20160323 有问题？
-%        
-%        \myItem{等压过程}
-%          没写%TODO：20160330 没写
-%        \myItem{等温过程}
-%      \end{myEnum1}
-%    \end{myExample}
-%  
-%\section{熵增加原理；最大功} \label{sec:熵增加原理与最大功}
-%  \subsection{熵增加原理}
+\begin{example}[海拔与气温的关系]
+  下面推导气温垂直递减率。首先考虑干燥空气的温度\emph{绝热}递减率。假设空气是
+  理想气体。
+
+  因为是绝热过程，我们有
+  \begin{equation}
+    p^{(1-\gamma) / \gamma} T = \const
+  \end{equation}
+  两边求微分，得
+  \begin{equation}
+    \frac{1-\gamma}{\gamma} p^{(1-\gamma)/\gamma-1} T \dd{p}
+    + p^{(1-\gamma)/\gamma} \dd{T} = 0,
+  \end{equation}
+  即
+  \begin{equation} \label{eq:dT-over-dp-in-example-of-lapse-rate}
+    \dv{T}{p} = \frac{1-\gamma}{\gamma} \frac{T}{p}.
+  \end{equation}
+
+  假设大气处于平衡状态，则有
+  \begin{equation}
+    p = \rho gz \implies \dd{p} = -\rho g \dd{z},
+  \end{equation}
+  其中的 $g$ 是重力加速度，而 $\rho$ 是空气密度：
+  \begin{equation}
+    \rho = \frac{m}{V} = \frac{nM}{nRT/p} = \frac{pM}{RT},
+  \end{equation}
+  这里，$M$ 是空气的平均摩尔质量，$m$、$V$ 则分别是一定量空气的质量和体积。
+  代入 \eqref{eq:dT-over-dp-in-example-of-lapse-rate}~式，可得
+  \begin{equation}
+    \dv{T}{z} = -\frac{1-\gamma}{\gamma} \frac{\rho gT}{p}
+    = -\frac{1-\gamma}{\gamma} \frac{Mg}{R}.
+  \end{equation}
+  代入空气的热容比 $\gamma=1.4$、平均摩尔质量 $M=\SI{28.8e-3}{\kg\per\mol}$
+  等数值，可得
+  \begin{equation}
+    \dv{T}{z} = \SI{-9.7}{\kelvin\per\km}.
+  \end{equation}
+
+%  若为水汽饱和的湿空气，有下面的近似公式：%TODO：20160315 参考文献
+%  \begin{equation} \label{EQ_SATURATED_ADIABATIC_LAPSE_RATE}
+%    \frac{\dd T}{\dd z}
+%    = -g \, \frac{1 + \dfrac{L_\text{vap} r}{R_\text{s,\,dry} T}}{c_{p,\,\text{dry}} + \dfrac{L_\text{vap}^2 r}{R_\text{s,\,water} T^2}}
+%    = -g \, \frac{1 + \dfrac{L_\text{vap} r}{R_\text{s,\,dry} T}}{c_{p,\,\text{dry}} + \dfrac{L_\text{vap}^2 r \e}{R_\text{s,\,dry} T^2}} \comma
+%  \end{equation}
+%  式中的各符号见表~\ref{TAB_SYMBOLS_IN_SATURATED_ADIABATIC_LAPSE_RATE}。%FIXME：20160401 qed位置
+%
+%  \begin{myTable}{Mcc}{式~\eqref{EQ_SATURATED_ADIABATIC_LAPSE_RATE} 中所用到的符号}{TAB_SYMBOLS_IN_SATURATED_ADIABATIC_LAPSE_RATE}
+%    \toprule
+%    \text{\kwd{符号}} & \kwd{说明} & \kwd{数值} \\%HACK：20160330 表格首行加粗
+%    \midrule
+%    g & 重力加速度 & \SI{9.8076}{\metre\per\second\squared} \\
+%    L_\text{vap} & 水的汽化热 & \SI{2257}{\kilo\joule\per\kg} \\
+%    c_{p,\,\text{dry}} & 干燥空气的定压比热容 & \SI{1003.5}{\joule\per\kg\per\kelvin} \\
+%    R_\text{s,\,dry} & 干燥空气的气体常数 & \SI{287}{\joule\per\kg\per\kelvin} \\
+%    R_\text{s,\,water} & 水蒸气的气体常数 & \SI{461.5}{\joule\per\kg\per\kelvin} \\
+%    \e = R_\text{s,\,dry} / R_\text{s,\,water} & 干燥空气与水蒸气的气体常数之比 & 0.622 \\
+%    e & 饱和空气的水蒸气分压 & —— \\
+%    p & 饱和空气的气压 & —— \\
+%    r = \e e / (p - e) & 水蒸气的质量与干燥空气质量的混合比例 & —— \\
+%    T & 饱和空气的温度 & —— \\
+%    \bottomrule
+%  \end{myTable}
+\end{example}
+
+\section{理想气体与 Carnot 循环；热力学第二定律}
+\label{sec:ideal-gas-carnot-cycle-and-second-law}
+
+\subsection{Carnot 循环} \label{subsec:carnot-cycle}
+
+\kwd{Carnot 循环}分为四个过程，如图~\ref{fig:carnot-cycle} 所示。
+\begin{itemize}
+  \item 等温膨胀 (I)  ：$(T_\text{H}, \, V_1) \to (T_\text{H}, \, V_2)$，
+  \item 绝热膨胀 (II) ：$(T_\text{H}, \, V_2) \to (T_\text{C}, \, V_3)$，
+  \item 等温压缩 (III)：$(T_\text{C}, \, V_3) \to (T_\text{C}, \, V_4)$，
+  \item 绝热压缩 (IV) ：$(T_\text{C}, \, V_4) \to (T_\text{H}, \, V_1)$。
+\end{itemize}
+这里的 $T_\text{H}$ 和 $T_\text{C}$ 分别指高温和低温，并且还有 $V_1 < V_2$，
+$V_4 < V_3$。
+
+% \begin{figure}[h]
+%   \begin{asy}
+%     import graph;
+%     pair O = (0, 0), x_axes = (10, 0), y_axes = (0, 10);
+%     draw(Label("$V$", EndPoint), O--x_axes, Arrow);
+%     draw(Label("$p$", EndPoint), O--y_axes, Arrow);
+%     
+%     real gamma = 2.5;
+%     real x1 = 2, x4 = 9;
+%     real c1 = 10, c2 = 18;
+%     real c3 = c2*x1^(gamma-1), c4 = c1*x4^(gamma-1);
+%     real x2 = x1*(c1/c2)^(1/(1-gamma)), x3 = x4*(c2/c1)^(1/(1-gamma));
+%     
+%     path path1 = graph(new real(real x) {return c2/x;}, x1, x3);
+%     path path2 = graph(new real(real x) {return c4/x^gamma;}, x3, x4);
+%     path path3 = reverse(graph(new real(real x) {return c1/x;}, x2, x4));
+%     path path4 = reverse(graph(new real(real x) {return c3/x^gamma;}, x1, x2));
+%     //path path_TH = graph(new real(real x) {return c2/x;}, x3, 8);
+%     //path path_TC = graph(new real(real x) {return c1/x;}, 1.7, x2);
+%     
+%     pair p1 = (x1, c2/x1), p2 = (x3, c2/x3), p3 = (x4, c1/x4), p4 = (x2, c1/x2);
+%     
+%     pen pen1 = linewidth(1)+color1;
+%     
+%     fill(path1 & path2 & path3 & path4 & cycle, color1+opacity(0.2));
+%     
+%     //draw(path_TH, dashed + color1);
+%     //draw(path_TC, dashed + color1);
+%     draw(path1, pen1, Arrow(position = Relative(0.7), arrowhead = HookHead, size = 4));
+%     draw(path2, pen1, Arrow(position = Relative(0.5), arrowhead = HookHead, size = 4));
+%     draw(path3, pen1, Arrow(position = Relative(0.7), arrowhead = HookHead, size = 4));
+%     draw(path4, pen1, Arrow(position = Relative(0.45), arrowhead = HookHead, size = 4));
+%     
+%     draw(Label("$V_1$", EndPoint, black), p1--(p1.x, 0), dashed + color1);
+%     draw(Label("$V_2$", EndPoint, black), p2--(p2.x, 0), dashed + color1);
+%     draw(Label("$V_3$", EndPoint, black), p3--(p3.x, 0), dashed + color1);
+%     draw(Label("$V_4$", EndPoint, black), p4--(p4.x, 0), dashed + color1);
+%     
+%     label("状态1", p1, N);
+%     label("状态2", p2, NE);
+%     label("状态3", p3, E);
+%     label("状态4", p4, SW, Fill(white));
+%     
+%     label("I", path1, align = Relative(W));
+%     label("II", path2, align = Relative(W));
+%     label("III", path3, align = Relative(W));
+%     label("IV", path4, align = Relative(W), Fill(white));
+%   \end{asy}
+%   \caption{Carnot循环示意图}
+%   \label{fig:carnot-cycle}
+% \end{figure}
+
+根据热力学第一定律，有
+\begin{equation}
+  \oint \dd{U} = \oint \dbar{Q} + \oint \dbar{W} = 0.
+\end{equation}
+其中的“$\oint$”代表沿循环过程的积分。
+
+整个过程中对外做的净功（它等于图~\ref{fig:carnot-cycle} 中曲线包围起来的面积）
+\begin{equation}
+  W' = -\oint \dbar{W} = \oint \dbar{Q} = Q_\text{H} + Q_\text{C},
+\end{equation}
+其中的 $Q_\text{H}$ 和 $Q_\text{C}$ 分别为高温和低温时吸收的热量（可以有正负）。
+
+若工作物质为理想气体，则有
+\begin{equation} \label{eq:Q_H-in-carnot-cycle}
+  Q_\text{H} = \incr{U_\text{I}} - W_\text{I} = -W_\text{I}
+  = \int_{V_1}^{V_2} p \dd{V}
+  = nRT_\text{H} \int_{V_1}^{V_2} \frac{\dd{V}}{V}
+  = nRT_\text{H} \ln \frac{V_2}{V_1} > 0.
+\end{equation}
+同理，还有
+\begin{equation} \label{eq:Q_C-in-carnot-cycle}
+  Q_\text{C} = -nRT_\text{C} \ln \frac{V_3}{V_4} < 0.
+\end{equation}
+
+根据绝热过程的过程方程~\eqref{eq:equation-of-adiabatic-process-in-T-V}，有
+\begin{braced}
+  & T_\text{H} V_2^{\gamma-1} = T_\text{C} V_3^{\gamma-1}, \\
+  & T_\text{H} V_1^{\gamma-1} = T_\text{C} V_4^{\gamma-1},
+\end{braced}
+两边分别相除，得
+\begin{equation} \label{eq:V_2-over-V_1-in-carnot-cycle}
+  \frac{V_2}{V_1} = \frac{V_3}{V_4}.
+\end{equation}
+
+定义\kwd{热机效率}
+\begin{equation}
+  \eta \defeq \frac{W'}{Q_\text{H}}
+  = \frac{Q_\text{H} - \abs{Q_\text{C}}}{Q_\text{H}}
+  = 1 - \frac{\abs{Q_\text{C}}}{Q_\text{H}}.
+\end{equation}
+对于理想气体，代入式~\eqref{eq:Q_H-in-carnot-cycle} 和
+\eqref{eq:Q_C-in-carnot-cycle}，并利用式~%
+\eqref{eq:V_2-over-V_1-in-carnot-cycle}，可得
+\begin{equation}\label{eq:efficiency-of-carnot-cycle-for-ideal-gas}
+  \eta = 1 - \frac{T_\text{C}}{T_\text{H}} \frac{\ln(V_3/V_4)}{\ln(V_2/V_1)}
+       = 1 - \frac{T_\text{C}}{T_\text{H}}.
+\end{equation}
+%TODO：20160320 非理想气体的情况，见作业
+
+若 Carnot 循环反向进行，就成为\kwd{Carnot 制冷机}。其\emph{制冷效率}定义为
+\begin{equation}
+  \varepsilon = \frac{Q_\text{C}}{W}
+  = \frac{Q_\text{C}}{Q_\text{H} - Q_\text{C}}
+  = \frac{T_\text{C}}{T_\text{H} - T_\text{C}},
+\end{equation}
+它通常是大于 1 的。
+
+\subsection{热力学第二定律}
+
+\kwd{热力学第二定律}解决了有关过程\emph{方向性}的问题，它的主要建立者有
+Carnot、Clausius、Kelvin 等。
+
+\begin{theorem}[热力学第二定律（Kelvin 表述）]
+  不可能从单一热源吸热使之完全变为有用的功，而不产生其他影响。即第二类永动机
+  不可能实现。
+\end{theorem}
+
+\begin{theorem}[热力学第二定律（Clausius 表述）]
+  不可能把热量从低温物体传到高温物体，而不产生其他影响。
+\end{theorem}
+
+热力学第二定律的 Kelvin 表述与 Clausius 表述是等价的。
+
+\begin{proof} %TODO：20160318 图片
+  \def\Clausius{(\text{Clausius 表述})} \def\Kelvin{(\text{Kelvin 表述})}
+  \def\TH{T_\text{H}} \def\TC{T_\text{C}}
+  \def\QH{Q_\text{H}} \def\QC{Q_\text{C}}
+
+  首先证明 $\Kelvin\implies\Clausius$。我们采用反证法，即证明
+  $\neg\,\Clausius \implies \neg\,\Kelvin$。
+
+  设有一个 Carnot 热机工作于高温热源 $\TH$ 和低温热源 $\TC$ 之间。它从 $\TH$ 处
+  吸收热量 $\QH$，向 $\TC$ 放出热量 $\QC$，并做功 $W=\QH-\QC$。假设 Clausius
+  表述不成立，就可以在不产生其他影响的前提下，使低温热源获得的热量 $\QC$ 重新
+  回到高温热源。净结果便是从单一热源 $\TH$ 吸收了热量 $\QH-\QC$，并将其完全转化
+  为功，这就违背了 Kelvin 表述。因此原假设不成立，即有
+  $\neg\,\Clausius \implies \neg\,\Kelvin$。
+
+  接下来证明 $\Clausius\implies\Kelvin$。同样采用反证法，即证明
+  $\neg\,\Kelvin \implies \neg\,\Clausius$。
+
+  假设 Kelvin 表述不成立，就可以在不产生其他影响的前提下，从单一热源 $\TH$ 吸热
+  $\QH$ 并将其完全转化为有用功 $W=\QH$。它可以推动 Carnot 制冷机从低温热源
+  $\TC$ 吸收 $\QC$ 的热量，并传给高温热源 $\QH+\QC$ 的热量。净结果是热量 $\QC$
+  从低温热源传给了高温热源，却没有产生其他影响，这就违背了 Clausius 表述。
+  因此原假设不成立，即有
+  $\neg\,\Kelvin \implies \neg\,\Clausius$。
+\end{proof}
+
+热力学第二定律的核心内容可以概括为：\emph{自然界一切热现象过程都是不可逆的。}
+
+\section{热力学第二定律的数学解释；熵}
+
+\subsection{Carnot 定理}
+
+\begin{theorem}[Carnot 定理]
+  工作于两个确定温度之间的所有热机中，可逆热机效率最高。
+\end{theorem}
+
+设两个热机 A、B 工作于高温热源 $\theta_\text{H}$ 和低温热源
+$\theta_\text{C}$ 之间
+\footnote{这里用 $\theta$ 表示温度，而没有使用 $T$，原因见下一小节。}，
+它们分别从 $\theta_\text{H}$ 吸收 $Q_\text{H,\,A}$ 与 $Q_\text{H,\,B}$ 的热量，
+向 $\theta_\text{C}$ 放出 $Q_\text{C,\,A}$ 与 $Q_\text{C,\,B}$ 的热量，并对外
+做功 $W_\text{A}$ 与 $W_\text{B}$
+\footnote{前文用撇号表示系统（热机）对外界做功，这里方便起见直接用 $W$。
+  但需注意，$W_\text{A}$ 与 $W_\text{B}$ 均大于 $0$。}。
+根据定义，其效率分别为
+\begin{equation}
+  \eta_\text{A} = \frac{W_\text{A}}{Q_\text{H,\,A}} \qc
+  \eta_\text{B} = \frac{W_\text{B}}{Q_\text{H,\,B}}.
+\end{equation}
+设 A 是一个可逆热机。因此不妨把 $\eta_\text{A}$ 写成 $\eta_\text{rev,\,A}$。
+根据 Carnot 定理，有
+\begin{equation}
+  \eta_\text{rev,\,A} \geqslant \eta_\text{B}.
+\end{equation}
+
+\begin{proof}
+  下面利用反证法证明 Carnot 定理，即假设 $\eta_\text{rev,\,A} < \eta_\text{B}$。
+  因此有
+  \begin{equation}
+    \frac{W_\text{A}}{Q_\text{H,\,A}} < \frac{W_\text{B}}{Q_\text{H,\,B}}.
+  \end{equation}
+  令 A、B 从高温热源 $\theta_\text{H}$ 处吸收相同的热量，即
+  $Q_\text{H,\,A} = Q_\text{H,\,B}$，那么就有 $W_\text{A} < W_\text{B}$。因为
+  A 是可逆热机，所以不妨让 B 热机输出功的一部分 $W_\text{A}$ 推动 A 热机逆向
+  运行（此时 A 就是一个制冷机）。此时，B 热机还可以输出功
+  $W_\text{B} - W_\text{A}$。
+
+  根据热力学第一定律，有
+  \begin{braced}
+    & W_\text{A} = Q_\text{H,\,A} - Q_\text{C,\,A}, \\
+    & W_\text{B} = Q_\text{H,\,B} - Q_\text{C,\,B}.
+  \end{braced}
+  所以有
+  \begin{equation}
+    W_\text{B} - W_\text{A} = Q_\text{C,\,A} - Q_\text{C,\,B}.
+  \end{equation}
+
+  若 A、B 联合运行，其净结果便是从低温热源 $\theta_\text{C}$ 处吸收
+  $Q_\text{C,\,A} - Q_\text{C,\,B}$ 的热量，并对外做 $W_\text{B} - W_\text{A}$
+  的功，即在不产生其他影响的情况下完全把热转化为了功。这显然违背了热力学第二
+  定律的 Kelvin 表述。因此原假设不成立，Carnot 定理得证。
+\end{proof}
+
+由 Carnot 定理，可以得到如下推论：
+
+\begin{theorem}
+  所有工作于两个确定温度之间的可逆热机，其效率均相等。
+\end{theorem}
+
+\subsection{热力学温标}
+
+\kwd{温标}，是以量化数值，配以温度单位来表示温度的方法。它包含三个要素：
+\begin{enumerate}
+  \item \emph{测温质}与\emph{测温参量}；
+  \item 测温参量与温度的\emph{函数关系}；
+  \item \emph{温度标准点}的选定。
+\end{enumerate}
+
+常用的经验温标有摄氏温标、华氏温标等。利用理想气体状态方程，可以定义%
+\kwd{理想气体温标}：
+\begin{equation}
+  T \defeq \frac{1}{nR} \lim_{p \to 0} pV,
+\end{equation}
+同时需要规定水的三相点温度 $T_\text{tr} \defeq \SI{273.16}{\kelvin}$。
+
+在 \S\ref{sec:ideal-gas-carnot-cycle-and-second-law}
+第\ref{subsec:carnot-cycle}小节中，我们使用 $T$ 表示温度。实际上，那里的
+“温度”正是用理想气体温标表示的值。
+
+根据 Carnot 定理，可逆热机的效率只与两个热源的温度有关，而与工作物质的性质、
+吸放热多少、做功多少均无关。换句话说，可逆热机的效率是两个温度
+$\theta_\text{H}$、$\theta_\text{C}$ 的\emph{普适函数}。根据定义，热机的效率
+\begin{equation}
+  \eta = \frac{W}{Q_\text{H}} = 1 - \frac{Q_\text{C}}{Q_\text{H}}.
+\end{equation}
+因此有
+\begin{equation}
+  \frac{Q_\text{C}}{Q_\text{H}} = F\qty(\theta_\text{H}, \, \theta_\text{C}),
+\end{equation}
+其中的 $F\qty(\theta_\text{H}, \, \theta_\text{C})$ 是 $\theta_\text{H}$ 与
+$\theta_\text{C}$ 的普适函数。
+
+下面证明
+\begin{equation}
+  F(\theta_\text{H}, \, \theta_\text{C})
+  = \frac{f\qty(\theta_\text{C})}{f(\theta_\text{H})},
+\end{equation}
+其中的 $f$ 是另一个普适函数。%TODO：20160322 热力学温标证明
+
+由式~\eqref{eq:efficiency-of-carnot-cycle-for-ideal-gas}，以理想气体为工作物质的
+Carnot 热机效率为
+\begin{equation}
+  \eta = 1 - \frac{T^*_\text{C}}{T^*_\text{H}},
+\end{equation}
+这里用 $T^*$ 表示理想气体温标下的温度。这与式 是相同的，即温度尺度相同。
+又因为理想气体温标也规定在水的三相点处 $T^*_\text{tr} = \SI{273.16}{\kelvin}$，
+因此，理想气体温标与热力学温标是相同的。
+
+\subsection{Clausius 不等式}
+
+根据 Carnot 定理，工作于两个确定温度之间的所有热机，其效率均满足
+\footnote{以后均直接用 $T$ 表示温度。}
+\begin{equation}
+  \eta = 1 - \frac{Q_2}{Q_1} \leqslant 1 - \frac{T_2}{T_1}.
+\end{equation}
+对于可逆热机，取等号；对于不可逆热机，则取小于号。
+
+上式稍作变形，可得
+\begin{equation}
+  \frac{Q_2}{Q_1} \geqslant \frac{T_2}{T_1}
+  \implies \frac{Q_1}{T_1} - \frac{Q_2}{T_2} \leqslant 0.
+\end{equation}
+约定 $Q$ 始终表示吸收的热量，则放热应写作 $-Q$。于是
+\begin{equation}
+  \frac{Q_1}{T_1} + \frac{Q_2}{T_2} \leqslant 0.
+\end{equation}
+假设系统先后与温度分别为 $T_1, \, T_2 \, \dots, \, T_n$ 的 $n$ 个热源接触，
+又分别吸热 $Q_1, \, Q_2 \, \dots, \, Q_n$，则可以证明 \kwd{Clausius 不等式}：
+\begin{equation}
+  \sum_{i=1}^n \frac{Q_i}{T_i} \leqslant 0.
+\end{equation}
+
+\begin{proof}
+  设有 %TODO：20160322 证明过程没写
+\end{proof}
+
+在 $n\to\infty$ 的极限下，Clausius 不等式过渡到积分形式：
+\begin{equation} \label{eq:clausius-inequality-integral-form}
+  \lim_{n\to\infty} \sum_{i=1}^n \frac{Q_i}{T_i} \leqslant 0
+  = \oint \frac{\dbar Q}{T} \leqslant 0.
+\end{equation}
+
+\subsection{熵的定义}
+
+对于可逆循环，根据式~\eqref{eq:clausius-inequality-integral-form}，有
+\begin{equation}
+  \oint \frac{\dbar{Q_\text{rev}}}{T} = 0.
+\end{equation}
+如图，%TODO：20160323 图片
+可以表示成两段路径之和：
+\begin{equation}
+  \underset{C_1\phantom{M}}{\int_{(P_0)}^{(P)}} \, \frac{\dbar{Q_\text{rev}}}{T}
+  + \underset{C_2\phantom{M}}{\int_{(P)}^{(P_0)}} \, \frac{\dbar{Q_\text{rev}}}{T} = 0,
+\end{equation}
+即
+\begin{equation}
+  \underset{C_1\phantom{M}}{\int_{(P_0)}^{(P)}} \, \frac{\dbar{Q_\text{rev}}}{T}
+  = \underset{C_2\phantom{M}}{\int_{(P_0)}^{(P)}} \, \frac{\dbar{Q_\text{rev}}}{T} = \const
+\end{equation}
+可以看出，$\dbar{Q_\text{rev}}/T$ 是一个与路径无关的量。由此，定义一个新的
+状态函数——\kwd{熵}：
+\begin{equation}
+  S - S_0 = \int_{(P_0)}^{(P)} \, \frac{\dbar{Q_\text{rev}}}{T}.
+\end{equation}
+
+\subsection{不可逆过程的数学表述}
+
+如果初、终态均是平衡态，根据 Clausius 不等式，我们有
+\begin{equation}
+  \underset{\text{irrev}+\text{rev}}{\oint} \frac{\dbar{Q}}{T}
+  = \int_{(P_0)}^{(P)} \frac{\dbar{Q_\text{irrev}}}{T}
+    + \int_{(P)}^{(P_0)} \frac{\dbar{Q_\text{rev}}}{T} < 0
+  \implies S - S_0 > \int_{(P_0)}^{(P)} \frac{\dbar{Q_\text{irrev}}}{T}.
+\end{equation}
+
+如果初、终态均是非平衡态，采用\emph{局域平衡近似}，仍旧可以推得
+\begin{equation}
+  S - S_0 > \int_{(P_0)}^{(P)} \, \frac{\dbar{Q_\text{irrev}}}{T}.
+\end{equation} %TODO：20160323 局域平衡近似的证明
+
+把对可逆过程与不可逆过程的表述合起来，就有
+\begin{equation} \label{eq:secone-law-integral-form}
+  \incr S = S - S_0 \geqslant \int_{(P_0)}^{(P)} \, \frac{\dbar{Q}}{T};
+\end{equation}
+写成微分形式，为
+\begin{equation} \label{eq:secone-law-differential-form}
+  \boxed{\dd{S} \geqslant \frac{\dbar{Q}}{T}}
+\end{equation}
+以上两式中，“$=$”适用于可逆过程，“$>$”适用于不可逆过程。这两式实际上便是热力学第二定律的数学表述。
+
+\subsection{熵的性质}
+
+这里小结一下熵的性质。
+
+\begin{itemize}
+  \item 熵是\emph{状态函数}。
+  \item 熵是\emph{广延量}。
+  \item 对微小的\emph{可逆}过程，$\dd{S} = \dbar{Q} / T$。因此有
+  \begin{equation} \label{eq:dQ-TdS}
+    \dbar{Q} = T \dd{S}.
+  \end{equation}
+  对于绝热过程，有 $\dbar{Q} = 0$，因此有
+  \begin{equation} \label{eq:dS-for-adiabatic-reversible-process}
+    \dd{S} = 0.
+  \end{equation}
+\end{itemize} %TODO：20160323 卡诺循环的 TS 表述
+
+\subsection{热力学基本方程}
+
+热力学第一定律式~\eqref{eq:first-law-differential-form}：
+\begin{equation}
+  \dd{U} = \dbar{Q} + \dbar{W};
+\end{equation}
+由热力学第二定律，得可逆过程微热量的表达式 \eqref{eq:dQ-TdS}：
+\begin{equation}
+  \dbar{Q} = T \dd{S};
+\end{equation}
+根据式~\eqref{eq:work-general}，又有微功的一般表示：
+\begin{equation}
+  \dbar{W} = \sum_{i=1}^{n} Y_i \dd{y_i}.
+\end{equation}
+联立以上三式，可得
+\begin{equation} \label{eq:fundamental-equation-of-thermodynamics}
+  \dd{U} = T \dd{S} + \sum_{i=1}^{n} Y_i \dd{y_i}.
+\end{equation}
+这就是\kwd{热力学基本微分方程}。
+
+对于 $p$-$\!V\!$-$\!T$ 系统，上式可简化为
+\begin{equation} \label{eq:fundamental-equation-for-PVT-system}
+  \dd{U} = T \dd{S} - p \dd{V}.
+\end{equation}
+
+\begin{example}[理想气体的熵]
+  下面推导不同过程下理想气体的熵。
+
+  首先考虑等容过程。根据式~\eqref{eq:dU-for-ideal-gas}，有
+  \begin{equation}
+    \dd{U} = C_V \dd{T}.
+  \end{equation}
+  根据热力学基本微分方程式~\eqref{eq:fundamental-equation-for-PVT-system}，
+  \begin{equation}
+    T \dd{S} = \dd{U} + p \dd{V}
+    \implies \dd{S} = \frac{\dd{U}}{T} + \frac{p \dd{V}}{T}
+                    = C_V \frac{\dd{T}}{T} + nR \frac{\dd{V}}{V}.
+  \end{equation} %TODO：20160323 有问题？
+  积分可得
+  \begin{align}
+    S &= \int C_V \frac{\dd{T}}{T} + nR \ln V + S_0 \\
+  \intertext{若 $C_V$ 为常数，则有}
+      &= C_V \ln T + nR \ln V + S_0.
+  \end{align}
+\end{example}
+
+\section{熵增加原理；最大功} \label{sec:principle-of-the-increase-of-entropy}
+
+\subsection{熵增加原理}
+
 %    根据热力学第二定律［式~\eqref{EQ_2ND_LAW_IN_INTEGRAL_FORM}］，
 %    \begin{equation}
 %      \incr S \geqslant \int_{\text{I}}^{\text{II}} \frac{\dbar Q}{T} \fullstop
@@ -1017,7 +1069,7 @@ $\incr{U}=0$。假设内能是温度和体积的函数，即
 %    对于\emph{绝热}过程（或孤立体系），有 $\dbar Q = 0$。因此
 %    \begin{equation} \label{EQ_PRINCIPLE_OF_ENTROPY_INCREASE}
 %      \incr S \geqslant 0 \fullstop \footnote{
-%        注意与 \eqref{EQ_dS=0_FOR_ADIABATIC_REVERSIBLE_PROCESS} 式对比，它还要求\kwd{可逆}过程。
+%        注意与 \eqref{eq:dS-for-adiabatic-reversible-process} 式对比，它还要求\kwd{可逆}过程。
 %      }
 %    \end{equation}
 %    这就是\kwd{熵增加原理}，它说明绝热体系的熵永不减少。
@@ -1051,17 +1103,17 @@ $\incr{U}=0$。假设内能是温度和体积的函数，即
 %      \dbar W'_{\text{irrev}} < \dbar W'_{\text{rev}} \fullstop
 %    \end{equation}
 %    
-%    \begin{myExample}[水的混合]
+%    \begin{example}[水的混合]
 %      两杯等量的水初始温度分别为 $T_1$、$T_2$。在等压、绝热条件下将它们混合均匀，求该过程的熵变。%TODO：20160323 没写
 %      %TODO：20160330 T取平均值：假设热容为常数
-%    \end{myExample}
+%    \end{example}
 %    
-%    \begin{myExample}[制冷机所需的最小功]
+%    \begin{example}[制冷机所需的最小功]
 %      两物体初始温度均为 $T_1$。一台制冷机工作于其间，使一物体温度升高至 $T_2$。假设这是一个等压过程，并且不考虑相变。证明：制冷机所需的最小功
 %      \begin{equation}
 %        W_{\text{min}} = C_p \left( \frac{T_1^2}{T_2} + T_2 - 2 T_1 \right) \fullstop%TODO：20160323 没写
 %      \end{equation}
-%    \end{myExample}
+%    \end{example}
 %  
 %\section{自由能与Gibbs函数}
 %%	根据熵增加原理［式~\eqref{EQ_PRINCIPLE_OF_ENTROPY_INCREASE}］，对于孤立系统，有
