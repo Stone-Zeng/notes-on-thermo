@@ -73,12 +73,12 @@
 
 Boyle 和 Mariotte 分别于 1662 年和 1676 年各自确立了\kwd{Boyle--Mariotte定律}：
 \begin{equation}
-  p V = p_0 V_0, \text{\quad 若\ } T = \const;
+  p V = p_0 V_0 \qc\qif* T = \const;
 \end{equation}
 1802年，Gay-Lussac 确立了\kwd{Gay-Lussac定律} \footnote{事实上，在 1787 年，
   Charles 就已经发现了这一定律，只是当时未发表，也未被人注意。}：
 \begin{equation}
-  \frac{V}{T} = \frac{V_0}{T_0}, \text{\quad 若\ } p = \const
+  \frac{V}{T} = \frac{V_0}{T_0} \qc\qif* p = \const
 \end{equation}
 综合两式，可得 \footnote{该式中常数的值显然与物质的量 $n$ 有关，故用带引号的
   $\text{``const.''}$ 表示。}
@@ -86,9 +86,9 @@ Boyle 和 Mariotte 分别于 1662 年和 1676 年各自确立了\kwd{Boyle--Mari
   \frac{p V}{T} = \frac{p_0 V_0}{T_0} = \text{``const.''} = n R,
 \end{equation}
 即\kwd{理想气体物态方程}
-\begin{boxedEq} \label{eq:ideal-gas-law-b}
+\begin{boced} \label{eq:ideal-gas-law-b}
   p V = n R T = N \kB T
-\end{boxedEq}
+\end{boced}
 
 \begin{proof}
   式~\eqref{eq:ideal-gas-law-a} 的推导如下。
@@ -117,445 +117,458 @@ Boyle 和 Mariotte 分别于 1662 年和 1676 年各自确立了\kwd{Boyle--Mari
 
 \kwd{膨胀系数} $\alpha$ 定义为
 \begin{equation}
-  \alpha \equiv \frac{1}{V} \qty(\pdv{V}{T})_p,
+  \alpha \defeq \frac{1}{V} \qty(\pdv{V}{T})_p,
 \end{equation}
 \kwd{压强系数} $\beta$ 定义为
 \begin{equation}
-  \beta \equiv \frac{1}{p} \qty(\pdv{p}{T})_V,
+  \beta \defeq \frac{1}{p} \qty(\pdv{p}{T})_V,
 \end{equation}
 \kwd{等温压缩系数} $\kappa_T$ 定义为
 \begin{equation}
-  \kappa_T \equiv -\frac{1}{V} \qty(\pdv{V}{p})_T.
+  \kappa_T \defeq -\frac{1}{V} \qty(\pdv{V}{p})_T.
 \end{equation}
 
 可以证明，以上三个常数满足下面的关系：
-\begin{equation} \label{EQ_RELATION_OF_ALPHA_BETA_KAPPA}
-  \a = \b \k_T p \fullstop
+\begin{equation} \label{eq:relation-of-alpha-beta-gamma}
+  \alpha = \beta \kappa_T p.
 \end{equation}
-该式说明三者并非独立。通常会直接测量 $\a$ 和 $\k_T$，而通过计算得到 $\b$。
-%    
-%    \begin{proof}
-%      先证明两个结论。若 $x, \, y, \, z$ 满足 $F(x, y, z) = \const$，其中 $F(x, y, z)$ 是一个可微函数。那么
-%      \begin{mySubEq}
-%        \begin{align}
-%          \dd x &= \left( \frac{\pd x}{\pd y} \right)_z \dd y + \left( \frac{\pd x}{\pd z} \right)_y \dd z \comma \\
-%          \dd z &= \left( \frac{\pd z}{\pd x} \right)_y \dd x + \left( \frac{\pd z}{\pd y} \right)_x \dd y \fullstop
-%        \end{align}
-%      \end{mySubEq}
-%      把第一式代入第二式，得
-%      \begin{equation}
-%        \begin{aligned}
-%          \dd z &= \left( \frac{\pd z}{\pd x} \right)_y \left[ \left( \frac{\pd x}{\pd y} \right)_z \dd y + \left( \frac{\pd x}{\pd z} \right)_y \dd z \right]% + \left( \frac{\pd z}{\pd y} \right)_x \dd y \\
-%          &= \left[ \left( \frac{\pd z}{\pd x} \right)_y \left( \frac{\pd x}{\pd y} \right)_z + \left( \frac{\pd z}{\pd y} \right)_x \right] \dd y
-%          + \left( \frac{\pd z}{\pd x} \right)_y \left( \frac{\pd x}{\pd z} \right)_y \dd z \fullstop
-%        \end{aligned}
-%      \end{equation}
-%      于是
-%      \begin{equation} \label{EQ_***_dz_EQUAL_***_dy}
-%         \left[ 1 - \left( \frac{\pd z}{\pd x} \right)_y \left( \frac{\pd x}{\pd z} \right)_y \right] \dd z
-%        = \left[ \left( \frac{\pd z}{\pd x} \right)_y \left( \frac{\pd x}{\pd y} \right)_z + \left( \frac{\pd z}{\pd y} \right)_x \right] \dd y \fullstop
-%      \end{equation}
-%      因为 $y$ 与 $z$ 是独立的变量，所以 $\dd y$ 与 $\dd z$ 也是独立的。这就要求上式左右两边括号内的项均为零。由左边括号内的项，可得到\kwd{倒数关系}：
-%      \begin{equation}
-%        \left( \frac{\pd z}{\pd x} \right)_y \left( \frac{\pd x}{\pd z} \right)_y = 1 \fullstop
-%      \end{equation}
-%      类似地，还有
-%      \begin{equation} \label{EQ_RECIPROCITY_RELATION}
-%        \left( \frac{\pd z}{\pd y} \right)_x \left( \frac{\pd y}{\pd z} \right)_x = 1 \fullstop
-%      \end{equation}
-%      根据 \eqref{EQ_***_dz_EQUAL_***_dy}~式的右侧，有
-%      \begin{equation} \label{EQ_CYCLIC_RELATION}
-%        \left( \frac{\pd z}{\pd x} \right)_y \left( \frac{\pd x}{\pd y} \right)_z = -\left( \frac{\pd z}{\pd y} \right)_x \fullstop
-%      \end{equation}
-%      代入式~\eqref{EQ_RECIPROCITY_RELATION}，便得到\kwd{偏导数三乘积法则}：
-%      \begin{equation}
-%        \left( \frac{\pd x}{\pd y} \right)_z \left( \frac{\pd y}{\pd z} \right)_x \left( \frac{\pd z}{\pd x} \right)_y = -1 \fullstop
-%      \end{equation}
-%      
-%      \blankline
-%      
-%      然后我们利用式~\eqref{EQ_CYCLIC_RELATION}，用热力学中的变量将其写成
-%      \begin{equation}
-%        \left( \frac{\pd V}{\pd T} \right)_p = -\left( \frac{\pd V}{\pd p} \right)_T \left( \frac{\pd p}{\pd T} \right)_V \fullstop
-%      \end{equation}
-%      代入前文中的定义，就得到了 \eqref{EQ_RELATION_OF_ALPHA_BETA_KAPPA}~式：
-%      \begin{equation}
-%        \a = \b \k_T p \fullstop
-%      \end{equation}
-%    \end{proof} 
-%    
-%    \blankline
-%    
-%    考虑分子之间的相互作用后，对理想气体进行修正，这就是\kwd{van der Waals气体}。其物态方程为
-%    \begin{equation} \label{EQ_VAN_DER_WAALS_GAS_STATE_EQUATION}
-%      \left( p + \frac{n^2 a}{V^2} \right) (V - n b) = n R T \comma
-%    \end{equation}
-%    其中 $n^2 a / V^2$ 代表分子之间吸引力所引起的修正，而 $n b$ 则代表排斥力所引起的修正。
-%    
-%\section{功；热力学第一定律}
-%  \subsection{准静态过程的功}
-%    静态过程即平衡态。
-%    
-%    \kwd{准静态过程}指过程中的每一步都是平衡态。这就要求外界的条件变化地足够缓慢。令 $\t$ 为外界条件变化的特征时间，$\incr t$ 为系统趋于与外界条件对应的平衡%态的特征时间（即\kwd{弛豫时间}），那么准静态过程相当于
-%    \begin{equation}
-%      \frac{\t}{\incr t} \approach 0
-%    \end{equation}
-%    的极限。
-%    
-%    一个过程中，若每一步都可以在相反的方向进行而不引起外界的变化，则称为\kwd{可逆过程}。可逆过程的实质是没有耗散。
-%    
-%    下面举两个准静态过程的例子。
-%    
-%    \begin{myEnum1}
-%      \myItem{$p V$ 系统}
-%        考虑盛于带活塞容器内的气体。气体体积变化 $\dd V$ 时，\emph{外界对系统}做功
-%        \begin{equation}
-%          \db W = -p \dd V \fullstop
-%        \end{equation}
-%        这里的 $p$ 指外界对系统的压强。由于是准静态过程，它又等于容器内气体对器壁的压强。外界压力作用下体积减小，$\dd V < 0$；而外界却对系统做正功，因此会出现%负号。如果令 $W'$ 为\emph{系统对外界}做的功，则有
-%        \begin{equation}
-%          \db W' = - \dd W = p \dd V \fullstop
-%        \end{equation}
-%        
-%        体积由 $V_1$ 变化到 $V_2$，外界对系统做的总功
-%        \begin{equation}
-%          W = -\int_{V_1}^{V_2} p \dd V \fullstop
-%        \end{equation}
-%        
-%        \begin{figure}[h]
-%          \centering
-%          
-%          \begin{asy}
-%            pair O = (0, 0), x_axes = (10, 0), y_axes = (0, 10);
-%            
-%            pair p1 = (2.2, 7.5), p2 = (8, 2.5), p3 = (4, 4.5);
-%            pair p1_x = (p1.x, 0), p2_x = (p2.x, 0);
-%            
-%            fill(p1_x--p1..p3..p2--p2_x--cycle, color1 + opacity(0.2));
-%            
-%            draw(Label("$V$", EndPoint), O--x_axes, Arrow);
-%            draw(Label("$p$", EndPoint), O--y_axes, Arrow);
-%            
-%            draw(p1..p3..p2, linewidth(1) + color1);
-%            draw(p1_x--p1, dashed + color1);
-%            draw(p2_x--p2, dashed + color1);
-%            
-%            label("$O$", O, SW);
-%            label("状态 $1$", p1, (0, 2));
-%            label("状态 $2$", p2, (0.5, 2));
-%            label("$V_1$", p1_x, S);
-%            label("$V_2$", p2_x, S);
-%          \end{asy}
-%          \caption{$p \text{-} V$ 系统的状态空间}
-%          \label{FIG_pV_DIAGRAM}
-%        \end{figure}
-%        
-%        在 $p \text{-} V$ 图中标出状态1和状态2，则连接它们的曲线就表示一个准静态过程，曲线下的面积就等于 $-W$，如图~\ref{FIG_pV_DIAGRAM} 所示。显然，$W$ 与路%径有关，即不是一个全微分，因此用“$\db W$”表示微功。
-%        
-%      \myItem{电介质极化系统}
-%        
-%        考虑均匀电场 $\vecb{E}$ 中的均匀电介质。电位移 $\vecb{D}$ 变化 $\dd \vecb{D}$ 时，电场做功
-%        \begin{equation}
-%          \db W = V \vecb{E} \dotTimes \dd \vecb{D} \comma
-%        \end{equation}
-%        其中的 $V$ 表示电介质的体积。这里，$\vecb{E}$ 是变化的外因，$\vecb{D}$ 则是内果。令 $\vecb{P}$ 为极化强度，则
-%        \begin{equation}
-%          \vecb{D} = \pfs \vecb{E} + \vecb{P} \fullstop
-%        \end{equation}
-%        于是
-%        \begin{equation}
-%          \begin{aligned}
-%            \db W &= V \pfs \vecb{E} \dotTimes \dd \vecb{E} + V \vecb{E} \dotTimes \dd \vecb{P} \\
-%            &= V \dd \left( \frac{1}{2} \pfs \vecb{E}^2 \right) + V 
-%            \vecb{E} \dotTimes \dd \vecb{P} \fullstop
-%          \end{aligned}
-%        \end{equation}
-%        式中的第一项代表电场能量的变化，第二项则代表\emph{极化功}。
-%    \end{myEnum1}
-%    
-%    对以上两种情况进行推广，可得
-%    \begin{align} \label{EQ_GENERAL_WORK}
-%      \db W &= Y_1 \dd y_1 + Y_2 \dd y_2 + \cdots Y_n \dd y_n \notag \\
-%      &= \iTonSum Y_i \dd y_i \fullstop
-%    \end{align}
-%    这里的 $Y_i$ 是\kwd{广义力}，如压强 $p$、电场强度 $\vecb{E}$、磁场强度 $\vecb{H}$ 等；$y_i$ 是\kwd{广义坐标}，如体积 $V$、电位移 $\vecb{D}$、磁感应强%度 $\vecb{B}$ 等。
-%    
-%  \subsection{非静态过程}
-%    \begin{myEnum1}
-%      \myItem{等容过程}
-%        由于体积不变，$\dd V = 0$，因此
-%        \begin{equation} \label{EQ_WORK_IN_ISOCHORIC_PROCESS}
-%          \db W = 0 \fullstop
-%        \end{equation}
-%        
-%      \myItem{等压过程}
-%        \emph{外界}压强不变，即 $p_{\text{ext}} = \const$，因此体积从 $V_1$ 变化到 $V_2$ 时外界对系统做功
-%        \begin{equation}
-%          W = -p_{\text{ext}} (V_2 - V_1) = -p_{\text{ext}} \incr V \fullstop
-%        \end{equation}
-%        若系统初、终态压强相等都处于平衡态，有
-%        \begin{equation}
-%          p_1 = p_2 = p_{\text{ext}} \eqdef p \fullstop
-%        \end{equation}
-%        于是功
-%        \begin{equation} \label{EQ_WORK_IN_ISOBARIC_PROCESS}
-%          W = -p (V_2 - V_1) = -p \incr V \fullstop
-%        \end{equation}
-%    \end{myEnum1}
-%    
-%  \subsection{热力学第一定律}
-%    \kwd{热力学第一定律}的主要建立者有Mayer、Joule、Helmholtz、Carnot等。它描述了\emph{功}、\emph{热量}、\emph{内能}三者之间的关系，是\kwd{能量守恒定%律}在宏观热现象过程中的表现形式。
-%    \begin{myThm}{能量守恒定律}
-%      自然界中的一切物质都具有能量。能量有各种不同的形式，能够从一种形式转化为另一种形式，从一个物体传递给另一个物体。在转化和传递中，能量的总量不变。
-%    \end{myThm}
-%    
-%    \begin{myEnum1}
-%      \myItem{绝热过程}
-%        从状态1变化到状态2的过程中，只有外界做功，因此
-%        \begin{equation}
-%          U_2 - U_1 = W_\text{a} \comma
-%        \end{equation}
-%        其中的 $W_\text{a}$ 表示绝热功。
-%        
-%      \myItem{非绝热过程}
-%      由于既有外界做功，又有热量传递，因此
-%      \begin{equation} \label{EQ_1ST_LAW_IN_INTEGRAL_FORM}
-%        U_2 - U_1 = W + Q \fullstop
-%      \end{equation}
-%      写成微分形式，为
-%      \begin{boxedEq} \label{EQ_1ST_LAW_IN_DIFFERENTIAL_FORM}
-%        \dd U = \db W + \db Q
-%      \end{boxedEq}
-%    \end{myEnum1}
-%    这实际上就是热力学第一定律最常用的表述。
-%    
-%    设两个全同系统内能分别为 $U_1$、$U_2$。则总内能 $U_\text{total}$ 除了 $U_1 + U_2$，还需包括由于界面效应所导致的 $U_{12}$。但在热力学中，界面效应基本可以忽%略，因此近似有
-%    \begin{equation}
-%      U_\text{total} = U_1 + U_2 \fullstop
-%    \end{equation}
-%    这就是说，内能也是一个广延量。
-%    
-%\section{热容与焓；理想气体的性质} \label{sec:热容与焓；理想气体的性质}
-%  \subsection{热容与焓} \label{subsec:热容与焓}
-%    对于过程 $y$，定义\kwd{热容（heat capacity）}
-%    \begin{equation}
-%      C_y \eqdef \frac{\db Q_y}{\dd T} \comma
-%    \end{equation}
-%    式中的 $\db Q_y$ 是温度升高 $\dd T$ 时系统所吸收的热量。
-%    
-%    对于\emph{等容过程}，有\kwd{定容热容}
-%    \begin{equation}
-%      C_V \eqdef \frac{\db Q_V}{\dd T} \fullstop
-%    \end{equation}
-%    根据式~\eqref{EQ_WORK_IN_ISOCHORIC_PROCESS}，可知
-%    \begin{equation}
-%      \db Q_V = \dd U - \db W = \dd U - 0 = \dd U \comma
-%    \end{equation}
-%    因此
-%    \begin{equation} \label{EQ_HEAT_CAPACITY_IN_CONST_V}
-%      C_V = \left( \frac{\pd U}{\pd T} \right)_V \fullstop
-%    \end{equation}
-%    
-%    对于\emph{等压过程}，有\kwd{定压热容}
-%    \begin{equation}
-%      C_p \eqdef \frac{\db Q_p}{\dd T} \fullstop
-%    \end{equation}
-%    根据式~\eqref{EQ_WORK_IN_ISOBARIC_PROCESS}，可知
-%    \begin{equation} \label{EQ_dQ_IN_CONST_p}
-%      \db Q_p = \dd U - \db W = \dd U + p \dd V \comma
-%    \end{equation}
-%    因此
-%    \begin{equation} \label{EQ_HEAT_CAPACITY_IN_CONST_p}
-%      C_p = \left( \frac{\pd U}{\pd T} \right)_p + p \left( \frac{\pd V}{\pd T} \right)_p \fullstop
-%    \end{equation}
-%    
-%    可以发现，
-%    \begin{equation}
-%      C_p = C_V + p \left( \frac{\pd V}{\pd T} \right)_p \fullstop
-%    \end{equation}
-%    这是它们的关系之一。\footnote{
-%      $\pd U / \pd T$ 的下标，在式~\eqref{EQ_HEAT_CAPACITY_IN_CONST_V} 中是 $V$，而在式~\eqref{EQ_HEAT_CAPACITY_IN_CONST_p} 中则是 $p$。%TODO：20160312 偏微分%关系
-%    }%TODO：20160330 下标的更换是不对的，或者有其他要求
-%    
-%    \blankline
-%    
-%    引入一个新的物理量——\kwd{焓（enthalpy）}，其定义为
-%    \begin{equation}
-%      H \eqdef U + p V \fullstop
-%    \end{equation}
-%    由于 $U$、$p$ 和 $V$ 均是状态函数，因此焓也是状态函数。利用焓，可将式~\eqref{EQ_HEAT_CAPACITY_IN_CONST_p} 改写为
-%    \begin{equation} \label{EQ_HEAT_CAPACITY_IN_CONST_p_WITH_H}
-%      C_p = \left( \frac{\pd H}{\pd T} \right)_p \comma
-%    \end{equation}
-%    同时将式~\eqref{EQ_dQ_IN_CONST_p} 改写为
-%    \begin{equation}
-%      \db Q_p = \dd H \fullstop
-%    \end{equation}
-%    这就是说，\emph{在等压过程中，物体吸收的热量等于焓的增加量}。
-%    
-%    很明显，热容与焓均是广延量。单位质量的热容称为\kwd{比热容（specific heat capacity）}或\kwd{比热（specific heat）}，它是强度量。
-%    
-%  \subsection{理想气体的性质} \label{subsec:理想气体的性质}
-%    \begin{figure}[h]
-%      \begin{asy}
-%        pair p1 = (0, 7), p2 = (0, 0), p3 = (12, 0), p4 = (p3.x, p1.y), p5 = (0, 6), p6 = (p3.x, p5.y);
-%        pair m1 = (p1+p4)/2, m2 = (p2+p3)/2;
-%        transform myReflect = reflect(m1, m2);
-%        
-%        real boxWidth = 3, boxHeight = 2;
-%        pair pA1 = (1.8, 2.5), pA2 = (pA1.x+boxWidth, pA1.y), pA3 = (pA2.x, pA1.y+boxHeight), pA4 = (pA1.x, pA3.y);
-%        path boxA = pA1--pA2--pA3--pA4--cycle;
-%        path boxB = myReflect*boxA;
-%        
-%        real pipeSize = 0.2, pipeHeight = 3.5;
-%        pair ppA1 = (pA4.x+(boxWidth-pipeSize)/2, pA4.y), ppA2 = (ppA1.x, ppA1.y+pipeHeight), ppA3 = (ppA1.x+pipeSize, ppA1.y), ppA4 = (ppA3.x, %ppA2.y-pipeSize);
-%        pair ppB1 = myReflect*ppA1, ppB2 = myReflect*ppA2, ppB3 = myReflect*ppA3, ppB4 = myReflect*ppA4;
-%        path pipe = ppA1--ppA2--ppB2--ppB1--ppB3--ppB4--ppA4--ppA3--cycle;
-%        
-%        real valveHeight = 0.6;
-%        pair pv1 = (m1.x, ppA2.y-(valveHeight+pipeSize)/2), pv2 = (pv1.x, pv1.y+valveHeight);
-%        
-%        real thermometerHeight = 5, thermometerR = 0.2;
-%        pair pt1 = (1, 3), pt2 = (pt1.x, pt1.y+thermometerHeight);
-%        
-%        fill(p5--p2--p3--p6--cycle, color1+opacity(0.2));
-%        draw(p1--p2--p3--p4, linewidth(1)+color1);
-%        draw(boxA, linewidth(1)+color2);
-%        draw(boxB, linewidth(1)+color2);
-%        draw(pipe, linewidth(1)+color2);
-%        draw(pv1--pv2, linewidth(2)+color3);
-%        draw(pt1--pt2, linewidth(2)+color4);
-%        fill(circle(pt1, thermometerR), color4);
-%        
-%        label("A", (ppA1+ppA3)/2, (0, -3));
-%        label("B", (ppB1+ppB3)/2, (0, -3));
-%        
-%        pair pwLabel1 = (p3.x-1, p3.y+1.4), pwLabel2 = (p3.x+1, p3.y+2.5);
-%        draw(pwLabel1--pwLabel2);
-%        label("水槽", pwLabel2, E);
-%        
-%        pair ptLabel1 = (pt1.x-0.25, pt2.y-1), ptLabel2 = (pt1.x-1.5, pt2.y+0.4);
-%        draw(ptLabel1--ptLabel2);
-%        label("温度计", ptLabel2, N);
-%        
-%        pair pvLabel1 = (pv1.x+0.25, pv2.y-0.1), pvLabel2 = (pv1.x+1.5, pv2.y+1);
-%        draw(pvLabel1--pvLabel2);
-%        label("阀门", pvLabel2, N);
-%      \end{asy}
-%      \caption{Joule实验的装置}
-%      \label{FIG_JOULE_EXPERIMENT}
-%    \end{figure}
-%    
-%    先介绍Joule实验（1845年）。设有一容器，分为A、B两个相同的部分。将它们置于水槽内，并通过带阀门的细管相连，水温可以通过温度计测量，如图~\ref%{FIG_JOULE_EXPERIMENT} 所示。
-%    
-%    首先，在A内充满气体，而使B保持真空。然后打开阀门，气体将\emph{自由膨胀}，并充满整个容器。Joule的实验结果是前后水温不变。
-%    
-%    由于是等容过程，因此 $W = 0$；水温不变，说明 $Q = 0$。根据热力学第一定律，有 $\incr U = 0$。假设内能是温度和体积的函数，即
-%    \begin{equation}
-%      U = U(T, \, V) \fullstop
-%    \end{equation}%TODO：20160312 此处推导有问题？
-%    根据\emph{偏导数三乘积法则}，可知
-%    \begin{equation}
-%      \left( \frac{\pd U}{\pd V} \right)_T \left( \frac{\pd V}{\pd T} \right)_U \left( \frac{\pd T}{\pd T} \right)_V = -1 \fullstop
-%    \end{equation}
-%    于是
-%    \begin{equation}
-%      \left( \frac{\pd U}{\pd V} \right)_T 
-%      = -\left( \frac{\pd U}{\pd T} \right)_V \left( \frac{\pd T}{\pd V} \right)_U 
-%      = 0 \fullstop
-%    \end{equation}
-%    这就说明 $U = U(T)$，即内能只和温度有关。
-%    
-%    不过，Joule实验过于粗糙，更精确的实验表明实际气体的内能不仅与 $T$ 有关，还与 $V$ 有关。但对于理想气体，以上结论仍然成立，因此理想气体具有如下两条性质：
-%    \begin{mySubEq}
-%      \begin{empheq}[left=\empheqlbrace]{align}
-%        & p V = n R T \comma \label{EQ_IDEAL_GAS_PROPERTY_STATE_EQUATION} \\
-%        & U = U(T) \label{EQ_IDEAL_GAS_PROPERTY_INTERNAL_ENERGY} \fullstop
-%      \end{empheq}
-%    \end{mySubEq}
-%    就目前而言，这两条性质彼此是独立的。但利用热力学第二定律或统计物理，可以由 \eqref{EQ_IDEAL_GAS_PROPERTY_STATE_EQUATION}~式 推导 \eqref%{EQ_IDEAL_GAS_PROPERTY_INTERNAL_ENERGY}~式。［见\secref{sec:Maxwell关系}\subsecref{subsec:简单应用_OF_MAXWELL关系}中的\egref{EG_pd_U/pd_V_WITH_FIXED_T}］%%FIXME：20160401 后续交叉引用
-%    
-%    对于理想气体，根据焓的定义，可得
-%    \begin{equation}
-%      H = U + p V = U(T) + n R T = H(T) \comma
-%    \end{equation}
-%    即焓也仅是温度的函数。从而根据式~\eqref{EQ_HEAT_CAPACITY_IN_CONST_V} 和 \eqref{EQ_HEAT_CAPACITY_IN_CONST_p_WITH_H}，又有
-%    \begin{align}
-%      C_p - C_V 
-%      &= \left( \frac{\pd H}{\pd T} \right)_p - \left( \frac{\pd U}{\pd T} \right)_V \notag \\
-%      &= \frac{\dd H}{\dd T} - \frac{\dd U}{\dd T} \notag \\
-%      &= \frac{\dd \; (p V)}{\dd T} 
-%      = \frac{\dd \; (n R T)}{\dd T} 
-%      = n R \fullstop \label{EQ_C_p-C_V_FOR_IDEAL_GAS}
-%    \end{align}
-%    
-%    定义\kwd{热容比（heat capacity ratio）} $\g$ \footnote{
-%      也称为\kwd{绝热指数（adiabatic index）}，原因见\subsecref{subsec:绝热过程的过程方程}。
-%    }
-%    为 $C_p$ 与 $C_V$ 之比：
-%    \begin{equation} \label{EQ_DEF_OF_HEAT_CAPACITY_RATIO}
-%      \g \eqdef \frac{C_p}{C_V} = \g(T) \fullstop
-%    \end{equation}
-%    这里 $\g = \g(T)$ 是显而易见的。
-%    
-%    由式~\eqref{EQ_C_p-C_V_FOR_IDEAL_GAS} 和 \eqref{EQ_DEF_OF_HEAT_CAPACITY_RATIO}，可以解得
-%    \begin{mySubEq}
-%      \begin{empheq}[left=\empheqlbrace]{align}
-%        & C_V = \frac{1}{\g - 1} n R \comma \label{EQ_C_V_BY_HEAT_CAPACITY_RATIO}\\
-%        & C_p = \frac{\g}{\g - 1} n R \fullstop \label{EQ_C_p_BY_HEAT_CAPACITY_RATIO}
-%      \end{empheq}
-%    \end{mySubEq}
-%    因为 $\g$ 可以通过实验测量，由此算出热容后，就可以确定理想气体的内能与焓：
-%    \begin{mySubEq}
-%      \begin{empheq}[left=\empheqlbrace]{align}
-%        & U(T) = \int C_V(T) \dd T + U_0 \comma \\
-%        & H(T) = \int C_p(T) \dd T + H_0 \comma
-%      \end{empheq}
-%    \end{mySubEq}
-%    其中的 $U_0$ 和 $H_0$ 是积分常数。写成微分形式，为
-%    \begin{mySubEq}
-%      \begin{empheq}[left=\empheqlbrace]{align}
-%      & \dd U = C_V(T) \dd T \comma \label{EQ_dU=Cv*dT_IDEAL_GAS} \\
-%      & \dd H = C_p(T) \dd T \fullstop \label{EQ_dH=Cp*dT_IDEAL_GAS}
-%      \end{empheq}
-%    \end{mySubEq}
-%    
-%  \subsection{绝热过程的过程方程} \label{subsec:绝热过程的过程方程}
-%    本节叙述均针对理想气体。
-%    
-%    根据理想气体状态方程，有
-%    \begin{equation}
-%      p V = n R T \fullstop
-%    \end{equation}
-%    于是
-%    \begin{equation}
-%      \dd T = \frac{p \dd V + V \dd p}{n R} \fullstop
-%    \end{equation}
-%    对于绝热过程，根据热力学第一定律，有
-%    \begin{align}
-%      \db Q &= \dd U + p \dd V \notag \\
-%      &= C_V \dd T + p \dd V \notag \\
-%      &= C_V \, \frac{p \dd V + V \dd p}{n R} + p \dd V \notag \\
-%      &= \frac{\g}{\g - 1} p \dd V + \frac{1}{\g - 1} V \dd p \myTag{见式~\eqref{EQ_C_V_BY_HEAT_CAPACITY_RATIO}} \\
-%      &= 0 \comma
-%    \end{align}
-%    因此
-%    \begin{align}
-%      &\mathrel{\phantom{\implies}} V \dd p + \g p \dd V = 0 \\
-%      &\implies \frac{\dd p}{p} + \g \frac{\dd V}{V} = 0 \notag \\
-%      &\implies \ln p + \g \ln V = \ln \left(p V^{\g} \right) = 0 \notag \\
-%      &\implies p V^{\g} = \label{EQ_STATE_EQUATION_OF_ADIABATIC_PROCESS_IN_p_V} \const \footnotemark
-%    \end{align} \footnotetext{这一步推导假定 $\g$ 为常数，因此可以直接积分。} \enlargethispage{\baselineskip}%HACK：禁止脚注分页
-%    改用其他变量，可把该式写成
-%    \begin{equation} \label{EQ_STATE_EQUATION_OF_ADIABATIC_PROCESS_IN_p_T}
-%      p^{(1 - \g) / \g} T = \const
-%    \end{equation}
-%    或
-%    \begin{equation} \label{EQ_STATE_EQUATION_OF_ADIABATIC_PROCESS_IN_T_V}
-%      T V^{\g - 1} = \const
-%    \end{equation}
-%    的形式。
-%    
+该式说明三者并非独立。通常会直接测量 $\alpha$ 和 $\kappa_T$，而通过计算得到
+$\beta$。
+
+\begin{proof}
+  先证明两个结论。若 $x, \, y, \, z$ 满足 $F(x, y, z) = \const$，其中
+  $F(x, y, z)$ 是一个可微函数。那么
+  \begin{braced}
+    \dd{x} &= \qty(\pdv{x}{y})_z \dd{y} + \qty(\pdv{x}{z})_y \dd{z}, \\
+    \dd{z} &= \qty(\pdv{z}{x})_y \dd{x} + \qty(\pdv{z}{y})_x \dd{y}.
+  \end{braced}
+  把第一式代入第二式，得
+  \begin{align}
+    \dd{z} &= \qty(\pdv{z}{x})_y
+      \qty[\qty(\pdv{x}{y})_z \dd{y} + \qty(\pdv{x}{z})_y \dd{z}]
+      + \qty(\pdv{z}{y})_x \dd{y} \notag \\
+    &= \qty[\qty(\pdv{z}{x})_y \qty(\pdv{x}{y})_z + \qty(\pdv{z}{y})_x] \dd{y}
+      + \qty(\pdv{z}{x})_y \qty(\pdv{x}{z})_y \dd{z}.
+  \end{align}
+  于是
+  \begin{equation} \label{eq:coefficient-of-dy-and-dz}
+    \qty[\qty(\pdv{z}{x})_y \qty(\pdv{x}{y})_z + \qty(\pdv{z}{y})_x] \dd{y}
+    + \qty[\qty(\pdv{z}{x})_y \qty(\pdv{x}{z})_y - 1] \dd{z} = 0.
+  \end{equation}
+  因为 $y$ 与 $z$ 是独立的变量，所以 $\dd{y}$ 与 $\dd{z}$ 也是独立的。这就要求
+  它们的系数均为零。由 $\dd{z}$ 的系数为零，可得到\kwd{倒数关系}：
+  \begin{equation} \label{eq:reciprocal-relation}
+    \qty(\pdv{z}{x})_y \qty(\pdv{x}{z})_y = 1;
+  \end{equation}
+  由 $\dd{y}$ 的系数为零，可得
+  \begin{equation} \label{eq:cyclic-relation}
+    \qty(\pdv{z}{x})_y \qty(\pdv{x}{y})_z = -\qty(\pdv{z}{y})_x.
+  \end{equation}
+  利用倒数关系式~\eqref{eq:reciprocal-relation}，即有\kwd{偏导数三乘积法则}：
+  \begin{equation}
+    \qty(\pdv{x}{y})_z \qty(\pdv{y}{z})_x \qty(\pdv{z}{x})_y = -1.
+  \end{equation}
+
+  根据式~\eqref{eq:cyclic-relation}，用热力学中的变量将其写成
+  \begin{equation}
+    \qty(\pdv{V}{T})_p = -\qty(\pdv{V}{p})_T \qty(\pdv{p}{T})_V.
+  \end{equation}
+  代入前文中的定义，就得到了 \eqref{eq:relation-of-alpha-beta-gamma}~式：
+  \begin{equation}
+    \alpha = \beta \kappa_T p.
+  \end{equation}
+\end{proof}
+
+考虑分子之间的相互作用后，对理想气体进行修正，这就是\kwd{van der Waals 气体}。
+其物态方程为
+\begin{equation} \label{eq:van-der-waals-gas}
+  \qty(p + \frac{n^2 a}{V^2}) (V - nb) = nRT,
+\end{equation}
+其中 $n^2 a / V^2$ 代表分子之间吸引力所引起的修正，而 $nb$ 则代表排斥力所引起
+的修正。
+
+\section{功；热力学第一定律}
+
+\subsection{准静态过程的功}
+
+静态过程即平衡态。
+
+\kwd{准静态过程}指过程中的每一步都是平衡态。这就要求外界的条件变化地足够缓慢。
+令 $\tau$ 为外界条件变化的特征时间，$\incr{t}$ 为系统趋于与外界条件对应的平衡态
+的特征时间（即\kwd{弛豫时间}），那么准静态过程相当于
+\begin{equation}
+  \frac{\tau}{\incr{t}} \to 0
+\end{equation}
+的极限。
+
+在一个过程中，如果每一步都可以在相反的方向进行而不引起外界的变化，则称为%
+\kwd{可逆过程}。可逆过程的实质是没有耗散。
+
+下面举两个准静态过程的例子。
+
+第一个例子是 $p$-$\!V$ 系统。考虑盛于带活塞容器内的气体。气体体积变化 $\dd{V}$ 时，
+\emph{外界对系统}做功
+\begin{equation}
+  \dbar{W} = -p \dd{V}.
+\end{equation}
+这里的 $p$ 指外界对系统的压强。由于是准静态过程，它又等于容器内气体对器壁的
+压强。外界压力作用下体积减小，$\dd{V} < 0$；而外界却对系统做正功，因此会出现
+负号。如果令 $W'$ 为\emph{系统对外界}做的功，则有
+\begin{equation}
+  \dbar{W'} = - \dbar{W} = p \dd{V}.
+\end{equation}
+
+体积由 $V_1$ 变化到 $V_2$，外界对系统做的总功为
+\begin{equation}
+  W = -\int_{V_1}^{V_2} p \dd{V}.
+\end{equation}
+
+% \begin{figure}[h]
+%   \centering
+%   \begin{asy}
+%     pair O = (0, 0), x_axes = (10, 0), y_axes = (0, 10);
+%     
+%     pair p1 = (2.2, 7.5), p2 = (8, 2.5), p3 = (4, 4.5);
+%     pair p1_x = (p1.x, 0), p2_x = (p2.x, 0);
+%     
+%     fill(p1_x--p1..p3..p2--p2_x--cycle, color1 + opacity(0.2));
+%     
+%     draw(Label("$V$", EndPoint), O--x_axes, Arrow);
+%     draw(Label("$p$", EndPoint), O--y_axes, Arrow);
+%     
+%     draw(p1..p3..p2, linewidth(1) + color1);
+%     draw(p1_x--p1, dashed + color1);
+%     draw(p2_x--p2, dashed + color1);
+%     
+%     label("$O$", O, SW);
+%     label("状态 $1$", p1, (0, 2));
+%     label("状态 $2$", p2, (0.5, 2));
+%     label("$V_1$", p1_x, S);
+%     label("$V_2$", p2_x, S);
+%   \end{asy}
+%   \caption{$p \text{-} V$ 系统的状态空间}
+%   \label{fig:pV-diagram}
+% \end{figure}
+
+在 $p$-$\!V$ 图中标出状态 1 和状态 2，则连接它们的曲线就表示一个准静态过程，曲线
+下的面积等于 $-W$，如图~\ref{fig:pV-diagram} 所示。显然，$W$ 与路径有关，即不是
+一个全微分，因此我们用“$\dbar{W}$”表示微功。
+
+另一个例子是电介质极化系统。考虑均匀电场 $\V{E}$ 中的均匀电介质。电位移 $\V{D}$
+变化 $\dd{\V{D}}$ 时，电场做功
+\begin{equation}
+  \dbar{W} = V \V{E} \cdot \dd{\V{D}},
+\end{equation}
+其中的 $V$ 表示电介质的体积。这里，$\V{E}$ 是变化的外因，$\V{D}$ 则是内果。
+令 $\V{P}$ 为极化强度，则
+\begin{equation}
+  \V{D} = \pfs \V{E} + \V{P}.
+\end{equation}
+于是
+\begin{equation}
+  \dbar{W} = V \pfs \V{E} \cdot \dd{\V{E}} + V \V{E} \cdot \dd{\V{P}}
+  = V \dd(\frac{1}{2} \pfs \V{E}^2) + V \V{E} \cdot \dd{\V{P}}.
+\end{equation}
+式中的第一项代表电场能量的变化，第二项则代表\emph{极化功}。
+
+对以上两种情况进行推广，可得
+\begin{equation} \label{eq:work-general}
+  \dbar{W} = Y_1 \dd{y_1} + Y_2 \dd{y_2} + \cdots + Y_n \dd{y_n}
+  = \sum_{i=1}^{n} Y_i \dd{y_i}.
+\end{equation}
+这里的 $Y_i$ 是\kwd{广义力}，如压强 $p$、电场强度 $\V{E}$、磁场强度 $\V{H}$ 等；
+$y_i$ 是\kwd{广义坐标}，如体积 $V$、电位移 $\V{D}$、磁感应强度 $\V{B}$ 等。
+
+\subsection{非静态过程}
+
+等容过程是一种非静态过程。由于体积不变，即 $\dd{V} = 0$，因此
+\begin{equation} \label{eq:work-fixed-V}
+  \dbar{W} = 0.
+\end{equation}
+
+另一种非静态过程是等压过程。由于\emph{外界}压强不变，即 $p_\text{ext}=\const$，
+因此体积从 $V_1$ 变化到 $V_2$ 时外界对系统做功
+\begin{equation}
+  W = -p_\text{ext} \qty(V_2 - V_1) = -p_\text{ext} \incr{V}.
+\end{equation}
+若系统初、终态压强相等，并等于外部压强，即
+\begin{equation}
+  p_1 = p_2 \defeq p = p_\text{ext} .
+\end{equation}
+则有
+\begin{equation} \label{eq:work-fixed-p}
+  W = -p \qty(V_2 - V_1) = -p \incr{V}.
+\end{equation}
+这里的 $p$ 指系统内的压强。注意，我们并没有要求\emph{整个过程}中系统内的压强
+都等于 $p$，只需要初、终态压强等于 $p$ 即可。
+
+\subsection{热力学第一定律}
+
+\kwd{热力学第一定律}的主要建立者有 Mayer、Joule、Helmholtz、Carnot 等。它描述
+了\emph{功}、\emph{热量}、\emph{内能}三者之间的关系，是\kwd{能量守恒定律}在宏观
+热现象过程中的表现形式。
+
+\begin{theorem}[能量守恒定律]
+  自然界中的一切物质都具有能量。能量有各种不同的形式，能够从一种形式转化为
+  另一种形式，从一个物体传递给另一个物体。在转化和传递中，能量的总量不变。
+\end{theorem}
+
+对绝热过程而言，从状态 1 变化到状态 2 的过程中，只有外界做功，因此
+\begin{equation}
+  U_2 - U_1 = W_\text{a}.
+\end{equation}
+下标“a”表示绝热。
+
+而对于非绝热过程，由于既有外界做功，又有热量传递，因此
+\begin{equation} \label{eq:first-law-integral-form}
+  U_2 - U_1 = W + Q.
+\end{equation}
+写成微分形式，为
+\begin{boced} \label{eq:first-law-differential}
+  \dd{U} = \dbar{W} + \dbar{Q}.
+\end{boced}
+这实际上就是热力学第一定律最常用的表述。
+
+设两个全同系统内能分别为 $U_1$、$U_2$。则总内能 $U_\text{total}$ 除了
+$U_1+U_2$，还需包括由于界面效应所导致的 $U_{12}$。但在热力学中，界面效应基本
+可以忽略，因此近似有
+\begin{equation}
+  U_\text{total} = U_1 + U_2.
+\end{equation}
+这说明内能是一个广延量。
+
+\section{热容与焓；理想气体的性质} \label{sec:heat-capacity-enthalpy-ideal-gas}
+
+\subsection{热容与焓} \label{subsec:heat-capacity-and-enthalpy}
+
+对于过程 $y$，定义\kwd{热容}
+\begin{equation}
+  C_y \defeq \frac{\dbar{Q_y}}{\dd{T}},
+\end{equation}
+式中的 $\dbar{Q_y}$ 是温度升高 $\dd{T}$ 时系统所吸收的热量。
+
+对于\emph{等容过程}，有\kwd{定容热容}
+\begin{equation}
+  C_V \defeq \frac{\dbar{Q_V}}{\dd{T}}.
+\end{equation}
+根据式~\eqref{eq:work-fixed-V}，可知
+\begin{equation}
+  \dbar{Q_V} = \dd{U} - \dbar{W} = \dd{U} - 0 = \dd{U},
+\end{equation}
+因此
+\begin{equation} \label{eq:heat-capacity-fixed-V}
+  C_V = \qty(\pdv{U}{T})_V.
+\end{equation}
+
+对于\emph{等压过程}，有\kwd{定压热容}
+\begin{equation}
+  C_p \defeq \frac{\dbar{Q_p}}{\dd{T}}.
+\end{equation}
+根据式~\eqref{eq:work-fixed-p}，可知
+\begin{equation} \label{eq:dQ-fixed-p}
+  \dbar{Q_p} = \dd{U} - \dbar{W} = \dd{U} - p \dd{V},
+\end{equation}
+因此
+\begin{equation} \label{eq:heat-capacity-fixed-p}
+  C_V = \qty(\pdv{U}{T})_p + p \, \qty(\pdv{V}{T})_p.
+\end{equation}
+
+% 可以发现，
+% \begin{equation}
+%   C_p = C_V + p \, \qty(\pdv{V}{T})_p.
+% \end{equation}
+% 这是它们的关系之一。
+
+下面引入一个新的物理量——\kwd{焓}，其定义为
+\begin{equation}
+  H \defeq U + p V.
+\end{equation}
+由于 $U$、$p$ 和 $V$ 均是状态函数，因此焓也是状态函数。利用焓，
+可将式~\eqref{eq:heat-capacity-fixed-p} 改写为
+\begin{equation} \label{eq:heat-capacity-fixed-p-with-H}
+  C_p = \qty(\pdv{H}{T})_p,
+\end{equation}
+同时将式~\eqref{eq:dQ-fixed-p} 改写为
+\begin{equation}
+  \dbar{Q_p} = \dd{H}.
+\end{equation}
+这就是说，\emph{在等压过程中，物体吸收的热量等于焓的增加量}。
+
+显然，热容与焓均是广延量。单位质量下的热容称为\kwd{比热容}或\kwd{比热}，
+它是强度量。
+
+\subsection{理想气体的性质} \label{subsec:ideal-gas-property} %\label{subsec:理想气体的性质}
+
+% \begin{figure}[h]
+%   \begin{asy}
+%     pair p1 = (0, 7), p2 = (0, 0), p3 = (12, 0), p4 = (p3.x, p1.y), p5 = (0, 6), p6 = (p3.x, p5.y);
+%     pair m1 = (p1+p4)/2, m2 = (p2+p3)/2;
+%     transform myReflect = reflect(m1, m2);
+%     
+%     real boxWidth = 3, boxHeight = 2;
+%     pair pA1 = (1.8, 2.5), pA2 = (pA1.x+boxWidth, pA1.y), pA3 = (pA2.x, pA1.y+boxHeight), pA4 = (pA1.x, pA3.y);
+%     path boxA = pA1--pA2--pA3--pA4--cycle;
+%     path boxB = myReflect*boxA;
+%     
+%     real pipeSize = 0.2, pipeHeight = 3.5;
+%     pair ppA1 = (pA4.x+(boxWidth-pipeSize)/2, pA4.y),
+%          ppA2 = (ppA1.x, ppA1.y+pipeHeight),
+%          ppA3 = (ppA1.x+pipeSize, ppA1.y),
+%          ppA4 = (ppA3.x, ppA2.y-pipeSize);
+%     pair ppB1 = myReflect*ppA1, ppB2 = myReflect*ppA2, ppB3 = myReflect*ppA3, ppB4 = myReflect*ppA4;
+%     path pipe = ppA1--ppA2--ppB2--ppB1--ppB3--ppB4--ppA4--ppA3--cycle;
+%     
+%     real valveHeight = 0.6;
+%     pair pv1 = (m1.x, ppA2.y-(valveHeight+pipeSize)/2), pv2 = (pv1.x, pv1.y+valveHeight);
+%     
+%     real thermometerHeight = 5, thermometerR = 0.2;
+%     pair pt1 = (1, 3), pt2 = (pt1.x, pt1.y+thermometerHeight);
+%     
+%     fill(p5--p2--p3--p6--cycle, color1+opacity(0.2));
+%     draw(p1--p2--p3--p4, linewidth(1)+color1);
+%     draw(boxA, linewidth(1)+color2);
+%     draw(boxB, linewidth(1)+color2);
+%     draw(pipe, linewidth(1)+color2);
+%     draw(pv1--pv2, linewidth(2)+color3);
+%     draw(pt1--pt2, linewidth(2)+color4);
+%     fill(circle(pt1, thermometerR), color4);
+%     
+%     label("A", (ppA1+ppA3)/2, (0, -3));
+%     label("B", (ppB1+ppB3)/2, (0, -3));
+%     
+%     pair pwLabel1 = (p3.x-1, p3.y+1.4), pwLabel2 = (p3.x+1, p3.y+2.5);
+%     draw(pwLabel1--pwLabel2);
+%     label("水槽", pwLabel2, E);
+%     
+%     pair ptLabel1 = (pt1.x-0.25, pt2.y-1), ptLabel2 = (pt1.x-1.5, pt2.y+0.4);
+%     draw(ptLabel1--ptLabel2);
+%     label("温度计", ptLabel2, N);
+%     
+%     pair pvLabel1 = (pv1.x+0.25, pv2.y-0.1), pvLabel2 = (pv1.x+1.5, pv2.y+1);
+%     draw(pvLabel1--pvLabel2);
+%     label("阀门", pvLabel2, N);
+%   \end{asy}
+%   \caption{Joule实验的装置}
+%   \label{fig-Joule-experiment}
+% \end{figure}
+
+先介绍 Joule 实验（1845 年）。设有一容器，分为 A、B 两个相同的部分。将它们置于
+水槽内，并通过带阀门的细管相连，水温可以通过温度计测量，
+如图~\ref{fig-Joule-experiment} 所示。
+
+首先，在 A 内充满气体，而使 B 保持真空。然后打开阀门，气体将\emph{自由膨胀}，
+并充满整个容器。Joule 的实验结果是前后水温不变。
+
+由于是等容过程，因此 $W=0$；水温不变，说明 $Q=0$。根据热力学第一定律，有
+$\incr{U}=0$。假设内能是温度和体积的函数，即
+\begin{equation}
+  U = U(T, \, V).
+\end{equation}
+根据\emph{偏导数三乘积法则}，可知
+\begin{equation}
+  \qty(\pdv{U}{V})_T \qty(\pdv{V}{T})_U \qty(\pdv{T}{U})_V = -1.
+\end{equation}
+于是
+\begin{equation}
+  \qty(\pdv{U}{V})_T
+  = -\qty(\pdv{T}{U})_V^{-1} \qty(\pdv{V}{T})_U^{-1}
+  = -\qty(\pdv{U}{T})_V \qty(\pdv{T}{V})_U.
+\end{equation}
+注意到系统满足 $\incr{U}=0$ 以及 $\incr{T}=0$，因此有
+\begin{equation}
+  \qty(\pdv{T}{V})_U = 0 \implies \qty(\pdv{U}{V})_T = 0.
+\end{equation}
+这就说明 $U = U(T)$，即内能只和温度有关。
+
+不过，限于当时的技术水平，Joule 实验较为粗糙。更精确的实验表明，实际气体的内能
+不仅与 $T$ 有关，还与 $V$ 有关。但对于理想气体，以上结论仍然成立，因此理想气体
+具有如下两条性质：
+\begin{braced}
+  & pV = nRT,  \label{eq:ideal-gas-property-equation-of-state}\\
+  & U  = U(T). \label{eq:ideal-gas-property-internal-energy}
+\end{braced}
+就目前而言，这两条性质彼此是独立的。但利用热力学第二定律或统计物理，可以由
+\eqref{eq:ideal-gas-property-equation-of-state}~式推导
+\eqref{eq:ideal-gas-property-internal-energy}~式。
+%［见\secref{sec:Maxwell关系}\subsecref{subsec:简单应用_OF_MAXWELL关系}中的\egref{EG_pd_U/pd_V_WITH_FIXED_T}］
+
+对于理想气体，根据焓的定义，可得
+\begin{equation}
+  H = U + pV = U(T) + nRT = H(T),
+\end{equation}
+即焓也仅是温度的函数。从而根据式~\eqref{eq:heat-capacity-fixed-V} 和
+\eqref{eq:heat-capacity-fixed-p-with-H}，又有
+\begin{equation}
+  C_p - C_V = \qty(\pdv{H}{T})_p - \qty(\pdv{U}{T})_V
+  = \dv{H}{T} - \dv{U}{T} = \dv{T} \qty\Big(pV) = \dv{T} \qty\Big(nRT) = nR.
+  \label{eq:C_p-C_V-for-ideal-gas}
+\end{equation}
+
+定义\kwd{热容比} \footnote{也称为\kwd{绝热指数}，原因见第%
+  \ref{subsec:adiabatic-process}小节。} $\gamma$ 为 $C_p$ 与 $C_V$ 之比：
+\begin{equation} \label{eq:heat-capacity-ratio}
+  \gamma \defeq \frac{C_p}{C_V}.
+\end{equation}
+对于理想气体，显然也有
+\begin{equation}
+  \gamma = \gamma(T).
+\end{equation}
+
+由式~\eqref{eq:C_p-C_V-for-ideal-gas} 和 \eqref{eq:heat-capacity-ratio}，
+可以解得
+\begin{braced}
+  C_V &= \frac{1}{\gamma-1} nR,      \label{eq:C_V-in-heat-capacity-ratio} \\
+  C_p &= \frac{\gamma}{\gamma-1} nR. \label{eq:C_p-in-heat-capacity-ratio}
+\end{braced}
+因为 $\gamma$ 可以通过实验测量，由此算出热容后，就可以确定理想气体的内能与焓：
+\begin{braced}
+  U(T) &= \int C_V(T) \dd{T} + U_0, \\
+  H(T) &= \int C_p(T) \dd{T} + H_0,
+\end{braced}
+其中的 $U_0$ 和 $H_0$ 是积分常数。将上式写成微分形式，为
+\begin{braced}
+  \dd{U} &= C_V(T) \dd{T}, \label{eq:dU-for-ideal-gas} \\ %\label{EQ_dU=Cv*dT_IDEAL_GAS}
+  \dd{H} &= C_p(T) \dd{T}. \label{eq:dH-for-ideal-gas}    %\label{EQ_dH=Cp*dT_IDEAL_GAS}
+\end{braced}
+
+\subsection{绝热过程的过程方程} \label{subsec:adiabatic-process} %\label{subsec:绝热过程的过程方程}
+
+\emph{本节叙述均只针对理想气体。}
+
+根据理想气体状态方程
+\begin{equation}
+  pV = nRT,
+\end{equation}
+有
+\begin{equation}
+  \dd{T} = \frac{p\dd{V}+V\dd{p}}{nR}.
+\end{equation}
+对于绝热过程，根据热力学第一定律，有
+\begin{align}
+  0 = \dbar{Q} &= \dd{U} + p\dd{V} = C_V\dd{T} + p\dd{V} \notag \\
+  &= C_V \, \frac{p\dd{V}+V\dd{p}}{nR} + p\dd{V} \notag \\
+  &= \qty(\frac{C_V}{nR} + 1) p\dd{V} + \frac{C_V}{nR} V\dd{p} \notag
+  \intertext{利用式~\eqref{eq:C_V-in-heat-capacity-ratio}，可得}
+  &= \frac{\gamma}{\gamma-1} p \dd{V} + \frac{1}{\gamma - 1} V \dd{p},
+\end{align}
+即
+\begin{equation}
+  \frac{\dd{p}}{p} + \gamma \frac{\dd{V}}{V} = 0.
+\end{equation}
+假定 $\gamma$ 为常数，积分可得
+\begin{equation} \label{eq:equation-of-adiabatic-process-in-p-V}
+  \ln p + \gamma \ln V = \ln(pV^\gamma) = \const \implies pV^\gamma = \const
+\end{equation}
+改用其他变量，可把该式写成
+\begin{equation} \label{eq:equation-of-adiabatic-process-in-p-T}
+  p^{(1 - \gamma) / \gamma} T = \const
+\end{equation}
+或
+\begin{equation} \label{eq:equation-of-adiabatic-process-in-T-V}
+  T V^{\gamma - 1} = \const
+\end{equation}
+的形式。
+
 %    \begin{myExample}[海拔与气温的关系]
 %      下面推导\emph{气温垂直递减率}。首先考虑\emph{干燥空气}的温度\emph{绝热}递减率。假设空气是理想气体。
 %      
@@ -682,13 +695,13 @@ Boyle 和 Mariotte 分别于 1662 年和 1676 年各自确立了\kwd{Boyle--Mari
 %    
 %    利用热力学第一定律，有
 %    \begin{equation}
-%      \oint \dd U = \oint \db Q + \oint \db W = 0 \comma
+%      \oint \dd U = \oint \dbar Q + \oint \dbar W = 0 \comma
 %    \end{equation}
 %    其中的“$\oint$”代表沿循环过程的积分。
 %    
 %    整个过程中对外做的净功（它等于图~\ref{FIG_CARNOT_CYCLE} 中曲线包围起来的面积）
 %    \begin{equation}
-%      W' = -\oint \db W = \oint \db Q = Q_\text{H} + Q_\text{C} \comma
+%      W' = -\oint \dbar W = \oint \dbar Q = Q_\text{H} + Q_\text{C} \comma
 %    \end{equation}
 %    其中的 $Q_\text{H}$ 和 $Q_\text{C}$ 分别为高温和低温时吸收的热量（可以有正负）。
 %    
@@ -706,7 +719,7 @@ Boyle 和 Mariotte 分别于 1662 年和 1676 年各自确立了\kwd{Boyle--Mari
 %      Q_\text{C} = -n R T_\text{C} \ln \frac{V_3}{V_4} < 0 \fullstop
 %    \end{equation}
 %    
-%    根据绝热过程的过程方程~\eqref{EQ_STATE_EQUATION_OF_ADIABATIC_PROCESS_IN_T_V},有
+%    根据绝热过程的过程方程~\eqref{eq:equation-of-adiabatic-process-in-T-V},有
 %    \begin{mySubEq}
 %      \begin{empheq}[left=\empheqlbrace]{align}
 %        & T_\text{H} V_2^{\g - 1} = T_\text{C} V_3^{\g - 1} \comma \\
@@ -720,7 +733,7 @@ Boyle 和 Mariotte 分别于 1662 年和 1676 年各自确立了\kwd{Boyle--Mari
 %    
 %    定义\kwd{热机效率}
 %    \begin{equation}
-%      \h \eqdef \frac{W'}{Q_\text{H}} 
+%      \h \defeq \frac{W'}{Q_\text{H}} 
 %      = \frac{Q_\text{H} - \abs{Q_\text{C}}}{Q_\text{H}} 
 %      = 1 - \frac{\abs{Q_\text{C}}}{Q_\text{H}} \fullstop
 %    \end{equation}
@@ -822,9 +835,9 @@ Boyle 和 Mariotte 分别于 1662 年和 1676 年各自确立了\kwd{Boyle--Mari
 %    
 %    常用的经验温标有摄氏温标、华氏温标等。利用理想气体状态方程，可以定义\kwd{理想气体温标}：
 %    \begin{equation}
-%      T \eqdef \frac{1}{n R} \lim\limits_{p \approach 0} p V \comma
+%      T \defeq \frac{1}{n R} \lim\limits_{p \approach 0} p V \comma
 %    \end{equation}
-%    同时需要规定水的三相点温度 $T_\text{tr} \eqdef \SI{273.16}{\kelvin}$。
+%    同时需要规定水的三相点温度 $T_\text{tr} \defeq \SI{273.16}{\kelvin}$。
 %    
 %    在 \secref{sec:理想气体与Carnot循环_热力学第二定律} \subsecref{subsec:Carnot循环} 中，我们使用 $T$ 表示温度。实际上，那里的“温度”是用\emph{理想气体温标}%表示的值。
 %    
@@ -881,28 +894,28 @@ Boyle 和 Mariotte 分别于 1662 年和 1676 年各自确立了\kwd{Boyle--Mari
 %    
 %    在 $n \approach \infty$ 的极限下，Clausius不等式过渡到积分形式：
 %    \begin{equation} \label{EQ_CLAUSISU_INEQUALITY_IN_INTEGRAL}
-%      \lim\limits_{n \approach \infty} \iTonSum \frac{Q_i}{T_i} \leqslant 0 \approach \oint \frac{\db Q}{T} \leqslant 0 \fullstop
+%      \lim\limits_{n \approach \infty} \iTonSum \frac{Q_i}{T_i} \leqslant 0 \approach \oint \frac{\dbar Q}{T} \leqslant 0 \fullstop
 %    \end{equation}
 %    
 %  \subsection{熵的定义}
 %    对于可逆循环，根据式~\eqref{EQ_CLAUSISU_INEQUALITY_IN_INTEGRAL}，有
 %    \begin{equation}
-%      \oint \frac{\db Q_\text{rev}}{T} = 0 \fullstop
+%      \oint \frac{\dbar Q_\text{rev}}{T} = 0 \fullstop
 %    \end{equation}
 %    如图%TODO：20160323 图片
 %    可以表示成两段路径之和：
 %    \begin{equation}
-%      \underset{C_1\phantom{M}}{\int_{(P_0)}^{(P)}} \, \frac{\db Q_\text{rev}}{T}
-%      + \underset{C_2\phantom{M}}{\int_{(P)}^{(P_0)}} \, \frac{\db Q_\text{rev}}{T} = 0 \comma
+%      \underset{C_1\phantom{M}}{\int_{(P_0)}^{(P)}} \, \frac{\dbar Q_\text{rev}}{T}
+%      + \underset{C_2\phantom{M}}{\int_{(P)}^{(P_0)}} \, \frac{\dbar Q_\text{rev}}{T} = 0 \comma
 %    \end{equation}
 %    即
 %    \begin{equation}
-%      \underset{C_1\phantom{M}}{\int_{(P_0)}^{(P)}} \, \frac{\db Q_\text{rev}}{T}
-%      = \underset{C_2\phantom{M}}{\int_{(P_0)}^{(P)}} \, \frac{\db Q_\text{rev}}{T} = \const
+%      \underset{C_1\phantom{M}}{\int_{(P_0)}^{(P)}} \, \frac{\dbar Q_\text{rev}}{T}
+%      = \underset{C_2\phantom{M}}{\int_{(P_0)}^{(P)}} \, \frac{\dbar Q_\text{rev}}{T} = \const
 %    \end{equation}
-%    可以看出，$\db Q_\text{rev} / T$ 是一个与路径无关的量。由此，定义一个新的状态函数——\kwd{熵（entropy）}：
+%    可以看出，$\dbar Q_\text{rev} / T$ 是一个与路径无关的量。由此，定义一个新的状态函数——\kwd{熵（entropy）}：
 %    \begin{equation}
-%      S - S_0 = \int_{(P_0)}^{(P)} \, \frac{\db Q_\text{rev}}{T} \fullstop
+%      S - S_0 = \int_{(P_0)}^{(P)} \, \frac{\dbar Q_\text{rev}}{T} \fullstop
 %    \end{equation}
 %    
 %  \subsection{不可逆过程的数学表述}
@@ -910,15 +923,15 @@ Boyle 和 Mariotte 分别于 1662 年和 1676 年各自确立了\kwd{Boyle--Mari
 %      \myItem{初终态均是平衡态}
 %        根据Clausius不等式，有
 %        \begin{align}
-%          &\mathrel{\phantom{\implies}} \underset{\text{irrev} + \text{rev}}{\oint} \frac{\db Q}{T} < 0 \notag \\
-%          &\implies \int_{(P_0)}^{(P)} \, \frac{\db Q_\text{irrev}}{T} + \int_{(P)}^{(P_0)} \, \frac{\db Q_\text{rev}}{T} < 0 \notag \\
-%          &\implies S - S_0 > \int_{(P_0)}^{(P)} \, \frac{\db Q_\text{irrev}}{T} \fullstop
+%          &\mathrel{\phantom{\implies}} \underset{\text{irrev} + \text{rev}}{\oint} \frac{\dbar Q}{T} < 0 \notag \\
+%          &\implies \int_{(P_0)}^{(P)} \, \frac{\dbar Q_\text{irrev}}{T} + \int_{(P)}^{(P_0)} \, \frac{\dbar Q_\text{rev}}{T} < 0 \notag \\
+%          &\implies S - S_0 > \int_{(P_0)}^{(P)} \, \frac{\dbar Q_\text{irrev}}{T} \fullstop
 %        \end{align}
 %        
 %      \myItem{初终态均是非平衡态}
 %        采用\emph{局域平衡近似}，仍旧可以推得
 %        \begin{equation}
-%          S - S_0 > \int_{(P_0)}^{(P)} \, \frac{\db Q_\text{irrev}}{T} \fullstop
+%          S - S_0 > \int_{(P_0)}^{(P)} \, \frac{\dbar Q_\text{irrev}}{T} \fullstop
 %        \end{equation} %TODO：20160323 局域平衡近似的证明
 %    \end{myEnum1}
 %    
@@ -926,12 +939,12 @@ Boyle 和 Mariotte 分别于 1662 年和 1676 年各自确立了\kwd{Boyle--Mari
 %    
 %    把对可逆过程与不可逆过程的表述合起来，就有
 %    \begin{equation} \label{EQ_2ND_LAW_IN_INTEGRAL_FORM}
-%      \incr S = S - S_0 \geqslant \int_{(P_0)}^{(P)} \, \frac{\db Q}{T} \semicolon
+%      \incr S = S - S_0 \geqslant \int_{(P_0)}^{(P)} \, \frac{\dbar Q}{T} \semicolon
 %    \end{equation}
 %    写成微分形式，为
-%    \begin{boxedEq} \label{EQ_2ND_LAW_IN_DIFFERENTIAL_FORM}
-%      \dd S \geqslant \frac{\db Q}{T}
-%    \end{boxedEq}
+%    \begin{boced} \label{EQ_2ND_LAW_IN_DIFFERENTIAL_FORM}
+%      \dd S \geqslant \frac{\dbar Q}{T}
+%    \end{boced}
 %    以上两式中，“$=$”适用于可逆过程，“$>$”适用于不可逆过程。这两式实际上便是热力学第二定律的数学表述。
 %    
 %  \subsection{熵的性质}
@@ -940,11 +953,11 @@ Boyle 和 Mariotte 分别于 1662 年和 1676 年各自确立了\kwd{Boyle--Mari
 %    \begin{myEnum2}
 %      \item 熵是\emph{状态函数}。
 %      \item 熵是\emph{广延量}。
-%      \item 对微小的\emph{可逆}过程，$\dd S = \db Q / T$。因此有
+%      \item 对微小的\emph{可逆}过程，$\dd S = \dbar Q / T$。因此有
 %      \begin{equation} \label{EQ_dQ=TdS}
-%        \db Q = T \dd S \fullstop
+%        \dbar Q = T \dd S \fullstop
 %      \end{equation}
-%      对于\emph{绝热}过程，有 $\db Q = 0$，因此
+%      对于\emph{绝热}过程，有 $\dbar Q = 0$，因此
 %      \begin{equation} \label{EQ_dS=0_FOR_ADIABATIC_REVERSIBLE_PROCESS}
 %        \dd S = 0 \fullstop
 %      \end{equation}
@@ -953,15 +966,15 @@ Boyle 和 Mariotte 分别于 1662 年和 1676 年各自确立了\kwd{Boyle--Mari
 %  \subsection{热力学基本方程}
 %    热力学第一定律式~\eqref{EQ_1ST_LAW_IN_DIFFERENTIAL_FORM}：
 %    \begin{equation}
-%      \dd U = \db Q + \db W \semicolon
+%      \dd U = \dbar Q + \dbar W \semicolon
 %    \end{equation}
 %    由热力学第二定律，得可逆过程微热量的表达式 \eqref{EQ_dQ=TdS}：
 %    \begin{equation}
-%      \db Q = T \dd S \semicolon
+%      \dbar Q = T \dd S \semicolon
 %    \end{equation}
-%    微功的一般表示式~\eqref{EQ_GENERAL_WORK}：
+%    微功的一般表示式~\eqref{eq:work-general}：
 %    \begin{equation}
-%      \db W = \iTonSum Y_i \dd y_i \fullstop
+%      \dbar W = \iTonSum Y_i \dd y_i \fullstop
 %    \end{equation}
 %    联立以上三式，可得
 %    \begin{equation} \label{EQ_FUNDAMENTAL_EQUATION_OF_THERMODYNAMICS}
@@ -999,9 +1012,9 @@ Boyle 和 Mariotte 分别于 1662 年和 1676 年各自确立了\kwd{Boyle--Mari
 %  \subsection{熵增加原理}
 %    根据热力学第二定律［式~\eqref{EQ_2ND_LAW_IN_INTEGRAL_FORM}］，
 %    \begin{equation}
-%      \incr S \geqslant \int_{\text{I}}^{\text{II}} \frac{\db Q}{T} \fullstop
+%      \incr S \geqslant \int_{\text{I}}^{\text{II}} \frac{\dbar Q}{T} \fullstop
 %    \end{equation}
-%    对于\emph{绝热}过程（或孤立体系），有 $\db Q = 0$。因此
+%    对于\emph{绝热}过程（或孤立体系），有 $\dbar Q = 0$。因此
 %    \begin{equation} \label{EQ_PRINCIPLE_OF_ENTROPY_INCREASE}
 %      \incr S \geqslant 0 \fullstop \footnote{
 %        注意与 \eqref{EQ_dS=0_FOR_ADIABATIC_REVERSIBLE_PROCESS} 式对比，它还要求\kwd{可逆}过程。
@@ -1013,29 +1026,29 @@ Boyle 和 Mariotte 分别于 1662 年和 1676 年各自确立了\kwd{Boyle--Mari
 %  \subsection{最大功}
 %    根据热力学第一定律［式~\eqref{EQ_1ST_LAW_IN_DIFFERENTIAL_FORM}］，
 %    \begin{equation}
-%      \dd U = \db Q + \db W \fullstop
+%      \dd U = \dbar Q + \dbar W \fullstop
 %    \end{equation}
-%    令 $\db W' = - \db W$ 为系统对外界做的功，则
+%    令 $\dbar W' = - \dbar W$ 为系统对外界做的功，则
 %    \begin{equation} \label{EQ_dU=dQ-dW'_IN_SECTION_MAX_WORK}
-%      \db W' = \db Q - \dd U \fullstop
+%      \dbar W' = \dbar Q - \dd U \fullstop
 %    \end{equation}
 %    根据热力学第二定律［式~\eqref{EQ_2ND_LAW_IN_DIFFERENTIAL_FORM}］，
 %    \begin{equation}
-%      \db Q \leqslant T_\text{e} \dd S \fullstop
+%      \dbar Q \leqslant T_\text{e} \dd S \fullstop
 %    \end{equation}
 %    代入式~\eqref{EQ_dU=dQ-dW'_IN_SECTION_MAX_WORK}，可得
 %    \begin{equation}
-%      \db W' \leqslant T_\text{e} \dd S - \dd U \fullstop
+%      \dbar W' \leqslant T_\text{e} \dd S - \dd U \fullstop
 %    \end{equation}
 %    因此系统对外做的\kwd{最大功}为
 %    \begin{equation}
-%      \db W'_{\text{max}} = \db W'_{\text{rev}} = T \dd S - \dd U \comma
+%      \dbar W'_{\text{max}} = \dbar W'_{\text{rev}} = T \dd S - \dd U \comma
 %    \end{equation}
 %    这里的 $T = T_\text{e}$ 为系统的温度（因为是可逆过程）。
 %    
 %    对于不可逆过程，显然有
 %    \begin{equation}
-%      \db W'_{\text{irrev}} < \db W'_{\text{rev}} \fullstop
+%      \dbar W'_{\text{irrev}} < \dbar W'_{\text{rev}} \fullstop
 %    \end{equation}
 %    
 %    \begin{myExample}[水的混合]
@@ -1060,7 +1073,7 @@ Boyle 和 Mariotte 分别于 1662 年和 1676 年各自确立了\kwd{Boyle--Mari
 %    
 %    由Clausius不等式%［\eqref{}］
 %    \begin{equation}
-%      \incr S = S_2 - S_1 \geqslant \int_{\text{I}}^{\text{II}} \frac{\db Q}{T} = \frac{1}{T} \int_{\text{I}}^{\text{II}} \db Q = \frac{Q}{T}\comma 
+%      \incr S = S_2 - S_1 \geqslant \int_{\text{I}}^{\text{II}} \frac{\dbar Q}{T} = \frac{1}{T} \int_{\text{I}}^{\text{II}} \dbar Q = \frac{Q}{T}\comma 
 %    \end{equation}
 %    即
 %    \begin{equation}

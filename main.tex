@@ -32,7 +32,7 @@
 %\setmathfont{XITS Math}
 \setmainfont{Libertinus Serif}
 \setsansfont{Source Sans Pro Semibold}[BoldFont = Source Sans Pro Bold]
-\setmathfont{Libertinus Math}
+\setmathfont{Libertinus Math}[math-style = ISO, bold-style = ISO]
 
 
 \setCJKmainfont{Source Han Serif SC}%
@@ -102,12 +102,21 @@
 
 %% 数学
 
-\begingroup
-  \theoremstyle{empty}
-  \theorembodyfont{\rmfamily\fangsong}
-  \theoremsymbol{\ensuremath{\mdlgblksquare}} % U+25A0
-  \newtheorem{proof}{}
-\endgroup
+%\newenvironment{myenuma}
+%  {\enumerate [label = \alph*), align = leftalignwithindent, leftmargin = 0 pt, itemsep = 10 pt, parsep = 0 pt, listparindent = 2 em]}
+%  {\end{enumerate}}
+
+
+%\begingroup
+%  \theoremstyle{empty}
+%  \theorembodyfont{\rmfamily\fangsong}
+%  \theoremsymbol{\ensuremath{\mdlgblksquare}} % U+25A0
+%  \theoremprework{\leavevmode\hskip2em}
+%  \newtheorem{proof}{}
+%\endgroup
+
+\newenvironment{proof}%
+  {\par\mbox{}\par\small}{\par\mbox{}\par}
 
 \begingroup
   \theoremstyle{empty}
@@ -152,9 +161,29 @@
 %\renewcommand{\theequation}{\thesection.\arabic{equation}} %公式编号样式x.x.x
 
 
-\newenvironment{boxedEq}
+\newenvironment{boced}
   {\empheq[box=\fbox]{equation}}
   {\endempheq}
+
+
+% \newenvironment{mySubEq}
+%   {\subequations \renewcommand{\theequation}{\theparentequation-\alph{equation}}}
+%   {\endsubequations
+%   \ignorespacesafterend}
+
+
+\makeatletter\ExplSyntaxOn
+\ctex_patch_cmd:Nnn \HyOrg@subequations
+  { \def \theequation { \theparentequation \alph { equation } } }
+  { \def \theequation { \theparentequation - \alph { equation } } }
+\ExplSyntaxOff\makeatother
+
+\newenvironment{braced}[1][align]
+  {\subequations
+    \setkeys{EmphEqEnv}{#1}
+    \setkeys{EmphEqOpt}{left = \empheqlbrace}
+    \EmphEqMainEnv}
+  {\endEmphEqMainEnv \endsubequations}
 
 %% 杂项
 \sisetup{
@@ -174,6 +203,8 @@
   hyperfootnotes     = false
 }
 
+\catcode`\。=\active
+\let。=．
 
 %% 命令
 
@@ -187,19 +218,38 @@
 \newcommand\kwd[1]{\textsf{#1}}
 
 
+\def\V#1{\symbf{#1}}
+\def\T#1{\symbf{#1}}
+
+\def\diffdbar{\mbox{đ}} % U+0111
+\DeclareDocumentCommand\dbar{ o g d() }{ % Differential 'd'
+  % o: optional n for nth differential
+  % g: optional argument for readability and to control spacing
+  % d: long-form as in d(cos x)
+  \IfNoValueTF{#2}{
+    \IfNoValueTF{#3}
+      {\diffdbar\IfNoValueTF{#1}{}{^{#1}}}
+      {\mathinner{\diffdbar\IfNoValueTF{#1}{}{^{#1}}\argopen(#3\argclose)}}
+    }
+    {\mathinner{\diffdbar\IfNoValueTF{#1}{}{^{#1}}#2} \IfNoValueTF{#3}{}{(#3)}}
+  }
+
+\def\incr{\increment}
+\def\defeq{\equiv}
+
 
 %\newcommand\pp{\piup} %圆周率
 %\newcommand\ee{\mathrm{e}} %自然对数基
 %\newcommand\ii{\mathrm{i}} %虚数单位
 %\newcommand\hb{\hbar} %约化Planck常数
-\newcommand\kB{k_{\symrm{B}}} %Boltzmann常数
-%\newcommand\pfs{\e_0} %真空介电常数 Permittivity of Free Space
+\def\kB{k_{\symrm{B}}} %Boltzmann常数
+\newcommand\pfs{\epsilon_0} %真空介电常数 Permittivity of Free Space
 
 
 %\newcommand\comma{\text{，}}
 %\newcommand\fullstop{\text{．}}
 %\newcommand\semicolon{\text{；}}
-\newcommand\const{\text{const.}}
+\def\const{\text{const.}}
 
 
 
@@ -393,7 +443,7 @@
 %%%  {\endsubequations
 %%%  \ignorespacesafterend}
 %%%%带框公式
-%%%\newenvironment{boxedEq}
+%%%\newenvironment{boced}
 %%%  {\empheq[box = \fbox]{equation}}
 %%%  {\endempheq}
 %%%%大括号公式
