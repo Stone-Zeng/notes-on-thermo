@@ -39,6 +39,8 @@
   [ItalicFont = FZKai-Z03, BoldItalicFont = FZKai-Z03]
 \setCJKsansfont{Source Han Sans SC Medium}%
   [BoldFont = Source Han Sans SC Bold, ItalicFont = FZKai-Z03, BoldItalicFont = FZKai-Z03]
+\setCJKmonofont{FZFangSong-Z02}%
+  [BoldFont = FZFangSong-Z02, ItalicFont = FZFangSong-Z02, BoldItalicFont = FZFangSong-Z02]
 
 %\setCJKmainfont{FZShuSong-Z01}[BoldFont = FZHei-B01, ItalicFont = FZKai-Z03]
 %\setCJKsansfont{FZHei-B01}[BoldFont = FZHei-B01, ItalicFont = FZKai-Z03]
@@ -569,6 +571,10 @@
 %%%\newcommand{\myTag}[1]{\tag*{\CJKfamily{楷体} [#1]}}
 %%%\newcommand{\myTagNumbering}[1]{\refstepcounter{equation} \tag*{\CJKfamily{楷体} [#1] \, (\theequation)} }
 
+\newcommand\myTag[1]{}
+
+\newcommand\FIGPLACEHOLDER{\includegraphics[draft]{foo}}
+
 %TODO——标题页
 \title{\vspace{-4 cm}\bfseries 热力学与统计物理 I}
 \author{\kaishu 复旦大学\quad 陈焱}
@@ -588,7 +594,7 @@
 %\mainmatter
 %\part{热力学}
 %%\chapter{热力学基础}
-\include{chapters/1}
+%\include{chapters/1}
 %\chapter{均匀系统的平衡特性}
 %\include{chapters/2}
 %\chapter{相变的热力学理论}
@@ -597,8 +603,8 @@
 %\include{chapters/4}
 %
 %\part{统计物理}
-%\chapter{统计物理学基本概念}
-%\include{chapters/5}
+%%\chapter{统计物理学基本概念}
+\include{chapters/5}
 %\chapter{三大统计}
 %\include{chapters/6}
 %\chapter{系综理论}
