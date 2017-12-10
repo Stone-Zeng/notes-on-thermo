@@ -55,6 +55,20 @@
 \renewcommand\headrulewidth{0pt}
 \pagestyle{fancy}
 
+% 章末空白页
+\makeatletter
+\renewcommand\cleardoublepage{\clearpage\if@twoside\ifodd\c@page\else
+  \hbox{}
+  \vspace*{\fill}
+  \begin{center}
+    \itshape This page is intentionally left blank.
+  \end{center}
+  \vspace{\fill}
+  \thispagestyle{empty}
+  \newpage
+  \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
+
 % 脚注
 \makeatletter\ExplSyntaxOn
 \RenewDocumentCommand \thefootnote { }
@@ -174,6 +188,7 @@
 \newcommand\kwd[1]{\textsf{#1}}
 \newcommand\cmark{\symbol{"2714}}
 \newcommand\xmark{\symbol{"2718}}
+\newcommand\blankline{\mbox{}}
 \newcommand\FIGPLACEHOLDER{\includegraphics[draft]{foo}}
 %\def\secref#1{\S\ref{#1}}
 %\def\subsecref#1{第\ref{#1}小节}
@@ -198,40 +213,33 @@
 
 \begin{document}
 
-%\maketitle
+\maketitle
 
-%\frontmatter
+\frontmatter
+  \include{chapters/introduction}
+  %\chapter{符号表}
+  %\include{chapters/Front_Symbols}
+  %\chapter{缩略词表}
+  %\include{chapters/Front_Abbreviations}
 
-%\chapter{绪论}
-%\include{Chapters/Front_Introduction}
-%\chapter{符号表}
-%\include{Chapters/Front_Symbols}
-%\chapter{缩略词表}
-%\include{Chapters/Front_Abbreviations}
-
-%\mainmatter
-
-%\part{热力学}
-
-%%\chapter{热力学基础}
-%\include{chapters/1}
-%\chapter{均匀系统的平衡特性}
-%\include{chapters/2}
-%\chapter{相变的热力学理论}
-%\include{chapters/3}
-%\chapter{多元复相 热力学第三定律}
-%\include{chapters/4}
-
-%\part{统计物理}
-
-%%\chapter{统计物理学基本概念}
-\include{chapters/5}
-%\chapter{三大统计}
-%\include{chapters/6}
-%\chapter{系综理论}
-%\include{chapters/7}
-%\chapter{相变的统计物理简介}
-%\include{chapters/8}
+\mainmatter
+  %\part{热力学}
+    %\chapter{热力学基础}
+    %\include{chapters/1}
+    %\chapter{均匀系统的平衡特性}
+    %\include{chapters/2}
+    %\chapter{相变的热力学理论}
+    %\include{chapters/3}
+    %\chapter{多元复相 热力学第三定律}
+    %\include{chapters/4}
+  %\part{统计物理}
+    \include{chapters/5}
+    %\chapter{三大统计}
+    %\include{chapters/6}
+    %\chapter{系综理论}
+    %\include{chapters/7}
+    %\chapter{相变的统计物理简介}
+    %\include{chapters/8}
 
 \end{document}
 
