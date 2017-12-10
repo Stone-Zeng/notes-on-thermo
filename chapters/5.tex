@@ -9,7 +9,7 @@
 对于一个有 $r$ 个自由度的系统，需要用 $2r$ 个变量来描述其运动状态，即 $r$ 个
 广义坐标和 $r$ 个广义动量：
 \begin{equation}
-  (q_i, \, p_i) \quad \text{where} \quad i = 1, \, 2, \, \cdots, r.
+  (q_i, \, p_i) \qq{where} i = 1, \, 2, \, \cdots, r.
 \end{equation}
 系统的 Hamilton 量为
 \begin{equation}
@@ -22,8 +22,8 @@
 \end{braced}
 
 坐标和动量 $(q_1, \, q_2, \, \cdots, q_r; \, p_1, \, p_2, \, \cdots, p_r)$
-张成了一个 $2r$ 维空间，称为 \kwd{μ 空间}，每一组坐标和动量描述的点
-称为\kwd{代表点}。
+张成了一个 $2r$ 维空间，称为 \kwd{μ 空间}（或\kwd{子相空间}），每一组坐标和
+动量描述的点称为\kwd{代表点}。
 
 \begin{example}[自由粒子]
   对于一个 $r=3$ 的自由粒子，有
@@ -54,9 +54,9 @@
   \begin{equation}
     \frac{p^2}{2mE} + \frac{x^2}{2E / m \omega^2} = 1,
   \end{equation}
-  这在 μ 空间中表示一个椭圆（见图~\ref{fig:harmonic-oscillator-in-mu-space}），
+  这在 μ 空间中表示一个椭圆（见图~\ref{fig:harmonic-oscillator-mu-space}），
   其面积为
-  \begin{equation} \label{eq:ellipse-of-harmonic-oscillator-in-mu-space}
+  \begin{equation} \label{eq:ellipse-of-harmonic-oscillator-mu-space}
     S_\text{ellipse} = \pp ab
       = \pp \cdot \sqrt{\frac{2E}{m \omega^2}} \cdot \sqrt{2mE}
       = \frac{2 \pp E}{\omega}.
@@ -88,7 +88,7 @@
   %  label("$O$", O, SW);
   %\end{asy}
   \caption{μ 空间中的一维谐振子}
-  \label{fig:harmonic-oscillator-in-mu-space}
+  \label{fig:harmonic-oscillator-mu-space}
 \end{figure}
 
 \begin{example}[转子]
@@ -201,11 +201,12 @@
 De Broglie 关系说明微观粒子具有\kwd{波粒二象性}。这就引出了另一个重要结果——%
 \kwd{不确定关系}：
 \begin{equation}
-  \incr{p} \, \incr{q} \gtrsim h.
-  \footnote{更精确的表述为 $\incr{p} \, \incr{q} \geqslant \hbar / 2 $。}
+  \incr{p} \incr{q} \gtrsim h.
+  \footnote{更精确的表述为 $\incr{p} \incr{q} \geqslant \hbar / 2 $。}
 \end{equation}
-该关系式说明粒子的动量和坐标不可能被同时精确测量，因而其运动也就无法用经典的
-轨道概念来描述，必须改用\kwd{波函数}。
+可见，在 $\incr{p}\to 0$ 时，必有 $\incr{q}\to\infty$。这说明粒子的动量和坐标
+不可能被同时精确测量，因而其运动也就无法用经典的轨道概念来描述，必须改用%
+\kwd{波函数}。
 
 粒子波函数 $\Psi$ 满足的方程即\kwd{Schrödinger方程}：
 \begin{equation}
@@ -255,27 +256,128 @@ Schrödinger 方程化为
   \end{equation}
   可见该系统的简并度 $g=1$。
 
-  根据式~\eqref{eq:ellipse-of-harmonic-oscillator-in-mu-space}，μ 空间中的椭圆
-  面积为
+  根据式~\eqref{eq:ellipse-of-harmonic-oscillator-mu-space}，μ 空间中的
+  椭圆面积为
   \begin{equation}
     S_n = \frac{2\pp E_n}{\omega} =\frac{E_n}{\nu} = \qty(n+\frac{1}{2}) \, h.
   \end{equation}
   因此两个相轨道之间的面积为 $h$，它对应一个量子态。
 \end{example}
 
-%     \begin{example}[转子]
-%       blablabla
-%     \end{example}%TODO：20160624 未完成
-    
-%   \subsection{多粒子体系的描述}
-%     对于 $N$ 个粒子组成的体系，设每个粒子的自由度为 $r$，则每个粒子可用 $2r$ 个变量 $(q_1, \, q_2, \, \cdots, q_r; \allowbreak \, p_1, \, p_2, \, \cdots, p_r)$ 来描述。此时，系统的总自由度 %FIXME：20160624 公式换行
-%     \begin{equation}
-%       f = Nr,
-%     \end{equation}
-%     因而系统的运动需要用 $2f$ 个变量来刻画。它们张成了一个 $2f$ 维空间，称为\kwd{\itshape{Γ}空间}，也叫\kwd{相空间}。
-% %\section{}
-% %\section{}
-% %\section{}
+\begin{example}[转子]
+  %TODO：20160624 未完成
+\end{example}
 
-% \raggedbottom%FIXME：20260325 交叉引用、脚注每页重新计数失效，必须加上该行
-% \pagebreak
+\subsection{多粒子系统}
+
+对于 $N$ 个粒子组成的系统，设每个粒子的自由度为 $r$，则每个粒子可用 $2r$ 个变量
+$(q_1, \, q_2, \, \cdots, q_r; \, \allowbreak p_1, \, p_2, \, \cdots, p_r)$
+来描述。此时，系统的总自由度
+\begin{equation}
+  f = Nr,
+\end{equation}
+因而系统的运动需要用 $2f$ 个变量
+$(q_1, \, q_2, \, \cdots, q_f; \, p_1, \, p_2, \, \cdots, p_f)$ 来刻画。
+这些变量张成了一个 $2f$ 维空间，称为\kwd{Γ 空间}，也叫\kwd{相空间}。
+Γ 空间中的一个点就表示系统的一个微观状态，状态运动的微小范围可用体积元表示：
+\begin{equation}
+  \incr{\Omega} = \incr{q_1} \cdots \incr{q_f} \incr{p_1} \cdots \incr{p_f}.
+\end{equation}
+根据不确定关系，取 $\incr{p} \incr{q} \simeq h$，则有
+\begin{equation}
+  \incr{\Omega} = \incr{q_1} \incr{p_1} \cdots \incr{q_f} \incr{p_f} \simeq h^f.
+\end{equation}
+这是多粒子系统的相格大小。
+
+统计物理研究的系统往往由大量\kwd{全同粒子}组成。全同粒子是指内禀性质，如质量、
+电荷、自旋等均完全相同的粒子。根据量子力学，全同粒子具有不可分辨性。换句话说，
+全同粒子的交换不引起新的量子态。
+
+设系统的波函数为 $\Psi$。引入\kwd{交换算符} $\hat{P}$，根据全同粒子的不可分辨
+性，可有
+\begin{equation}
+  \abs{\hat{P}\Psi}^2 = \abs{\Psi}^2 \implies \hat{P}\Psi = \pm\Psi.
+\end{equation}
+
+波函数交换对称，即 $\hat{P}\Psi=+\Psi$ 的粒子，称为\kwd{Bose 子}。它们遵循%
+\kwd{Bose--Einstein 统计}，并且自旋为整数。光子、π 介子、胶子以及 Higgs 粒子等
+都是 Bose 子。
+
+波函数交换反对称，即 $\hat{P}\Psi=-\Psi$ 的粒子，称为\kwd{Fermi 子}。它们遵循%
+\kwd{Fermi--Dirac 统计}，自旋为半整数。电子、质子、中子以及夸克等都是 Fermi 子。
+全同 Fermi 子组成的系统满足\kwd{Pauli 不相容原理}，即单一量子态上只可占据 0 个
+或 1 个 Fermi 子。
+
+就基本粒子而言，Bose 子传递相互作用，而 Fermi 子组成物质。
+对于复合粒子，如果含有偶数个 Fermi 子，则为 Bose 子；如果含有奇数个 Fermi 子，
+则为 Fermi 子。例如氦的同位素 \ce{^4He}，它包含两个质子、两个中子和两个电子，
+为 Bose 子；而 \ce{^3He} 则包含两个质子、一个中子和两个电子，为 Fermi 子。
+
+对于多粒子系统，如果各粒子的波函数分别局限在空间不同范围内，彼此交叠很少，则
+称为\kwd{定域子系}。此时，交换两个粒子的波函数（对应于量子态），可以看出系统的
+微观状态发生了变化（见图~\ref{fig:localized-sub-system}），因而即使是全同粒子，
+在定域子系中也可分辨。定域子系遵循\kwd{Boltzmann 统计}。
+
+\begin{figure}[ht]
+  \centering
+  \FIGPLACEHOLDER
+  \caption{定域子系}
+  \label{fig:localized-sub-system}
+\end{figure}
+
+下面我们举例说明单粒子量子态与多体量子态之间的关系。设系统由两个粒子组成，每个
+粒子可以处在四个量子态下。不同情况下，粒子的所有分布方式列于表~%
+\ref{tab:two-particles-distribution}。由此可知，对于定域子系、非定域 Bose 子和
+非定域 Fermi 子，系统分别有 16 个、10 个和 6 个量子态。
+
+\begin{table}[ht]
+  \def\B{{\Large\symbol{"25CB}}}
+  \let\TC=\textcircled
+  \newcommand\STATE[4]{%
+    \CJKunderline{\makebox[2em][c]{#1}}\kern1em%
+    \CJKunderline{\makebox[2em][c]{#2}}\kern1em%
+    \CJKunderline{\makebox[2em][c]{#3}}\kern1em%
+    \CJKunderline{\makebox[2em][c]{#4}}}
+  \newcommand\TITLE[1]{\makebox[11em][c]{#1}}
+  \centering
+  \caption{两个粒子在四个量子态中的分布情况}
+  \label{tab:two-particles-distribution}
+  \begin{tabular}{c|c|c}
+    \toprule
+      \multicolumn{3}{c}{%
+        \begin{tabular}{@{}ccc@{}}
+          \TITLE{定域子系} & \TITLE{非定域 Bose 子} & \TITLE{非定域 Fermi 子}
+        \end{tabular}} \\
+    \midrule
+      \STATE{\TC1\TC2}{}{}{} & \STATE{\B\B}{}{}{} & \\
+      \STATE{}{\TC1\TC2}{}{} & \STATE{}{\B\B}{}{} & \\
+      \STATE{}{}{\TC1\TC2}{} & \STATE{}{}{\B\B}{} & \\
+      \STATE{}{}{}{\TC1\TC2} & \STATE{}{}{}{\B\B} & \\
+      \STATE{\TC1}{\TC2}{}{} & \STATE{\B}{\B}{}{} & \STATE{\B}{\B}{}{} \\
+      \STATE{\TC2}{\TC1}{}{} &                    &                    \\
+      \STATE{\TC1}{\TC2}{}{} & \STATE{\B}{}{\B}{} & \STATE{\B}{}{\B}{} \\
+      \STATE{\TC2}{}{\TC1}{} &                    &                    \\
+      \STATE{\TC1}{}{\TC2}{} & \STATE{\B}{}{}{\B} & \STATE{\B}{}{}{\B} \\
+      \STATE{\TC2}{}{}{\TC1} &                    &                    \\
+      \STATE{}{\TC1}{\TC2}{} & \STATE{}{\B}{\B}{} & \STATE{}{\B}{\B}{} \\
+      \STATE{}{\TC2}{\TC1}{} &                    &                    \\
+      \STATE{}{\TC1}{}{\TC2} & \STATE{}{\B}{}{\B} & \STATE{}{\B}{}{\B} \\
+      \STATE{}{\TC2}{}{\TC1} &                    &                    \\
+      \STATE{}{}{\TC1}{\TC2} & \STATE{}{}{\B}{\B} & \STATE{}{}{\B}{\B} \\
+      \STATE{}{}{\TC2}{\TC1} &                    &                    \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+下面我们考虑一般情况，即有 $k$ 个粒子，$n$ 个量子态。
+
+\begin{itemize}
+  \item 定域子系：粒子所处的量子态互不影响，且粒子可以编号。根据乘法原理，所有
+    分布情况数等于每个粒子的可能量子态数目之积，即 $n^k$。
+  \item 非定域 Bose 子：该问题相当于 $k$ 个相同的小球放在 $n$ 个不同的盒子中。
+    考虑使用“插空法”，即将 $k$ 个小球和 $n-1$ 个挡板排列，并从中选出 $k$ 个
+    位置放小球。因此有 $\Cnum{k+n-1}{k}$ 种情况。
+  \item 非定域 Fermi 子：根据 Pauli 不相容原理，每个量子态上最多只能占据一个
+    粒子，这相当于从 $n$ 个量子态中选出 $k$ 个态来让粒子分布。因此有
+    $\Cnum{n}{k}$ 种情况。显然，此时要求 $k \leqslant n$。
+\end{itemize}

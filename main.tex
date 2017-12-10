@@ -22,7 +22,7 @@
 \usepackage[ntheorem]{empheq}
 \usepackage[stable, perpage, bottom]{footmisc}
 \usepackage{geometry,fancyhdr,enumitem,graphicx,array,tabularx,booktabs,%
-  caption,siunitx,hyperref}
+  caption,mhchem,siunitx,hyperref}
 
 %% 字体
 
@@ -203,6 +203,10 @@
 
 \def\incr{\increment}
 \def\defeq{\equiv}
+
+% 排列组合
+\newcommand\Pnum[2]{\symrm{P}^{#2}_{#1}}
+\newcommand\Cnum[2]{\symrm{C}^{#2}_{#1}}
 
 \def\ee{\symrm{e}}
 \def\ii{\symrm{i}}
