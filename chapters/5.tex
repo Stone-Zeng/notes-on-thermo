@@ -13,8 +13,8 @@
 
 微观态的经典描述以经典力学为基础，通常采用广义坐标与广义动量的形式。
 
-对于一个有 $r$ 个自由度的系统，需要用 $2r$ 个变量来描述其运动状态，即 $r$ 个
-广义坐标和 $r$ 个广义动量：
+对于一个有 $r$ 个自由度的系统，需要用 $2r$ 个变量来描述其运动状态，即 $r$ 个广义坐标和 $r$ 个广义动
+量：
 \begin{equation}
   (q_i, \, p_i) \qq{where} i = 1, \, 2, \, \cdots, r.
 \end{equation}
@@ -28,9 +28,8 @@
   \dot{p_i} &= -\pdv{H}{q_i}.
 \end{braced}
 
-坐标和动量 $(q_1, \, q_2, \, \cdots, q_r; \, p_1, \, p_2, \, \cdots, p_r)$
-张成了一个 $2r$ 维空间，称为 \kwd{μ 空间}（或\kwd{子相空间}），每一组坐标和
-动量描述的点称为\kwd{代表点}。
+坐标和动量 $(q_1, \, q_2, \, \cdots, q_r; \, p_1, \, p_2, \, \cdots, p_r)$ 张成一个 $2r$ 维空间，称
+为 \kwd{μ 空间}（或\kwd{子相空间}），每一组坐标和动量描述的点称为\kwd{代表点}。
 
 \begin{example}[自由粒子]
   对于一个 $r=3$ 的自由粒子，有
@@ -61,8 +60,7 @@
   \begin{equation}
     \frac{p^2}{2mE} + \frac{x^2}{2E / m \omega^2} = 1,
   \end{equation}
-  这在 μ 空间中表示一个椭圆（见图~\ref{fig:harmonic-oscillator-mu-space}），
-  其面积为
+  这在 μ 空间中表示一个椭圆（见图~\ref{fig:harmonic-oscillator-mu-space}），其面积为
   \begin{equation} \label{eq:ellipse-of-harmonic-oscillator-mu-space}
     S_\text{ellipse} = \pp ab
       = \pp \cdot \sqrt{\frac{2E}{m \omega^2}} \cdot \sqrt{2mE}
@@ -104,8 +102,8 @@
   %\def\STsq{\sin^2\theta} \def\SPsq{\sin^2\phi}
   %\def\CTsq{\cos^2\theta} \def\CPsq{\cos^2\phi}
   %\def\DR{\dot{r}} \def\DT{\dot{\theta}} \def\DP{\dot{\phi}}
-  如图~\ref{fig:rotator} 所示，质量为 $m$ 的物体被轻杆连接在 $O$ 点处，并可绕
-  该点运动。其 Hamilton 量为
+  如图~\ref{fig:rotator} 所示，质量为 $m$ 的物体被轻杆连接在 $O$ 点处，并可绕该点运动。其 Hamilton
+  量为
   \begin{equation} \label{eq:rotator-hamiltonian-a}
     H = \frac{m}{2} \qty\big(\dot{x}^2+\dot{y}^2+\dot{z}^2).
   \end{equation}
@@ -193,8 +191,7 @@
 
 \subsection{单粒子的量子描述}
 
-微观态的量子描述以量子力学为基础。粒子的动量 $\V{p}$、能量 $E$ 满足
-\kwd{de Broglie关系}：
+微观态的量子描述以量子力学为基础。粒子的动量 $\V{p}$、能量 $E$ 满足 \kwd{de Broglie关系}：
 \begin{braced}
   \V{p} &= \hbar\V{k}, \\
   E     &= \hbar\omega,
@@ -205,22 +202,19 @@
 \end{equation}
 式中的 $h$ 也称 Planck 常数。
 
-De Broglie 关系说明微观粒子具有\kwd{波粒二象性}。这就引出了另一个重要结果——%
-\kwd{不确定关系}：
+De Broglie 关系说明微观粒子具有\kwd{波粒二象性}。这就引出了另一个重要结果——\kwd{不确定关系}：
 \begin{equation}
   \incr{p} \incr{q} \gtrsim h.
   \footnote{更精确的表述为 $\incr{p} \incr{q} \geqslant \hbar / 2 $。}
 \end{equation}
-可见，在 $\incr{p}\to 0$ 时，必有 $\incr{q}\to\infty$。这说明粒子的动量和坐标
-不可能被同时精确测量，因而其运动也就无法用经典的轨道概念来描述，必须改用%
-\kwd{波函数}。
+可见，在 $\incr{p}\to 0$ 时，必有 $\incr{q}\to\infty$。这说明粒子的动量和坐标不可能被同时精确测量，
+因而其运动也就无法用经典的轨道概念来描述，必须改用\kwd{波函数}。
 
 粒子波函数 $\Psi$ 满足的方程即\kwd{Schrödinger 方程}：
 \begin{equation}
   \ii \pdv{t} \Psi = \hat{H} \Psi,
 \end{equation}
-式中的 $\hat{H}$ 是 Hamilton 算符。在定态情况（即将时间变量分离后），
-Schrödinger 方程化为
+式中的 $\hat{H}$ 是 Hamilton 算符。在定态情况（即将时间变量分离后），Schrödinger 方程化为
 \begin{equation}
   \hat{H} \psi = E \psi.
 \end{equation}
@@ -247,8 +241,8 @@ Schrödinger 方程化为
   \begin{equation}
     (\pm 1, \, 0, \, 0) \qc (0, \, \pm 1, \, 0) \qc (0, \, 0, \, \pm 1).
   \end{equation}
-  这种现象称为能级\kwd{简并}。同一能级对应量子态的数目称为\kwd{简并度}。
-  显然，这里的简并度为 6。而能量更高的一个能级
+  这种现象称为能级\kwd{简并}。同一能级对应量子态的数目称为\kwd{简并度}。显然，这里的简并度为 6。而能
+  量更高的一个能级
   \begin{equation}
     E = \frac{2\pp^2\hbar^2}{mL^2} \times 3
       = \frac{2\pp^2\hbar^2}{mL^2} \times (1+1+1)
@@ -263,8 +257,7 @@ Schrödinger 方程化为
   \end{equation}
   可见该系统的简并度 $g=1$。
 
-  根据式~\eqref{eq:ellipse-of-harmonic-oscillator-mu-space}，μ 空间中的
-  椭圆面积为
+  根据式~\eqref{eq:ellipse-of-harmonic-oscillator-mu-space}，μ 空间中的椭圆面积为
   \begin{equation}
     S_n = \frac{2\pp E_n}{\omega} =\frac{E_n}{\nu} = \qty(n+\frac{1}{2}) \, h.
   \end{equation}
@@ -278,15 +271,14 @@ Schrödinger 方程化为
 \subsection{多粒子系统}
 
 对于 $N$ 个粒子组成的系统，设每个粒子的自由度为 $r$，则每个粒子可用 $2r$ 个变量
-$(q_1, \, q_2, \, \cdots, q_r; \, \allowbreak p_1, \, p_2, \, \cdots, p_r)$
-来描述。此时，系统的总自由度
+$(q_1, \, q_2, \, \cdots, q_r; \, \allowbreak p_1, \, p_2, \, \cdots, p_r)$ 来描述。此时，系统的总自
+由度
 \begin{equation}
   f = Nr,
 \end{equation}
-因而系统的运动需要用 $2f$ 个变量
-$(q_1, \, q_2, \, \cdots, q_f; \, p_1, \, p_2, \, \cdots, p_f)$ 来刻画。
-这些变量张成了一个 $2f$ 维空间，称为\kwd{Γ 空间}，也叫\kwd{相空间}。
-Γ 空间中的一个点就表示系统的一个微观状态，状态运动的微小范围可用体积元表示：
+因而系统的运动需要用 $2f$ 个变量 $(q_1, \, q_2, \, \cdots, q_f; \, p_1, \, p_2, \, \cdots, p_f)$ 来
+刻画。这些变量张成了一个 $2f$ 维空间，称为\kwd{Γ 空间}，也叫\kwd{相空间}。Γ 空间中的一个点就表示系统
+的一个微观状态，状态运动的微小范围可用体积元表示：
 \begin{equation}
   \incr{\Omega} = \incr{q_1} \cdots \incr{q_f} \incr{p_1} \cdots \incr{p_f}.
 \end{equation}
@@ -296,34 +288,29 @@ $(q_1, \, q_2, \, \cdots, q_f; \, p_1, \, p_2, \, \cdots, p_f)$ 来刻画。
 \end{equation}
 这是多粒子系统的相格大小。
 
-统计物理研究的系统往往由大量\kwd{全同粒子}组成。全同粒子是指内禀性质，如质量、
-电荷、自旋等均完全相同的粒子。根据量子力学，全同粒子具有不可分辨性。换句话说，
-全同粒子的交换不引起新的量子态。
+统计物理研究的系统往往由大量\kwd{全同粒子}组成。全同粒子是指内禀性质，如质量、电荷、自旋等均完全相同
+的粒子。根据量子力学，全同粒子具有不可分辨性。换句话说，全同粒子的交换不引起新的量子态。
 
-设系统的波函数为 $\Psi$。引入\kwd{交换算符} $\hat{P}$，根据全同粒子的不可分辨
-性，可有
+设系统的波函数为 $\Psi$。引入\kwd{交换算符} $\hat{P}$，根据全同粒子的不可分辨性，可有
 \begin{equation}
   \abs{\hat{P}\Psi}^2 = \abs{\Psi}^2 \implies \hat{P}\Psi = \pm\Psi.
 \end{equation}
 
 波函数交换对称，即 $\hat{P}\Psi=+\Psi$ 的粒子，称为\kwd{Bose 子}。它们遵循%
-\kwd{Bose--Einstein 统计}，并且自旋为整数。光子、π 介子、胶子以及 Higgs 粒子等
-都是 Bose 子。
+\kwd{Bose--Einstein 统计}，并且自旋为整数。光子、π 介子、胶子以及 Higgs 粒子等都是 Bose 子。
 
 波函数交换反对称，即 $\hat{P}\Psi=-\Psi$ 的粒子，称为\kwd{Fermi 子}。它们遵循%
-\kwd{Fermi--Dirac 统计}，自旋为半整数。电子、质子、中子以及夸克等都是 Fermi 子。
-全同 Fermi 子组成的系统满足\kwd{Pauli 不相容原理}，即单一量子态上只可占据 0 个
-或 1 个 Fermi 子。
+\kwd{Fermi--Dirac 统计}，自旋为半整数。电子、质子、中子以及夸克等都是 Fermi 子。全同 Fermi 子组成的
+系统满足\kwd{Pauli 不相容原理}，即单一量子态上只可占据 0 个或 1 个 Fermi 子。
 
-就基本粒子而言，Bose 子传递相互作用，而 Fermi 子组成物质。
-对于复合粒子，如果含有偶数个 Fermi 子，则为 Bose 子；如果含有奇数个 Fermi 子，
-则为 Fermi 子。例如氦的同位素 \ce{^4He}，它包含两个质子、两个中子和两个电子，
-为 Bose 子；而 \ce{^3He} 则包含两个质子、一个中子和两个电子，为 Fermi 子。
+就基本粒子而言，Bose 子传递相互作用，而 Fermi 子组成物质。对于复合粒子，如果含有偶数个 Fermi 子，则
+为 Bose 子；如果含有奇数个 Fermi 子，则为 Fermi 子。例如氦的同位素 \ce{^4He}，它包含两个质子、两个中
+子和两个电子，为 Bose 子；而 \ce{^3He} 则包含两个质子、一个中子和两个电子，为 Fermi 子。
 
-对于多粒子系统，如果各粒子的波函数分别局限在空间不同范围内，彼此交叠很少，则
-称为\kwd{定域子系}。此时，交换两个粒子的波函数（对应于量子态），可以看出系统的
-微观状态发生了变化（见图~\ref{fig:localized-sub-system}），因而即使是全同粒子，
-在定域子系中也可分辨。定域子系遵循\kwd{Boltzmann 统计}。
+对于多粒子系统，如果各粒子的波函数分别局限在空间不同范围内，彼此交叠很少，则称为\kwd{定域子系}。此
+时，交换两个粒子的波函数（对应于量子态），可以看出系统的微观状态发生了变化（见图~%
+\ref{fig:localized-sub-system}），因而即使是全同粒子，在定域子系中也可分辨。定域子系遵循%
+\kwd{Boltzmann 统计}。
 
 \begin{figure}[ht]
   \centering
@@ -332,10 +319,9 @@ $(q_1, \, q_2, \, \cdots, q_f; \, p_1, \, p_2, \, \cdots, p_f)$ 来刻画。
   \label{fig:localized-sub-system}
 \end{figure}
 
-下面我们举例说明单粒子量子态与多体量子态之间的关系。设系统由两个粒子组成，每个
-粒子可以处在四个量子态下。不同情况下，粒子的所有分布方式列于表~%
-\ref{tab:two-particles-distribution}。由此可知，对于定域子系、非定域 Bose 子和
-非定域 Fermi 子，系统分别有 16 个、10 个和 6 个量子态。
+下面我们举例说明单粒子量子态与多体量子态之间的关系。设系统由两个粒子组成，每个粒子可以处在四个量子态
+下。不同情况下，粒子的所有分布方式列于表~\ref{tab:two-particles-distribution}。由此可知，对于定域子
+系、非定域 Bose 子和非定域 Fermi 子，系统分别有 16 个、10 个和 6 个量子态。
 
 \begin{table}[ht]
   \def\B{{\Large\symbol{"25CB}}}
@@ -379,14 +365,12 @@ $(q_1, \, q_2, \, \cdots, q_f; \, p_1, \, p_2, \, \cdots, p_f)$ 来刻画。
 下面我们考虑一般情况，即有 $k$ 个粒子，$n$ 个量子态。
 
 \begin{itemize}
-  \item 定域子系：粒子所处的量子态互不影响，且粒子可以编号。根据乘法原理，所有
-    分布情况数等于每个粒子的可能量子态数目之积，即 $n^k$。
-  \item 非定域 Bose 子：该问题相当于 $k$ 个相同的小球放在 $n$ 个不同的盒子中。
-    考虑使用“插空法”，即先将 $k$ 个小球和 $n-1$ 个挡板排列，再从中选出 $k$ 个
-    位置放小球。可见有 $\Cnum{k+n-1}{k}$ 种情况。
-  \item 非定域 Fermi 子：根据 Pauli 不相容原理，每个量子态上最多只能占据一个
-    粒子，这相当于从 $n$ 个量子态中选出 $k$ 个态来让粒子分布。因此有
-    $\Cnum{n}{k}$ 种情况。显然，此时要求 $k \leqslant n$。
+  \item 定域子系：粒子所处的量子态互不影响，且粒子可以编号。根据乘法原理，所有分布情况数等于每个粒子
+    的可能量子态数目之积，即 $n^k$。
+  \item 非定域 Bose 子：该问题相当于 $k$ 个相同的小球放在 $n$ 个不同的盒子中。考虑使用“插空法”，即先
+    将 $k$ 个小球和 $n-1$ 个挡板排列，再从中选出 $k$ 个位置放小球。可见有 $\Cnum{k+n-1}{k}$ 种情况。
+  \item 非定域 Fermi 子：根据 Pauli 不相容原理，每个量子态上最多只能占据一个粒子，这相当于从 $n$ 个
+    量子态中选出 $k$ 个态来让粒子分布。因此有 $\Cnum{n}{k}$ 种情况。显然，此时要求 $k \leqslant n$。
 \end{itemize}
 
 \section{宏观量；等概率原理}
@@ -404,39 +388,34 @@ $(q_1, \, q_2, \, \cdots, q_f; \, p_1, \, p_2, \, \cdots, p_f)$ 来刻画。
 
 \subsection{统计规律性}
 
-就微观层面而言，粒子的运动遵循\kwd{力学规律}。无论是经典力学中的 Newton 方程，
-还是量子力学中的 Schrödinger 方程，都具有\kwd{时间反演}对称性，因而是可逆的。
-但在宏观层面，考虑到热力学第二定律，热现象过程具有不可逆性，即时间有确定方向。
-这是\kwd{统计规律}的体现。
+就微观层面而言，粒子的运动遵循\kwd{力学规律}。无论是经典力学中的 Newton 方程，还是量子力学中的
+Schrödinger 方程，都具有\kwd{时间反演}对称性，因而是可逆的。但在宏观层面，考虑到热力学第二定律，热现
+象过程具有不可逆性，即时间有确定方向。这是\kwd{统计规律}的体现。
 
-力学规律是确定性的，一旦运动方程确定，系统在任意时刻的状态就可以确定；而统计
-规律则具有不确定性，在一定宏观条件下，系统总是以一定概率处于某一微观状态。
+力学规律是确定性的，一旦运动方程确定，系统在任意时刻的状态就可以确定；而统计规律则具有不确定性，在一
+定宏观条件下，系统总是以一定概率处于某一微观状态。
 
 造成统计规律的原因主要有下面两点：
 
 \begin{itemize}
   \item 宏观态对应着数量极其巨大的微观态，这些微观态不可能由宏观状态唯一决定；
-  \item 系统与环境之间总是不可避免地存在相互作用，而且这些相互作用又有一定的
-    随机性。
+  \item 系统与环境之间总是不可避免地存在相互作用，而且这些相互作用又有一定的随机性。
 \end{itemize}
 
 \subsection{等概率原理}
 
-\kwd{等概率原理}（equal a priori probability postulate）最早由 Boltzmann 提出，
-它可以表述为：对于平衡态下的孤立系，各微观态出现的概率相同。这是统计物理学的
-基本假设。
+\kwd{等概率原理}（equal a priori probability postulate）最早由 Boltzmann 提出，它可以表述为：对于平
+衡态下的孤立系，各微观态出现的概率相同。这是统计物理学的基本假设。
 
 \section{分布和微观状态}
 
-在本节以及第\ref{ch:}章中，我们均要求粒子之间相互作用可以忽略。因而总能量等于
-各粒子的能量之和。这样的系统称为\kwd{近独立粒子系统}。
+在本节以及第\ref{ch:}章中，我们均要求粒子之间相互作用可以忽略。因而总能量等于各粒子的能量之和。这样
+的系统称为\kwd{近独立粒子系统}。
 
-设粒子的能级为
-$\varepsilon_1, \, \varepsilon_2, \, \cdots, \, \varepsilon_l, \, \cdots$，
-各能级的简并度为 $\omega_1, \, \omega_2, \, \cdots, \, \omega_l, \, \cdots$。
-我们把每个能级上占据的粒子数 $a_1, \, a_2, \, \cdots, \, a_l, \, \cdots$ 称为
-一个\kwd{（微观）分布}，简记为 $\qty{a_l}$。对于平衡态下的孤立系，能量 $E$、
-体积 $V$、粒子数 $N$ 都是给定的。因此分布 $\qty{a_l}$ 需要满足
+设粒子的能级为 $\varepsilon_1, \, \varepsilon_2, \, \cdots, \, \varepsilon_l, \, \cdots$，各能级的简
+并度为 $\omega_1, \, \omega_2, \, \cdots, \, \omega_l, \, \cdots$。我们把每个能级上占据的粒子数
+$a_1, \, a_2, \, \cdots, \, a_l, \, \cdots$ 称为一个\kwd{（微观）分布}，简记为 $\qty{a_l}$。对于平衡
+态下的孤立系，能量 $E$、体积 $V$、粒子数 $N$ 都是给定的。因此分布 $\qty{a_l}$ 需要满足
 \begin{braced}
   & \sum_l a_l = N, \\
   & \sum_l \varepsilon_l a_l = E.
