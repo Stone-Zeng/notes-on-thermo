@@ -297,7 +297,8 @@ $(q_1, \, q_2, \, \cdots, q_r; \, \allowbreak p_1, \, p_2, \, \cdots, p_r)$ 来�
 \end{equation}
 
 波函数交换对称，即 $\hat{P}\Psi=+\Psi$ 的粒子，称为\kwd{Bose 子}。它们遵循%
-\kwd{Bose--Einstein 统计}，并且自旋为整数。光子、π 介子、胶子以及 Higgs 粒子等都是 Bose 子。
+\kwd{Bose--Einstein 统计}，并且自旋为整数。光子、π 介子、胶子以及 Higgs 粒子等都是 Bose 子。单一量子
+态上可占据任意数目的 Bose 子。
 
 波函数交换反对称，即 $\hat{P}\Psi=-\Psi$ 的粒子，称为\kwd{Fermi 子}。它们遵循%
 \kwd{Fermi--Dirac 统计}，自旋为半整数。电子、质子、中子以及夸克等都是 Fermi 子。全同 Fermi 子组成的
@@ -362,16 +363,7 @@ $(q_1, \, q_2, \, \cdots, q_r; \, \allowbreak p_1, \, p_2, \, \cdots, p_r)$ 来�
   \end{tabular}
 \end{table}
 
-下面我们考虑一般情况，即有 $k$ 个粒子，$n$ 个量子态。
-
-\begin{itemize}
-  \item 定域子系：粒子所处的量子态互不影响，且粒子可以编号。根据乘法原理，所有分布情况数等于每个粒子
-    的可能量子态数目之积，即 $n^k$。
-  \item 非定域 Bose 子：该问题相当于 $k$ 个相同的小球放在 $n$ 个不同的盒子中。考虑使用“插空法”，即先
-    将 $k$ 个小球和 $n-1$ 个挡板排列，再从中选出 $k$ 个位置放小球。可见有 $\Cnum{k+n-1}{k}$ 种情况。
-  \item 非定域 Fermi 子：根据 Pauli 不相容原理，每个量子态上最多只能占据一个粒子，这相当于从 $n$ 个
-    量子态中选出 $k$ 个态来让粒子分布。因此有 $\Cnum{n}{k}$ 种情况。显然，此时要求 $k \leqslant n$。
-\end{itemize}
+至于一般情况，我们将在 \ref{sec:distribution-and-microstate}~节中讨论。
 
 \section{宏观量；等概率原理}
 
@@ -407,7 +399,7 @@ Schrödinger 方程，都具有\kwd{时间反演}对称性，因而是可逆的�
 \kwd{等概率原理}（equal a priori probability postulate）最早由 Boltzmann 提出，它可以表述为：对于平
 衡态下的孤立系，各微观态出现的概率相同。这是统计物理学的基本假设。
 
-\section{分布和微观状态}
+\section{分布和微观状态} \label{sec:distribution-and-microstate}
 
 在本节以及第\ref{ch:}章中，我们均要求粒子之间相互作用可以忽略。因而总能量等于各粒子的能量之和。这样
 的系统称为\kwd{近独立粒子系统}。
@@ -422,3 +414,78 @@ $a_1, \, a_2, \, \cdots, \, a_l, \, \cdots$ 称为一个\kwd{（微观）分布}
 \end{braced}
 
 注意分布与量子态是不同的概念。
+
+\subsection{Boltzmann 体系}
+
+Boltzmann 体系由定域子系组成。在能级 $\varepsilon_l$ 上，有 $\omega_l$ 个量子态（简并度），并占据着
+$a_l$ 个粒子。粒子所处的量子态互不影响，且粒子可以编号。根据乘法原理，所有分布情况数等于每个粒子的可
+能量子态数目之积，即 ${\omega_l}^{a_l}$。对于整个体系而言，需将所有能级上的量子态数目乘起来，即
+$\prod_l {\omega_l}^{a_l}$。
+
+分布 $\qty{a_l}$ 仅仅指定了粒子的数目，而没有指定具体是哪些粒子，所以还要考虑不同能级之间粒子数的交
+换。交换 $N$ 个粒子的所有可能方式（全排列）共有 $\Pnum{N}{N}=N!$ 种。而单个能级上粒子的交换并不会造
+成任何改变
+\footnote{在能级 $\varepsilon_l$ 上，粒子交换带来微观状态的变化，已经计算在了
+  ${\omega_l}^{a_l}$ 中。}，
+因此需要除去所有能级上粒子的交换数 $\prod_l a_l!$。
+
+综上，分布 $\qty{a_l}$ 对应的总量子态数为
+\begin{equation}
+  \Omega_\text{MB}(\qty{a_l}) = \frac{N!}{\prod_l a_l!} \prod_l {\omega_l}^{a_l}.
+\end{equation}
+下标“$\text{MB}$”表示粒子服从 Maxwell--Boltzmann 统计。
+
+\subsection{Bose--Einstein 体系}
+
+Bose--Einstein 体系由 Bose 子组成。相比定域子系，Bose 子具有不可分辨性，而且在每个量子态上可占据任意
+数量。因而 $a_l$ 个 Bose 子在 $\omega_l$ 个量子态上的分布，就相当于 $a_l$ 个相同的小球放在
+$\omega_l$ 个不同的盒子中。考虑使用“插空法”，即先将 $a_l$ 个小球和 $\omega_l-1$ 个挡板排列（此时已经
+将球分成了 $\omega_l$ 份），再从中选出 $a_l$ 个位置放小球。可见，共有
+\begin{equation}
+  \Cnum{a_l+\omega_l-1}{a_l} = \frac{\qty(a_l+\omega_l-1)!}{a! \, \qty(\omega_l-1)!}
+\end{equation}
+种情况。
+
+由于不可分辨性，这里不需要考虑不同能级上粒子的交换。所以总量子态数为
+\begin{equation}
+  \Omega_\text{BE}(\qty{a_l}) = \prod_l \frac{\qty(a_l+\omega_l-1)!}{a! \, \qty(\omega_l-1)!}.
+\end{equation}
+下标“$\text{BE}$”表示粒子服从 Bose--Einstein 统计。
+
+\subsection{Fermi--Dirac 体系}
+
+Fermi--Dirac 体系由 Fermi 子组成。根据 Pauli 不相容原理，每个量子态上最多只能占据一个 Fermi 子，这相
+当于从 $\omega_l$ 个量子态中选出 $a_l$ 个态来让粒子分布。因此共有
+\begin{equation}
+  \Cnum{\omega_l}{a_l} = \frac{\omega_l!}{a_l! \, \qty(\omega_l-a_l)!}
+\end{equation}
+种情况。显然，此时要求 $k \leqslant n$。
+
+与 Bose--Einstein 体系相同，这里同样不需要考虑粒子的交换。总量子态数为
+\begin{equation}
+  \Omega_\text{FD}(\qty{a_l}) = \prod_l \frac{\omega_l!}{a_l! \, \qty(\omega_l-a_l)!}.
+\end{equation}
+下标“$\text{FD}$”表示粒子服从 Fermi--Dirac 统计。
+
+\subsection{非简并条件}
+
+当每个量子态上占据的粒子非常“稀薄”，即
+\begin{equation} \label{eq:non-degenerate-condition}
+  \frac{a_l}{\omega_l} \ll 1,
+\end{equation}
+且 $\omega_l$ 很大时，我们有
+\begin{braced} \label{eq:bose-and-fermi-dist-under-non-degenerate-condition}
+  \Omega_\text{BE}(\qty{a_l}) &= \prod_l \frac{\qty(a_l+\omega_l-1)!}{a! \, \qty(\omega_l-1)!}
+  = \prod_l \frac{\qty(\omega_l+a_l-1) \qty(\omega+a_l-2) \cdots \omega_l}{a_l!}
+  \approx \prod_l \frac{{\omega_l}^{a_l}}{a_l!}
+  = \frac{\Omega_\text{MB}(\qty{a_l})}{N!}, \\
+  \Omega_\text{FD}(\qty{a_l}) &= \prod_l \frac{\omega_l!}{a_l! \, \qty(\omega_l-a_l)!}
+  = \prod_l \frac{\omega_l \qty(\omega_l-1) \cdots \qty(\omega-a_l+1)}{a_l!}
+  \approx \prod_l \frac{{\omega_l}^{a_l}}{a_l!}
+  = \frac{\Omega_\text{MB}(\qty{a_l})}{N!}.
+\end{braced}
+即 Bose--Einstein 分布与 Fermi--Dirac 分布均趋同于 Maxwell--Boltzmann 分布。式~%
+\eqref{eq:non-degenerate-condition} 称为\kwd{非简并条件}。
+
+注意式~\eqref{eq:bose-and-fermi-dist-under-non-degenerate-condition} 最后的结果中有一个 $1/N!$，这反
+映了粒子的全同性要求。
