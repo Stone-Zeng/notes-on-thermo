@@ -42,7 +42,7 @@
   \begin{equation}
     H = \frac{1}{2m} \qty\big(p_x^2+p_y^2+p_z^2).
   \end{equation}
-  %TODO：20160504 示意图
+%TODO(2016-05-04): 示意图
 \end{example}
 
 \begin{example}[一维谐振子]
@@ -210,7 +210,7 @@ De Broglie 关系说明微观粒子具有\kwd{波粒二象性}。这就引出了
 可见，在 $\incr{p}\to 0$ 时，必有 $\incr{q}\to\infty$。这说明粒子的动量和坐标不可能被同时精确测量，
 因而其运动也就无法用经典的轨道概念来描述，必须改用\kwd{波函数}。
 
-粒子波函数 $\Psi$ 满足的方程即\kwd{Schrödinger 方程}：
+粒子波函数 $\Psi$ 满足的方程即 \kwd{Schrödinger 方程}：
 \begin{equation}
   \ii \pdv{t} \Psi = \hat{H} \Psi,
 \end{equation}
@@ -265,7 +265,7 @@ De Broglie 关系说明微观粒子具有\kwd{波粒二象性}。这就引出了
 \end{example}
 
 \begin{example}[转子]
-  %TODO：20160624 未完成
+%TODO(2016-06-24): 角动量量子化
 \end{example}
 
 \subsection{多粒子系统}
@@ -296,13 +296,13 @@ $(q_1, \, q_2, \, \cdots, q_r; \, \allowbreak p_1, \, p_2, \, \cdots, p_r)$ 来�
   \abs{\hat{P}\Psi}^2 = \abs{\Psi}^2 \implies \hat{P}\Psi = \pm\Psi.
 \end{equation}
 
-波函数交换对称，即 $\hat{P}\Psi=+\Psi$ 的粒子，称为\kwd{Bose 子}。它们遵循%
+波函数交换对称，即 $\hat{P}\Psi=+\Psi$ 的粒子，称为 \kwd{Bose 子}。它们遵循
 \kwd{Bose--Einstein 统计}，并且自旋为整数。光子、π 介子、胶子以及 Higgs 粒子等都是 Bose 子。单一量子
 态上可占据任意数目的 Bose 子。
 
-波函数交换反对称，即 $\hat{P}\Psi=-\Psi$ 的粒子，称为\kwd{Fermi 子}。它们遵循%
+波函数交换反对称，即 $\hat{P}\Psi=-\Psi$ 的粒子，称为 \kwd{Fermi 子}。它们遵循
 \kwd{Fermi--Dirac 统计}，自旋为半整数。电子、质子、中子以及夸克等都是 Fermi 子。全同 Fermi 子组成的
-系统满足\kwd{Pauli 不相容原理}，即单一量子态上只可占据 0 个或 1 个 Fermi 子。
+系统满足 \kwd{Pauli 不相容原理}，即单一量子态上只可占据 0 个或 1 个 Fermi 子。
 
 就基本粒子而言，Bose 子传递相互作用，而 Fermi 子组成物质。对于复合粒子，如果含有偶数个 Fermi 子，则
 为 Bose 子；如果含有奇数个 Fermi 子，则为 Fermi 子。例如氦的同位素 \ce{^4He}，它包含两个质子、两个中
@@ -310,7 +310,7 @@ $(q_1, \, q_2, \, \cdots, q_r; \, \allowbreak p_1, \, p_2, \, \cdots, p_r)$ 来�
 
 对于多粒子系统，如果各粒子的波函数分别局限在空间不同范围内，彼此交叠很少，则称为\kwd{定域子系}。此
 时，交换两个粒子的波函数（对应于量子态），可以看出系统的微观状态发生了变化（见图~%
-\ref{fig:localized-sub-system}），因而即使是全同粒子，在定域子系中也可分辨。定域子系遵循%
+\ref{fig:localized-sub-system}），因而即使是全同粒子，在定域子系中也可分辨。定域子系遵循
 \kwd{Boltzmann 统计}。
 
 \begin{figure}[ht]
@@ -401,19 +401,22 @@ Schrödinger 方程，都具有\kwd{时间反演}对称性，因而是可逆的�
 
 \section{分布和微观状态} \label{sec:distribution-and-microstate}
 
-在本节以及第\ref{ch:}章中，我们均要求粒子之间相互作用可以忽略。因而总能量等于各粒子的能量之和。这样
+%TODO(2018-01-08): 交叉引用
+在本节以及第%\ref{}
+章中，我们均要求粒子之间相互作用可以忽略。因而总能量等于各粒子的能量之和。这样
 的系统称为\kwd{近独立粒子系统}。
 
 设粒子的能级为 $\varepsilon_1, \, \varepsilon_2, \, \cdots, \, \varepsilon_l, \, \cdots$，各能级的简
 并度为 $\omega_1, \, \omega_2, \, \cdots, \, \omega_l, \, \cdots$。我们把每个能级上占据的粒子数
 $a_1, \, a_2, \, \cdots, \, a_l, \, \cdots$ 称为一个\kwd{（微观）分布}，简记为 $\qty{a_l}$。对于平衡
 态下的孤立系，能量 $E$、体积 $V$、粒子数 $N$ 都是给定的。因此分布 $\qty{a_l}$ 需要满足
-\begin{braced}
-  & \sum_l a_l = N, \\
-  & \sum_l \varepsilon_l a_l = E.
+\begin{braced}[\label{eq:constraint-condition-of-dist}]
+  & \sum_l a_l = N,               \label{eq:constraint-condition-N-of-dist} \\
+  & \sum_l \varepsilon_l a_l = E. \label{eq:constraint-condition-E-of-dist}
 \end{braced}
 
 注意分布与量子态是不同的概念。
+%TODO(2018-01-08): 不同之处？
 
 \subsection{Boltzmann 体系}
 
@@ -430,7 +433,7 @@ $\prod_l {\omega_l}^{a_l}$。
 因此需要除去所有能级上粒子的交换数 $\prod_l a_l!$。
 
 综上，分布 $\qty{a_l}$ 对应的总量子态数为
-\begin{equation}
+\begin{equation} \label{eq:number-of-states-in-boltzmann-dist}
   \Omega_\text{MB}(\qty{a_l}) = \frac{N!}{\prod_l a_l!} \prod_l {\omega_l}^{a_l}.
 \end{equation}
 下标“$\text{MB}$”表示粒子服从 Maxwell--Boltzmann 统计。
@@ -474,7 +477,7 @@ Fermi--Dirac 体系由 Fermi 子组成。根据 Pauli 不相容原理，每个�
   \frac{a_l}{\omega_l} \ll 1,
 \end{equation}
 且 $\omega_l$ 很大时，我们有
-\begin{braced} \label{eq:bose-and-fermi-dist-under-non-degenerate-condition}
+\begin{braced}[\label{eq:bose-and-fermi-dist-under-non-degenerate-condition}]
   \Omega_\text{BE}(\qty{a_l}) &= \prod_l \frac{\qty(a_l+\omega_l-1)!}{a! \, \qty(\omega_l-1)!}
   = \prod_l \frac{\qty(\omega_l+a_l-1) \qty(\omega+a_l-2) \cdots \omega_l}{a_l!}
   \approx \prod_l \frac{{\omega_l}^{a_l}}{a_l!}
@@ -484,8 +487,128 @@ Fermi--Dirac 体系由 Fermi 子组成。根据 Pauli 不相容原理，每个�
   \approx \prod_l \frac{{\omega_l}^{a_l}}{a_l!}
   = \frac{\Omega_\text{MB}(\qty{a_l})}{N!}.
 \end{braced}
-即 Bose--Einstein 分布与 Fermi--Dirac 分布均趋同于 Maxwell--Boltzmann 分布。式~%
-\eqref{eq:non-degenerate-condition} 称为\kwd{非简并条件}。
+这说明在\kwd{非简并条件}式~\eqref{eq:non-degenerate-condition} 下，Bose--Einstein 分布与 Fermi--%
+Dirac 分布均趋同于 Maxwell--Boltzmann 分布。
 
 注意式~\eqref{eq:bose-and-fermi-dist-under-non-degenerate-condition} 最后的结果中有一个 $1/N!$，这反
 映了粒子的全同性要求。
+
+\section{Maxwell--Boltzmann 分布}
+
+根据等概率原理，平衡态下各微观态出现的概率相同。因此，对应微观态数目最多的分布，出现的概率最大，称
+为\kwd{最概然分布}。
+
+对于 Boltzmann 体系，即定域子系组成的系统，分布 $\qty{a_l}$ 对应的微观态（量子态）数目
+$\Omega_\text{MB}(\qty{a_l})$ 由式~\eqref{eq:number-of-states-in-boltzmann-dist} 给出。现在我们做要
+做的，就是找到使 $\Omega_\text{MB}(\qty{a_l})$ 取极大值的分布 $\qty{a_l}$。但需注意，系统的粒子数
+$N$、能量 $E$ 还需满足如下关系：
+\begin{braced*}
+  & \sum_l a_l = N,               \tag*{\eqref{eq:constraint-condition-N-of-dist}} \\
+  & \sum_l \varepsilon_l a_l = E. \tag*{\eqref{eq:constraint-condition-E-of-dist}}
+\end{braced*}
+因而这是一个带约束条件的极值问题，数学上的标准求解手段是 \kwd{Lagrange 乘子法}。下面给出具体的操作。
+
+为处理方便，我们把求 $\Omega_\text{MB}$ 的极大值改为求 $\ln\Omega_\text{MB}$ 的极大值。利用
+\kwd{Stirling 公式}
+\begin{equation}
+  n!     \approx \sqrt{2\pp n} \qty(\frac{n}{\ee})^n \qc
+  \ln n! \approx n\,\qty(\ln n-1) + \frac{1}{2}\ln(2\pp n)
+         \approx n\,\qty(\ln n-1) \qc
+  n \ll 1,
+\end{equation}
+可有
+\begin{align}
+  \ln\Omega_\text{MB}
+  &= \ln(\frac{N!}{\prod_l a_l!} \prod_l {\omega_l}^{a_l})
+   = \ln N! - \sum_l\ln a_l! + \sum_l a_l \ln\omega_l \notag \\
+  &\approx N\,\qty(\ln N-1) - \sum_l a_l\,\qty(\ln a_l-1) + \sum_l a_l\ln\omega_l \notag
+  \intertext{利用约束条件 $N=\sum_l a_l$：}
+  &= N\ln N - \sum_l a_l\ln a_l + \sum_l a_l\ln\omega_l \notag \\
+  &= N\ln N - \sum_l a_l\ln\frac{\omega_l}{a_l}.
+\end{align}
+
+极值点要求满足 $\var{\ln\Omega_\text{MB}}=0$
+\footnote{这里我们用了变分记号“$\var{}$”，用以强调 $\var{a_l}$ 并非真实变动。具体计算上，与普通微分
+相同。}：
+\begin{equation} \label{eq:delta-Omega=0}
+  \var{\ln\Omega_\text{MB}}
+  = \var(N\ln N) - \sum_l \qty(\var{a_l}\ln\frac{\omega_l}{a_l}
+                               -a_l\cdot\frac{1}{a_l}\cdot\var{a_l})
+  = -\sum_l \qty(\ln\frac{a_l}{\omega_l}+1) \var{a_l} = 0.
+\end{equation}
+而根据约束条件则有
+\begin{equation}
+  \var{N} = \sum_l \var{a_l} = 0 \qc
+  \var{E} = \sum_l \varepsilon_l \var{a_l} = 0.
+\end{equation}
+两式分别乘上系数 $\alpha-1$ 和 $\beta$（称为 \kwd{Lagrange 不定乘子}），并从式~%
+\eqref{eq:delta-Omega=0} 中减去，可得：
+\begin{equation}
+  \var{\ln\Omega_\text{MB}} - \qty(\alpha-1)\var{N} - \beta\var{E}
+  = -\sum_l\qty(\ln\frac{a_l}{\omega_l}+\alpha+\beta\varepsilon_l) \var{a_l} = 0.
+\end{equation}
+根据 Lagrange 乘子法，令 $\var{a_l}$ 的系数为零，有
+\begin{equation}
+  \ln\frac{a_l}{\omega_l}+\alpha+\beta\varepsilon_l = 0 \qc l = 1, \, 2, \, \cdots
+\end{equation}
+这样就得到了最概然分布
+\begin{equation} \label{eq:maxwell-boltzmann-dist}
+  \tilde{a_l} = \omega_l \, \ee^{-\alpha-\beta\varepsilon_l}.
+\end{equation}
+式中的 Lagrange 不定乘子 $\alpha$ 与 $\beta$，可根据约束关系式~%
+\eqref{eq:constraint-condition-of-dist} 确定，我们将在稍后下一章中计算。
+%TODO(2018-01-07): 下一章的计算，交叉引用
+
+计算二阶变分：
+\begin{align}
+  \var[2]{\ln\Omega_\text{MB}}
+  &= -\sum_l \qty[  \qty(\frac{1}{a_l}\cdot\var{a_l})\var{a_l}
+                  + \qty(\ln\frac{a_l}{\omega_l}+1) \var[2]{a_l}] \notag
+  \intertext{忽略 $a_l$ 的二阶变分，得}
+  &= -\sum_l \frac{\qty(\var{a_l})^2}{a_l} < 0.
+\end{align}
+$a_l>0$，所以该式恒小于零。这就验证了最概然分布 $\qty{\tilde{a_l}}$ 的确对应 $\ln\Omega_\text{MB}$
+的极大值。式~\eqref{eq:maxwell-boltzmann-dist} 给出的结果即为 \kwd{Maxwell--Boltzmann 分布}。
+
+设粒子数分布相对最概然分布 $\qty{\tilde{a_l}}$ 有一微小偏离 $\var{a_l}$，并使得量子态数目变化了
+$\var{\Omega_\text{MB}}$。利用 Taylor 展开，可有
+\begin{align}
+  \ln(\Omega_\text{MB}+\incr{\Omega_\text{MB}})
+  = \ln\Omega_\text{MB}\qty(\qty{\tilde{a_l}+\var{a_l}})
+  &= \ln\Omega_\text{MB}(\qty{\tilde{a_l}}) + \eval{\var{\ln\Omega_\text{MB}}}_\qty{\tilde{a_l}}
+     + \frac{1}{2} \eval{\var[2]{\ln\Omega_\text{MB}}}_\qty{\tilde{a_l}} + \cdots \notag \\
+  &= \ln\Omega_\text{MB}(\qty{\tilde{a_l}}) + 0
+     - \frac{1}{2} \sum_l \frac{\qty(\var{a_l})^2}{\tilde{a_l}},
+\end{align}
+即
+\begin{equation}
+  \ln\frac{\Omega_\text{MB}+\incr{\Omega_\text{MB}}}{\Omega_\text{MB}}
+  = -\frac{1}{2} \sum_l \qty(\frac{\var{a_l}}{\tilde{a_l}})^2 \tilde{a_l}
+  \implies \frac{\Omega_\text{MB}+\incr{\Omega_\text{MB}}}{\Omega_\text{MB}}
+           = \exp[-\frac{1}{2} \sum_l \qty(\frac{\var{a_l}}{\tilde{a_l}})^2 \tilde{a_l}].
+\end{equation}
+在热力学极限下，$\sum_l a_l=N \sim 10^{23}$，即使 $\var{a_l}$ 很小（如 $10^{-5}$），也有
+\begin{equation}
+  \frac{\Omega_\text{MB}+\incr{\Omega_\text{MB}}}{\Omega_\text{MB}}
+  \sim \exp(-\frac{1}{2} \times 10^{-10} \times 10^{23}) \lll 1.
+\end{equation}
+这说明 $\Omega_\text{MB}$ 具有尖锐成锋的特性，类似数学中的 Dirac-$\delta$ 函数。
+
+\subsection*{经典统计中 Boltzmann 分布的表达式}
+
+之前的讨论建立在能级分立的量子情形上，现在将其推广到经典情形。我们需要在 μ 空间中定义体积元（或称为%
+\kwd{相格}）$\incr{\omega_1}, \, \incr{\omega_2}, \, \cdots$。μ 空间是由坐标和动量张成一个 $2r$ 维空
+间（$r$ 为自由度），其中的体积元为
+\begin{equation}
+  \incr{\omega}
+  = \qty\big(\incr{q_1}\incr{q_2}\cdots\incr{q_r}) \, \qty\big(\incr{p_1}\incr{p_2}\cdots\incr{p_r})
+  = (\incr{q_1}\incr{p_1}) \, (\incr{q_2}\incr{p_2}) \, \cdots (\incr{q_r}\incr{p_r})
+  = h_0^r.
+\end{equation}
+式中的 $h_0=\incr{q_i}\incr{p_i}$ 为相格的尺度。相格体积越小，对运动的刻画就越精确。但量子力学为相格
+的尺度给出了下限，即为 Planck 常数 $h$。
+
+一方面，我们需将相格取得足够小，使同一相格中不同代表点所代表的粒子，其运动状态的差别可以忽略不计，即
+所有代表点都具有近似相同的广义坐标 $q_i$ 和广义动量 $p_i$。另一方面，相格不能取为无穷小，因为相格中
+还必须有足够数量的代表点。这种近似通常被称为 μ 空间的\kwd{粗粒近似}。在粗粒近似下，同一相格中的代表
+点可认为处在同一能级 $\varepsilon_l$ 上。

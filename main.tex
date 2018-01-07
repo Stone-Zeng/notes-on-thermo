@@ -30,28 +30,35 @@
 \newCJKfontfamily\kaishu{FZKai-Z03}%
   [BoldFont = *, ItalicFont = *, BoldItalicFont = *]
 
-% 中文排版样式
-\ctexset{
-  part = {
-    format = {\bfseries \Huge \centering},
-    name   = {第, 篇}
-  },
-  chapter/format = {\bfseries \LARGE \raggedright},
-  section/format = {\bfseries \Large \centering},
-  subsection = {
-    format    = {\bfseries},
-    name      = {,、\hspace{-1 em}},
-    numbering = true,
-    number    = \chinese{subsection},
-  }
+% 页面尺寸
+\geometry{
+  hmargin    = 1.0 in,
+  vmargin    = 1.5 in,
+  headheight = 15 pt
 }
+
+% 中文排版样式
+%\ctexset{
+%  part = {
+%    format = {\bfseries \Huge \centering},
+%    name   = {第, 篇}
+%  },
+%  chapter/format = {\bfseries \LARGE \raggedright},
+%  section/format = {\bfseries \Large \centering},
+%  subsection = {
+%    format    = {\bfseries},
+%    name      = {,、\hspace{-1 em}},
+%    numbering = true,
+%    number    = \chinese{subsection},
+%  }
+%}
 %\setcounter{secnumdepth}{4}
 
 % 页眉页脚
 \fancyhf{}
-\fancyhead[EL]{\nouppercase{\kaishu \leftmark}}
-\fancyhead[OR]{\nouppercase{\kaishu \rightmark}}
-\fancyfoot[C]{\thepage}
+\fancyhead[EL]{\small\nouppercase{\kaishu\leftmark}}
+\fancyhead[OR]{\small\nouppercase{\kaishu\rightmark}}
+\fancyfoot[C]{\small\thepage}
 \renewcommand\headrulewidth{0pt}
 \pagestyle{fancy}
 
@@ -117,7 +124,7 @@
 % 公式
 %\numberwithin{equation}{section}
 %\renewcommand{\theequation}{\thesection.\arabic{equation}}
-\newenvironment{boxeq}%
+\NewDocumentEnvironment{boxeq}{}%
   {\empheq[box=\fbox]{equation}}%
   {\endempheq}
 \makeatletter\ExplSyntaxOn
@@ -125,19 +132,19 @@
   { \def \theequation { \theparentequation \alph { equation } } }
   { \def \theequation { \theparentequation - \alph { equation } } }
 \ExplSyntaxOff\makeatother
-\newenvironment{braced}[1][align]%
-  {\subequations
-    \setkeys{EmphEqEnv}{#1}%
-    \setkeys{EmphEqOpt}{left = \empheqlbrace}%
-    \EmphEqMainEnv}%
-  {\endEmphEqMainEnv \endsubequations}
+\NewDocumentEnvironment{braced}{O{}O{align}}%
+  {\subequations#1%
+   \setkeys{EmphEqEnv}{#2}%
+   \setkeys{EmphEqOpt}{left=\empheqlbrace}%
+   \EmphEqMainEnv}%
+  {\endEmphEqMainEnv\endsubequations}
+\NewDocumentEnvironment{braced*}{O{align*}}%
+  {\setkeys{EmphEqEnv}{#1}%
+   \setkeys{EmphEqOpt}{left=\empheqlbrace}%
+   \EmphEqMainEnv}%
+  {\endEmphEqMainEnv}
 
 % 杂项
-\geometry{
-  hmargin    = 2.54 cm,
-  vmargin    = 3.18 cm,
-  headheight = 15 pt
-}
 \sisetup{
   number-math-rm = \ensuremath,
   inter-unit-product = \ensuremath{{}\cdot{}},
