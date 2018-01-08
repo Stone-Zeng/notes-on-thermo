@@ -508,7 +508,9 @@ $N$、能量 $E$ 还需满足如下关系：
 \end{braced*}
 因而这是一个带约束条件的极值问题，数学上的标准求解手段是 \kwd{Lagrange 乘子法}。下面给出具体的操作。
 
-为处理方便，我们把求 $\Omega_\text{MB}$ 的极大值改为求 $\ln\Omega_\text{MB}$ 的极大值。利用
+为处理方便，我们把求 $\Omega$
+\footnote{本节以下部分将略去下标“MB”。}
+的极大值改为求 $\ln\Omega$ 的极大值。利用
 \kwd{Stirling 公式}
 \begin{equation}
   n!     \approx \sqrt{2\pp n} \qty(\frac{n}{\ee})^n \qc
@@ -518,7 +520,7 @@ $N$、能量 $E$ 还需满足如下关系：
 \end{equation}
 可有
 \begin{align}
-  \ln\Omega_\text{MB}
+  \ln\Omega
   &= \ln(\frac{N!}{\prod_l a_l!} \prod_l {\omega_l}^{a_l})
    = \ln N! - \sum_l\ln a_l! + \sum_l a_l \ln\omega_l \notag \\
   &\approx N\,\qty(\ln N-1) - \sum_l a_l\,\qty(\ln a_l-1) + \sum_l a_l\ln\omega_l \notag
@@ -527,11 +529,11 @@ $N$、能量 $E$ 还需满足如下关系：
   &= N\ln N - \sum_l a_l\ln\frac{\omega_l}{a_l}.
 \end{align}
 
-极值点要求满足 $\var{\ln\Omega_\text{MB}}=0$
+极值点要求满足 $\var{\ln\Omega}=0$
 \footnote{这里我们用了变分记号“$\var{}$”，用以强调 $\var{a_l}$ 并非真实变动。具体计算上，与普通微分
 相同。}：
 \begin{equation} \label{eq:delta-Omega=0}
-  \var{\ln\Omega_\text{MB}}
+  \var{\ln\Omega}
   = \var(N\ln N) - \sum_l \qty(\var{a_l}\ln\frac{\omega_l}{a_l}
                                -a_l\cdot\frac{1}{a_l}\cdot\var{a_l})
   = -\sum_l \qty(\ln\frac{a_l}{\omega_l}+1) \var{a_l} = 0.
@@ -544,7 +546,7 @@ $N$、能量 $E$ 还需满足如下关系：
 两式分别乘上系数 $\alpha-1$ 和 $\beta$（称为 \kwd{Lagrange 不定乘子}），并从式~%
 \eqref{eq:delta-Omega=0} 中减去，可得：
 \begin{equation}
-  \var{\ln\Omega_\text{MB}} - \qty(\alpha-1)\var{N} - \beta\var{E}
+  \var{\ln\Omega} - \qty(\alpha-1)\var{N} - \beta\var{E}
   = -\sum_l\qty(\ln\frac{a_l}{\omega_l}+\alpha+\beta\varepsilon_l) \var{a_l} = 0.
 \end{equation}
 根据 Lagrange 乘子法，令 $\var{a_l}$ 的系数为零，有
@@ -561,54 +563,73 @@ $N$、能量 $E$ 还需满足如下关系：
 
 计算二阶变分：
 \begin{align}
-  \var[2]{\ln\Omega_\text{MB}}
+  \var[2]{\ln\Omega}
   &= -\sum_l \qty[  \qty(\frac{1}{a_l}\cdot\var{a_l})\var{a_l}
                   + \qty(\ln\frac{a_l}{\omega_l}+1) \var[2]{a_l}] \notag
   \intertext{忽略 $a_l$ 的二阶变分，得}
   &= -\sum_l \frac{\qty(\var{a_l})^2}{a_l} < 0.
 \end{align}
-$a_l>0$，所以该式恒小于零。这就验证了最概然分布 $\qty{\tilde{a_l}}$ 的确对应 $\ln\Omega_\text{MB}$
-的极大值。式~\eqref{eq:maxwell-boltzmann-dist} 给出的结果即为 \kwd{Maxwell--Boltzmann 分布}。
+$a_l>0$，所以该式恒小于零。这就验证了最概然分布 $\qty{\tilde{a_l}}$ 的确对应 $\ln\Omega$ 的极大值。
+式~\eqref{eq:maxwell-boltzmann-dist} 给出的结果即为 \kwd{Maxwell--Boltzmann 分布}。
 
 设粒子数分布相对最概然分布 $\qty{\tilde{a_l}}$ 有一微小偏离 $\var{a_l}$，并使得量子态数目变化了
-$\var{\Omega_\text{MB}}$。利用 Taylor 展开，可有
+$\var{\Omega}$。利用 Taylor 展开，可有
 \begin{align}
-  \ln(\Omega_\text{MB}+\incr{\Omega_\text{MB}})
-  = \ln\Omega_\text{MB}\qty(\qty{\tilde{a_l}+\var{a_l}})
-  &= \ln\Omega_\text{MB}(\qty{\tilde{a_l}}) + \eval{\var{\ln\Omega_\text{MB}}}_\qty{\tilde{a_l}}
-     + \frac{1}{2} \eval{\var[2]{\ln\Omega_\text{MB}}}_\qty{\tilde{a_l}} + \cdots \notag \\
-  &= \ln\Omega_\text{MB}(\qty{\tilde{a_l}}) + 0
-     - \frac{1}{2} \sum_l \frac{\qty(\var{a_l})^2}{\tilde{a_l}},
+  \ln(\Omega+\incr{\Omega})
+  = \ln\Omega\qty(\qty{\tilde{a_l}+\var{a_l}})
+  &= \ln\Omega(\qty{\tilde{a_l}}) + \eval{\var{\ln\Omega}}_\qty{\tilde{a_l}}
+     + \frac{1}{2} \eval{\var[2]{\ln\Omega}}_\qty{\tilde{a_l}} + \cdots \notag \\
+  &= \ln\Omega(\qty{\tilde{a_l}}) + 0 - \frac{1}{2} \sum_l \frac{\qty(\var{a_l})^2}{\tilde{a_l}},
 \end{align}
 即
 \begin{equation}
-  \ln\frac{\Omega_\text{MB}+\incr{\Omega_\text{MB}}}{\Omega_\text{MB}}
+  \ln\frac{\Omega+\incr{\Omega}}{\Omega}
   = -\frac{1}{2} \sum_l \qty(\frac{\var{a_l}}{\tilde{a_l}})^2 \tilde{a_l}
-  \implies \frac{\Omega_\text{MB}+\incr{\Omega_\text{MB}}}{\Omega_\text{MB}}
+  \implies \frac{\Omega+\incr{\Omega}}{\Omega}
            = \exp[-\frac{1}{2} \sum_l \qty(\frac{\var{a_l}}{\tilde{a_l}})^2 \tilde{a_l}].
 \end{equation}
 在热力学极限下，$\sum_l a_l=N \sim 10^{23}$，即使 $\var{a_l}$ 很小（如 $10^{-5}$），也有
 \begin{equation}
-  \frac{\Omega_\text{MB}+\incr{\Omega_\text{MB}}}{\Omega_\text{MB}}
-  \sim \exp(-\frac{1}{2} \times 10^{-10} \times 10^{23}) \lll 1.
+  \frac{\Omega+\incr{\Omega}}{\Omega}
+  \sim \exp(-\frac{1}{2}\times\num{e-10}\times\num{e23}) \lll 1.
 \end{equation}
-这说明 $\Omega_\text{MB}$ 具有尖锐成锋的特性，类似数学中的 Dirac-$\delta$ 函数。
+这说明 $\Omega$ 具有尖锐成锋的特性，类似数学中的 Dirac-$\delta$ 函数。
 
 \subsection*{经典统计中 Boltzmann 分布的表达式}
 
-之前的讨论建立在能级分立的量子情形上，现在将其推广到经典情形。我们需要在 μ 空间中定义体积元（或称为%
-\kwd{相格}）$\incr{\omega_1}, \, \incr{\omega_2}, \, \cdots$。μ 空间是由坐标和动量张成一个 $2r$ 维空
-间（$r$ 为自由度），其中的体积元为
+之前的讨论建立在能级分立的量子情形上，现在将其推广到经典情形。我们需要在维度为 $1r$ 的 μ 空间中划分
+出等大的\kwd{相格}，其体积为
 \begin{equation}
-  \incr{\omega}
-  = \qty\big(\incr{q_1}\incr{q_2}\cdots\incr{q_r}) \, \qty\big(\incr{p_1}\incr{p_2}\cdots\incr{p_r})
-  = (\incr{q_1}\incr{p_1}) \, (\incr{q_2}\incr{p_2}) \, \cdots (\incr{q_r}\incr{p_r})
-  = h_0^r.
+  \qty\big(\var{q_1}\var{q_2}\cdots\var{q_r}) \, \qty\big(\var{p_1}\var{p_2}\cdots\var{p_r})
+  = (\var{q_1}\var{p_1}) \, (\var{q_2}\var{p_2}) \, \cdots (\var{q_r}\var{p_r}) = h_0^r.
 \end{equation}
-式中的 $h_0=\incr{q_i}\incr{p_i}$ 为相格的尺度。相格体积越小，对运动的刻画就越精确。但量子力学为相格
-的尺度给出了下限，即为 Planck 常数 $h$。
+式中的 $h_0=\incr{q_i}\incr{p_i}$ 为相格的尺度。当相格体积很小时，同一相格中不同代表点所代表的粒子，
+其运动状态的差别可以忽略不计，即所有代表点都具有近似相同的广义坐标 $q_i$ 和广义动量 $p_i$。显然，相
+格的尺度取得越小，对运动的刻画就越精确。但是，量子力学为相格的尺度给出了下限，为 \kwd{Planck 常数}
+\begin{equation}
+  h = \SI{6.626070040(81)e-34}{\joule\second}.
+\end{equation}
+这种近似通常被称为 μ 空间的\kwd{粗粒近似}。
 
-一方面，我们需将相格取得足够小，使同一相格中不同代表点所代表的粒子，其运动状态的差别可以忽略不计，即
-所有代表点都具有近似相同的广义坐标 $q_i$ 和广义动量 $p_i$。另一方面，相格不能取为无穷小，因为相格中
-还必须有足够数量的代表点。这种近似通常被称为 μ 空间的\kwd{粗粒近似}。在粗粒近似下，同一相格中的代表
-点可认为处在同一能级 $\varepsilon_l$ 上。
+再将 μ 空间中划分为许多体积元 $\incr{\omega_l}$。按照粗粒近似的观点，我们认为体积元
+$\incr{\omega_l}$ 中有大量的代表点，它们均处在同一能级 $\varepsilon_l$ 上。能级的简并度 $\omega_l$
+与 $\incr{\omega_l}$ 的体积成正比，取为
+\begin{equation}
+  \omega_l = \frac{\incr{\omega_l}}{h_0^r}.
+\end{equation}
+此时，类比式~\eqref{eq:number-of-states-in-boltzmann-dist} 和 \eqref{eq:maxwell-boltzmann-dist}，我
+们即可写出经典情形下的 Boltzmann 体系的微观态数目
+\begin{equation}
+  \Omega_\text{classical}
+  = \frac{N!}{\prod_l a_l!} \prod_l \qty(\frac{\incr{\omega_l}}{h_0^r})^{a_l}
+\end{equation}
+以及 Maxwell--Boltzmann 分布
+\begin{equation}
+  a_{l,\,\text{classical}} = \frac{\incr{\omega_l}}{h_0^r} \, \ee^{-\alpha-\beta\varepsilon_l}.
+\end{equation}
+$a_{l,\,\text{classical}}$ 满足也约束 \eqref{eq:constraint-condition-of-dist}~式：
+\begin{equation}
+  \sum_l a_l = N \qc \sum_l \varepsilon_l a_l = E.
+\end{equation}
+
+\section{Bose--Einstein 分布与 Fermi--Dirac 分布}
