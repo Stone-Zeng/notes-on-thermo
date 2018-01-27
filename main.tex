@@ -78,9 +78,8 @@
 
 % 脚注
 \makeatletter\ExplSyntaxOn
-\RenewDocumentCommand \thefootnote { }
-  { $ \__my_footnote_symbol:n { \c@footnote } $ }
-\cs_new:Npn \__my_footnote_symbol:n #1
+\cs_set:Npn \thefootnote { $ \my_footnote_symbol:N \c@footnote $ }
+\cs_new:Npn \my_footnote_symbol:N #1
   {
     \int_compare:nTF { #1 >= 10 }
       {
@@ -90,12 +89,11 @@
       }
       { \symbol { \int_eval:n { "2460 - 1 + #1 } } }
   }
-\RenewDocumentCommand \@makefntext { +m }
+\cs_set:Npn \@makefntext #1
   {
-    \dim_set:Nn \l_tmpa_dim { \textwidth - 1.5 em }
-    \makebox [ 1.5 em ] [ l ] { \@thefnmark }
-    \parbox [ t ] { \l_tmpa_dim }
-      { \everypar { \hspace* { 2 em } } \hspace* { -2 em } #1 }
+    \mode_leave_vertical:
+    \hbox_to_wd:nn { 1.5 em } { \@thefnmark \hfil }
+    #1
   }
 \ExplSyntaxOff\makeatother
 
@@ -124,24 +122,24 @@
 % 公式
 %\numberwithin{equation}{section}
 %\renewcommand{\theequation}{\thesection.\arabic{equation}}
-\NewDocumentEnvironment{boxeq}{}%
-  {\empheq[box=\fbox]{equation}}%
+\NewDocumentEnvironment{boxeq}{}
+  {\empheq[box=\fbox]{equation}}
   {\endempheq}
 \makeatletter\ExplSyntaxOn
 \ctex_patch_cmd:Nnn \HyOrg@subequations
   { \def \theequation { \theparentequation \alph { equation } } }
   { \def \theequation { \theparentequation - \alph { equation } } }
 \ExplSyntaxOff\makeatother
-\NewDocumentEnvironment{braced}{O{}O{align}}%
-  {\subequations#1%
-   \setkeys{EmphEqEnv}{#2}%
-   \setkeys{EmphEqOpt}{left=\empheqlbrace}%
-   \EmphEqMainEnv}%
+\NewDocumentEnvironment{braced}{O{}O{align}}
+  {\subequations#1
+   \setkeys{EmphEqEnv}{#2}
+   \setkeys{EmphEqOpt}{left=\empheqlbrace}
+   \EmphEqMainEnv}
   {\endEmphEqMainEnv\endsubequations}
-\NewDocumentEnvironment{braced*}{O{align*}}%
-  {\setkeys{EmphEqEnv}{#1}%
-   \setkeys{EmphEqOpt}{left=\empheqlbrace}%
-   \EmphEqMainEnv}%
+\NewDocumentEnvironment{braced*}{O{align*}}
+  {\setkeys{EmphEqEnv}{#1}
+   \setkeys{EmphEqOpt}{left=\empheqlbrace}
+   \EmphEqMainEnv}
   {\endEmphEqMainEnv}
 
 % 杂项
@@ -181,14 +179,22 @@
 %% 特殊命令
 %% see `physics.sty`
 \def\diffdbar{\mbox{đ}} % U+0111
-\DeclareDocumentCommand\dbar{ o g d() }{%
-  \IfNoValueTF{#2}{%
-    \IfNoValueTF{#3}%
-      {\diffdbar\IfNoValueTF{#1}{}{^{#1}}}%
-      {\mathinner{\diffdbar\IfNoValueTF{#1}{}{^{#1}}\argopen(#3\argclose)}}%
-    }%
-    {\mathinner{\diffdbar\IfNoValueTF{#1}{}{^{#1}}#2}\IfNoValueTF{#3}{}{(#3)}}%
-}
+\DeclareDocumentCommand\dbar{ogd()}
+  {
+    \IfNoValueTF{#2}
+      {
+        \IfNoValueTF{#3}
+          {\diffdbar\IfNoValueTF{#1}{}{^{#1}}}
+          {\mathinner{\diffdbar\IfNoValueTF{#1}{}{^{#1}}\argopen(#3\argclose)}}
+      }
+      {\mathinner{\diffdbar\IfNoValueTF{#1}{}{^{#1}}#2}\IfNoValueTF{#3}{}{(#3)}}
+  }
+\DeclareDocumentCommand\trigbraces{mod()}
+  {
+    \IfNoValueTF{#3}
+      {#1 \IfNoValueTF{#2}{}{[#2]}}
+      {#1 \IfNoValueTF{#2}{}{^{#2}} \, \argopen(#3\argclose)} % Add a thin space here
+  }
 %% 文本命令
 \newcommand\kwd[1]{\textsf{#1}}
 \newcommand\cmark{\symbol{"2714}}
