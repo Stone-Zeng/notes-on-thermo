@@ -13,7 +13,7 @@
 \usepackage[ntheorem]{empheq}
 \usepackage[stable, perpage, bottom]{footmisc}
 \usepackage{geometry,fancyhdr,enumitem,graphicx,array,tabularx,booktabs,%
-  caption,mhchem,siunitx,hyperref}
+  caption,mhchem,siunitx,hyperref,bookmark}
 
 % 西文字体
 \setmainfont{Libertinus Serif}
@@ -53,6 +53,14 @@
 %  }
 %}
 %\setcounter{secnumdepth}{4}
+
+%\let\OldSubsection=\subsection
+%\RenewDocumentCommand\subsection{sm}
+%  {
+%    \IfBooleanTF{#1}
+%      {\OldSubsection*{#2}\addcontentsline{toc}{subsection}{#2}}
+%      {\OldSubsection{#2}}
+%  }
 
 % 页眉页脚
 \fancyhf{}
@@ -226,7 +234,10 @@
 
 %\maketitle
 %
-%\frontmatter
+\frontmatter
+
+\tableofcontents
+
 %  \include{chapters/introduction}
 
 \mainmatter

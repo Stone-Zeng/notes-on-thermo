@@ -42,7 +42,7 @@
   \begin{equation}
     H = \frac{1}{2m} \qty\big(p_x^2+p_y^2+p_z^2).
   \end{equation}
-%TODO(2016-05-04): 示意图
+% TODO: (2016-05-04) 示意图
 \end{example}
 
 \begin{example}[一维谐振子]
@@ -71,37 +71,11 @@
 \begin{figure}[ht]
   \centering
   \FIGPLACEHOLDER
-  %\begin{asy}
-  %  pair O = (0, 0), x_axes = (8, 0), y_axes = (0, 5);
-  %
-  %  real a = 5.5, b = 3;
-  %
-  %  pair p1 = (0.4, 1.8), p2 = (5, 3.8);
-  %  pair p3 = (2, -0.4), p4 = (6, -3);
-  %
-  %  draw(Label("$x$", EndPoint), (-x_axes)--x_axes, Arrow);
-  %  draw(Label("$p$", EndPoint), (0, -4.2)--y_axes, Arrow);
-  %
-  %  draw(ellipse(O, a, b), linewidth(1) + color1);
-  %
-  %  draw(O--(a, 0), linewidth(1.2));
-  %  draw(O--(0, b), linewidth(1.2));
-  %
-  %  draw(Label("$\sqrt{2mE}$", EndPoint), p1--p2);
-  %  draw(Label("$\sqrt{\dfrac{\displaystyle 2E}{\displaystyle m\omega^2}}$", EndPoint), p3--p4);
-  %
-  %  label("$O$", O, SW);
-  %\end{asy}
   \caption{μ 空间中的一维谐振子}
   \label{fig:harmonic-oscillator-mu-space}
 \end{figure}
 
 \begin{example}[转子]
-  %\def\ST{\sin\theta} \def\SP{\sin\phi}
-  %\def\CT{\cos\theta} \def\CP{\cos\phi}
-  %\def\STsq{\sin^2\theta} \def\SPsq{\sin^2\phi}
-  %\def\CTsq{\cos^2\theta} \def\CPsq{\cos^2\phi}
-  %\def\DR{\dot{r}} \def\DT{\dot{\theta}} \def\DP{\dot{\phi}}
   如图~\ref{fig:rotator} 所示，质量为 $m$ 的物体被轻杆连接在 $O$ 点处，并可绕该点运动。其 Hamilton
   量为
   \begin{equation} \label{eq:rotator-hamiltonian-a}
@@ -128,15 +102,6 @@
     \dot{x}^2 + \dot{y}^2 + \dot{z}^2
     = \dot{r}^2 + (r\dot{\theta})^2 + (r\dot{\phi})^2 \sin^2\theta.
   \end{equation}
-  %\begin{align}
-  %  \dot{x}^2 + \dot{y}^2 + \dot{z}^2 \\
-  %  &= \qty\Big[\DR^2\STsq + (r\DT)^2\CTsq + (r\DP)^2\STsq] \\
-  %  %\myTag{$\dot{x}^2$、$\dot{y}^2$ 平方项} \\
-  %  &\mathrel{\phantom{=}} + \qty\Big[2r\DR\DT\ST\CT\CPsq - 2r\DR\DP\STsq\SP\CP - 2r^2\DT\DP\ST\CT\SP\CP] \\%\myTag{$\dot{x}^2$ 交叉项} \\
-  %  &\mathrel{\phantom{=}} + \qty\Big[2r\DR\DT\ST\CT\SPsq + 2r\DR\DP\STsq\SP\CP + 2r^2\DT\DP\ST\CT\SP\CP] \\%\myTag{$\dot{y}^2$ 交叉项} \\
-  %  &\mathrel{\phantom{=}} + \qty\Big[ \DR^2\CTsq - 2r\DR\DT\ST\CT + \qty\big(r\DT)^2\STsq] \myTag{$\dot{z}^2$} \\
-  %  &= \DR^2 + (r\DT)^2 + (r\DP)^2\STsq.
-  %\end{align}
   代入 \eqref{eq:rotator-hamiltonian-a}~式，得
   \begin{align}
     H &= \frac{m}{2} \qty\big(\dot{r}^2 + r^2 \dot{\theta}^2
@@ -162,29 +127,6 @@
 \begin{figure}[ht]
   \centering
   \FIGPLACEHOLDER
-  %\begin{asy}
-  %  import my3D;
-  %
-  %  triple O = (0, 0, 0), x_axes = (3.5, 0, 0), y_axes = (0, 5, 0), z_axes = (0, 0, 5);
-  %  triple point_m = (2.5, 5, 6), point_n = (point_m.x, point_m.y, 0);
-  %
-  %  pair O2 = project(O), point_m2 = project(point_m), point_n2 = project(point_n);
-  %
-  %  draw(Label("$x$", EndPoint), O2--project(x_axes), Arrow);
-  %  draw(Label("$y$", EndPoint), O2--project(y_axes), Arrow);
-  %  draw(Label("$z$", EndPoint), O2--project(z_axes), Arrow);
-  %
-  %  draw(Label("$\bm{r}$", MidPoint, black), O2--point_m2, linewidth(1.5) + color2);
-  %  draw(O2--point_n2--point_m2, dashed + color1);
-  %  fill(circle(point_m2, 0.2), color1);
-  %
-  %  real angle_r = 0.7;
-  %  draw(Label("$\varphi$", MidPoint, Relative(E)), angleMark(O, x_axes, point_n, angle_r));
-  %  draw(Label("$\theta$", MidPoint, Relative((-1,-0.4))), angleMark(O, z_axes, point_m, angle_r));
-  %
-  %  label("$O$", O2, (-1.5, 0.5));
-  %  label("$m$", point_m2, (2, 0.5));
-  %\end{asy}
   \caption{转子的示意图}
   \label{fig:rotator}
 \end{figure}
@@ -265,7 +207,7 @@ De Broglie 关系说明微观粒子具有\kwd{波粒二象性}。这就引出了
 \end{example}
 
 \begin{example}[转子]
-%TODO(2016-06-24): 角动量量子化
+% TODO: (2016-06-24) 角动量量子化
 \end{example}
 
 \subsection{多粒子系统}
@@ -401,7 +343,7 @@ Schrödinger 方程，都具有\kwd{时间反演}对称性，因而是可逆的�
 
 \section{分布和微观状态} \label{sec:distribution-and-microstate}
 
-%TODO(2018-01-08): 交叉引用
+% TODO: (2018-01-08) 交叉引用
 在本节以及第%\ref{}
 章中，我们均要求粒子之间相互作用可以忽略。因而总能量等于各粒子的能量之和。这样
 的系统称为\kwd{近独立粒子系统}。
@@ -416,7 +358,7 @@ $a_1, \, a_2, \, \cdots, \, a_l, \, \cdots$ 称为一个\kwd{（微观）分布}
 \end{braced}
 
 注意分布与量子态是不同的概念。
-%TODO(2018-01-08): 不同之处？
+% TODO: (2018-01-08) 不同之处？
 
 \subsection{Boltzmann 体系}
 
@@ -559,7 +501,7 @@ $N$、能量 $E$ 还需满足如下关系：
 \end{equation}
 式中的 Lagrange 不定乘子 $\alpha$ 与 $\beta$，可根据约束关系式~%
 \eqref{eq:constraint-condition-of-dist} 确定，我们将在稍后下一章中计算。
-%TODO(2018-01-07): 下一章的计算，交叉引用
+% TODO: (2018-01-07) 下一章的计算，交叉引用
 
 计算二阶变分：
 \begin{align}
@@ -595,7 +537,7 @@ $\var{\Omega}$。利用 Taylor 展开，可有
 \end{equation}
 这说明 $\Omega$ 具有尖锐成锋的特性，类似数学中的 Dirac-$\delta$ 函数。
 
-\subsection*{经典统计中 Boltzmann 分布的表达式}
+\subsection{经典统计中 Boltzmann 分布的表达式}
 
 之前的讨论建立在能级分立的量子情形上，现在将其推广到经典情形。我们需要在维度为 $r$ 的 μ 空间中划分
 出等大的\kwd{相格}，其体积为
