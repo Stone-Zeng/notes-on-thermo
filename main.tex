@@ -182,10 +182,21 @@
 \newcommand\incr{\increment}
 \newcommand\defeq{\equiv}
 %% 杂项
+\newcommand\dotsint{\int\!\cdots\!\int}
 \newcommand\const{\text{const.}}
 \newcommand\myTag[1]{}
 %% 特殊命令
 %% see `physics.sty`
+\DeclareDocumentCommand\differential{ogd()}
+  {
+    \IfNoValueTF{#2}
+      {
+        \IfNoValueTF{#3}
+          {\diffd\IfNoValueTF{#1}{}{^{#1}}}
+          {\mathinner{\diffd\IfNoValueTF{#1}{}{^{#1}}\,\argopen(#3\argclose)}} % Add \, here
+      }
+      {\mathinner{\diffd\IfNoValueTF{#1}{}{^{#1}}#2}\IfNoValueTF{#3}{}{(#3)}}
+  }
 \def\diffdbar{\mbox{đ}} % U+0111
 \DeclareDocumentCommand\dbar{ogd()}
   {
@@ -193,7 +204,7 @@
       {
         \IfNoValueTF{#3}
           {\diffdbar\IfNoValueTF{#1}{}{^{#1}}}
-          {\mathinner{\diffdbar\IfNoValueTF{#1}{}{^{#1}}\argopen(#3\argclose)}}
+          {\mathinner{\diffdbar\IfNoValueTF{#1}{}{^{#1}}\,\argopen(#3\argclose)}} % Add \, here
       }
       {\mathinner{\diffdbar\IfNoValueTF{#1}{}{^{#1}}#2}\IfNoValueTF{#3}{}{(#3)}}
   }
@@ -201,7 +212,7 @@
   {
     \IfNoValueTF{#3}
       {#1 \IfNoValueTF{#2}{}{[#2]}}
-      {#1 \IfNoValueTF{#2}{}{^{#2}} \, \argopen(#3\argclose)} % Add a thin space here
+      {#1 \IfNoValueTF{#2}{}{^{#2}}\,\argopen(#3\argclose)} % Add \, here
   }
 %% 文本命令
 \newcommand\kwd[1]{\textsf{#1}}

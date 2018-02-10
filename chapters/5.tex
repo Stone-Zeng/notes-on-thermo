@@ -375,7 +375,7 @@ $\prod_l {\omega_l}^{a_l}$。
 因此需要除去所有能级上粒子的交换数 $\prod_l a_l!$。
 
 综上，分布 $\qty{a_l}$ 对应的总量子态数为
-\begin{equation} \label{eq:number-of-states-in-boltzmann-dist}
+\begin{equation} \label{eq:Omega-in-boltzmann-dist}
   \Omega_\text{MB}(\qty{a_l}) = \frac{N!}{\prod_l a_l!} \prod_l {\omega_l}^{a_l}.
 \end{equation}
 下标“$\text{MB}$”表示粒子服从 Maxwell--Boltzmann 统计。
@@ -392,7 +392,7 @@ $\omega_l$ 个不同的盒子中。考虑使用“插空法”，即先将 $a_l$
 种情况。
 
 由于不可分辨性，这里不需要考虑不同能级上粒子的交换。所以总量子态数为
-\begin{equation} \label{eq:number-of-states-in-bose-dist}
+\begin{equation} \label{eq:Omega-in-bose-dist}
   \Omega_\text{BE}(\qty{a_l}) = \prod_l \frac{\qty(a_l+\omega_l-1)!}{a! \, \qty(\omega_l-1)!}.
 \end{equation}
 下标“$\text{BE}$”表示粒子服从 Bose--Einstein 统计。
@@ -407,7 +407,7 @@ Fermi--Dirac 体系由 Fermi 子组成。根据 Pauli 不相容原理，每个�
 种情况。显然，此时要求 $k \leqslant n$。
 
 与 Bose--Einstein 体系相同，这里同样不需要考虑粒子的交换。总量子态数为
-\begin{equation} \label{eq:number-of-states-in-fermi-dist}
+\begin{equation} \label{eq:Omega-in-fermi-dist}
   \Omega_\text{FD}(\qty{a_l}) = \prod_l \frac{\omega_l!}{a_l! \, \qty(\omega_l-a_l)!}.
 \end{equation}
 下标“$\text{FD}$”表示粒子服从 Fermi--Dirac 统计。
@@ -435,13 +435,13 @@ Dirac 分布与 Maxwell--Boltzmann 分布的差别将逐渐消失。
 注意式~\eqref{eq:bose-and-fermi-dist-non-degenerate} 最后的结果中有一个 $1/N!$，这反映了粒子的全同性
 要求。
 
-\section{Maxwell--Boltzmann 分布}
+\section{Maxwell--Boltzmann 分布} \label{sec:maxwell-boltzmann-dist}
 
 根据等概率原理，平衡态下各微观态出现的概率相同。因此，对应微观态数目最多的分布，出现的概率最大，称
 为\kwd{最概然分布}。
 
 对于 Boltzmann 体系，即定域子系组成的系统，分布 $\qty{a_l}$ 对应的微观态（量子态）数目
-$\Omega_\text{MB}(\qty{a_l})$ 由式~\eqref{eq:number-of-states-in-boltzmann-dist} 给出。现在我们做要
+$\Omega_\text{MB}(\qty{a_l})$ 由式~\eqref{eq:Omega-in-boltzmann-dist} 给出。现在我们做要
 做的，就是找到使 $\Omega_\text{MB}(\qty{a_l})$ 取极大值的分布 $\qty{a_l}$。但需注意，系统的粒子数
 $N$、能量 $E$ 还需满足如下关系：
 \begin{braced*}
@@ -468,7 +468,7 @@ $N$、能量 $E$ 还需满足如下关系：
   &\approx N\,\qty(\ln N-1) - \sum_l a_l\,\qty(\ln a_l-1) + \sum_l a_l\ln\omega_l \notag
   \intertext{利用约束条件 $N=\sum_l a_l$：}
   &= N\ln N - \sum_l a_l\ln a_l + \sum_l a_l\ln\omega_l \notag \\
-  &= N\ln N - \sum_l a_l\ln\frac{\omega_l}{a_l}.
+  &= N\ln N - \sum_l a_l\ln\frac{a_l}{\omega_l}.
 \end{align}
 
 极值点要求满足 $\var{\ln\Omega}=0$
@@ -476,8 +476,8 @@ $N$、能量 $E$ 还需满足如下关系：
 相同。}：
 \begin{equation} \label{eq:delta-Omega=0}
   \var{\ln\Omega}
-  = \var(N\ln N) - \sum_l \qty(\var{a_l}\ln\frac{\omega_l}{a_l}
-                               -a_l\cdot\frac{1}{a_l}\cdot\var{a_l})
+  = \var(N\ln N) - \sum_l \qty(\var{a_l}\ln\frac{a_l}{\omega_l}
+                               + a_l\cdot\frac{1}{a_l}\cdot\var{a_l})
   = -\sum_l \qty(\ln\frac{a_l}{\omega_l}+1) \var{a_l} = 0.
 \end{equation}
 而根据约束条件则有
@@ -500,8 +500,8 @@ $N$、能量 $E$ 还需满足如下关系：
   \tilde{a_l} = \omega_l \, \ee^{-\alpha-\beta\varepsilon_l}.
 \end{equation}
 式中的 Lagrange 不定乘子 $\alpha$ 与 $\beta$，可根据约束关系式~%
-\eqref{eq:constraint-condition-of-dist} 确定，我们将在稍后下一章中计算。
-% TODO: (2018-01-07) 下一章的计算，交叉引用
+\eqref{eq:constraint-condition-of-dist} 确定，我们将第\ref{chap:three-distributions}章中计算（见
+\ref{sec:thermodynamics-in-boltzmann-dist}~节）。
 
 计算二阶变分：
 \begin{align}
@@ -537,7 +537,7 @@ $\var{\Omega}$。利用 Taylor 展开，可有
 \end{equation}
 这说明 $\Omega$ 具有尖锐成锋的特性，类似数学中的 Dirac-$\delta$ 函数。
 
-\subsection{经典统计中 Boltzmann 分布的表达式}
+\subsection{经典统计中 Boltzmann 分布的表达式} \label{subsec:boltzmann-dist-classical}
 
 之前的讨论建立在能级分立的量子情形上，现在将其推广到经典情形。我们需要在维度为 $r$ 的 μ 空间中划分
 出等大的\kwd{相格}，其体积为
@@ -556,10 +556,10 @@ $\var{\Omega}$。利用 Taylor 展开，可有
 再将 μ 空间中划分为许多体积元 $\incr{\omega_l}$。按照粗粒近似的观点，我们认为体积元
 $\incr{\omega_l}$ 中有大量的代表点，它们均处在同一能级 $\varepsilon_l$ 上。能级的简并度 $\omega_l$
 与 $\incr{\omega_l}$ 的体积成正比，取为
-\begin{equation}
+\begin{equation} \label{eq:degeneracy-classical}
   \omega_l = \frac{\incr{\omega_l}}{h_0^r}.
 \end{equation}
-此时，类比式~\eqref{eq:number-of-states-in-boltzmann-dist} 和 \eqref{eq:maxwell-boltzmann-dist}，我
+此时，类比式~\eqref{eq:Omega-in-boltzmann-dist} 和 \eqref{eq:maxwell-boltzmann-dist}，我
 们即可写出经典情形下的 Boltzmann 体系的微观态数目
 \begin{equation}
   \Omega_\text{classical}
@@ -581,7 +581,7 @@ $a_{l,\,\text{classical}}$ 满足也约束 \eqref{eq:constraint-condition-of-dis
 在 \ref{subsec:bose-einstein-system}~小节中，我们已经得到了 Bose--Einstein 分布的量子态数目：
 \begin{equation}
   \Omega_\text{BE}(\qty{a_l}) = \prod_l \frac{\qty(a_l+\omega_l-1)!}{a! \, \qty(\omega_l-1)!}.
-  \tag*{\eqref{eq:number-of-states-in-bose-dist}}
+  \tag*{\eqref{eq:Omega-in-bose-dist}}
 \end{equation}
 于是有
 \begin{align}
@@ -622,7 +622,7 @@ $a_{l,\,\text{classical}}$ 满足也约束 \eqref{eq:constraint-condition-of-dis
 Fermi--Dirac 分布的推导是完全类似的。仍然从量子态数目
 \begin{equation}
   \Omega_\text{FD}(\qty{a_l}) = \prod_l \frac{\omega_l!}{a_l! \, \qty(\omega_l-a_l)!}
-  \tag*{\eqref{eq:number-of-states-in-fermi-dist}}
+  \tag*{\eqref{eq:Omega-in-fermi-dist}}
 \end{equation}
 出发，我们有
 \begin{align}

@@ -5,14 +5,16 @@
 %% This file may be distributed and/or modified under the
 %% Creative Commons Attribution Share Alike 4.0 license.
 
-\chapter{Boltzmann、Bose 与 Fermi 统计}
+\chapter{Boltzmann、Bose 与 Fermi 统计} \label{chap:three-distributions}
 
 本章我们将从第\ref{chap:statistical-physics-basis}章获得的结果出发，推导一些重要的物理结论。
 
-\section{定域子系热力学量的统计表述}
+\section{定域子系热力学量的统计表述} \label{sec:thermodynamics-in-boltzmann-dist}
+
+\subsection{单粒子配分函数}
 
 定域子系遵循 Boltzmann 统计。其粒子数和内能由式~\eqref{eq:constraint-condition-of-dist} 给出：
-\begin{braced}
+\begin{braced}[\label{eq:constraint-condition-of-dist-restate}]
   N &=     \sum_l a_l = \sum_l \omega_l\ee^{-\alpha-\beta\varepsilon_l}, \\
   U &= E = \sum_l \varepsilon_l a_l = \sum_l \varepsilon_l\omega_l\ee^{-\alpha-\beta\varepsilon_l}.
 \end{braced}
@@ -21,7 +23,7 @@
   Z_1 \defeq \sum_l \omega_l\ee^{-\beta\varepsilon_l},
 \end{equation}
 则有
-\begin{braced}
+\begin{braced}[\label{eq:N-U-from-Z1}]
   N &= \sum_l a_l = \ee^{-\alpha} \sum_l \omega_l\ee^{-\beta\varepsilon_l}
      = \ee^{-\alpha} Z_1, \\
   U &= \sum_l \varepsilon_l a_l
@@ -37,12 +39,122 @@
     &= \ee^{-\alpha} \, \qty(-\frac{1}{\beta} \pdv{y} \sum_l \omega_l\ee^{-\beta\varepsilon_l})
      = \frac{N}{Z_1} \, \qty(-\frac{1}{\beta} \pdv{y} Z_1) = -\frac{N}{\beta} \pdv{y} \ln Z_1.
 \end{align}
-在 $pV$ 系统中，取 $Y=-p$ 和 $y=V$，可得
+在 $p$-$V$ 系统中，取 $Y=-p$ 和 $y=V$，可得
 \begin{equation}
   p = \frac{N}{\beta} \pdv{V} \ln Z_1.
 \end{equation}
 
+\subsection{熵与 Boltzmann 关系}
+
 下面我们来计算熵。根据热力学基本微分方程，我们有
 \begin{equation}
-  T\dd{S} = \dd{U} - Y\dd{y} = -N\pdv{\beta} \ln Z_1 + \frac{N}{\beta} \pdv{y} \ln Z_1.
+  T\dd{S} = \dd{U} - Y\dd{y} = - N \dd(\pdv{\beta}\ln Z_1)
+                               + \qty(\frac{N}{\beta}\pdv{y}\ln Z_1) \dd{y}.
 \end{equation}
+为了凑出全微分，需要在两边同乘 $\beta$：
+\begin{align}
+  \beta T\dd{S}
+  &= N \, \qty[\qty(\pdv{y}\ln Z_1)\dd{y} - \beta\dd(\pdv{\beta}\ln Z_1)] \notag
+  \intertext{注意到 $Z_1$ 只是 $\beta$ 和 $y$ 的函数，因此有}
+  &= N \, \qty[\dd{\ln Z_1} - \qty(\pdv{\beta}\ln Z_1)\dd{\beta}
+            - \dd(\beta\pdv{\beta}\ln Z_1) + \qty(\pdv{\beta}\ln Z_1)\dd{\beta}] \notag \\
+  &= N \dd(\ln Z_1 - \beta\pdv{\beta}\ln Z_1).
+\end{align}
+令
+% TODO: (2018/02/10) 与理想气体类比，如何操作
+\begin{equation}
+  \beta = \frac{1}{kT},
+\end{equation}
+立即得到
+\begin{equation}
+  \dd{S} = Nk \dd(\ln Z_1 - \beta\pdv{\beta}\ln Z_1).
+\end{equation}
+积分之后，可有
+\begin{equation}
+  S = Nk \, \qty(\ln Z_1 - \beta\pdv{\beta}\ln Z_1) + S_0
+    = Nk \, \qty(\ln Z_1 - \beta\pdv{\beta}\ln Z_1).
+\end{equation}
+式中，我们取积分常数 $S_0=0$。
+% TODO: (2018/02/10) 为什么这样取积分常数
+
+代入粒子数和内能的表达式~\eqref{eq:N-U-from-Z1}，可得
+\begin{align}
+  S &= Nk \, \qty(\ln N + \alpha + \beta\cdot\frac{U}{N}) \notag \\
+    &= k \, \qty(N\ln N + \alpha N + \beta U) \notag
+  \intertext{进一步代入式~\eqref{eq:constraint-condition-of-dist-restate}：}
+    &= k \, \qty[N\ln N + \sum_l \qty(\alpha+\beta\varepsilon_l) a_l].
+\end{align}
+根据 Boltzmann 分布 \eqref{eq:maxwell-boltzmann-dist}~式
+\begin{equation}
+  a_l = \omega_l \, \ee^{-\alpha-\beta\varepsilon_l}
+  \implies \alpha+\beta\varepsilon_l = -\ln\frac{a_l}{\omega_l},
+\end{equation}
+于是
+\begin{equation} \label{eq:S-in-boltzmann-dist}
+  S = k \, \qty(N\ln N - \sum_l a_l\ln\frac{a_l}{\omega_l}).
+\end{equation}
+另一方面，Boltzmann 体系中微观态数目为
+\begin{equation}
+  \Omega_\text{MB} = \frac{N!}{\prod_l a_l!} \prod_l {\omega_l}^{a_l}.
+  \tag*{\eqref{eq:Omega-in-boltzmann-dist}}
+\end{equation}
+利用 Stirling 公式，计算得到
+\footnote{推导可见 \ref{sec:maxwell-boltzmann-dist}~节。}
+\begin{equation}
+  \ln\Omega_\text{MB} = N\ln N - \sum_l a_l\ln\frac{a_l}{\omega_l}.
+\end{equation}
+与式~\eqref{eq:S-in-boltzmann-dist} 比较，立即有
+\begin{equation}
+  S = k\ln\Omega_\text{MB}.
+\end{equation}
+这称为 \kwd{Boltzmann 关系}。
+
+在非简并条件下，Fermi--Dirac 分布与 Bose--Einstein 分布均趋同于 Boltzmann 分布（见
+\ref{subsec:non-degenerate-condition-i}~小节）：
+\begin{equation}
+  \Omega_\text{FD} = \Omega_\text{BE} = \frac{\Omega_\text{MB}}{N!}.
+\end{equation}
+此时，熵为
+\begin{equation}
+  S = Nk \, \qty(\ln Z_1 - \beta\pdv{\beta}\ln Z_1) - k\ln N! = k\ln\frac{\Omega_\text{MB}}{N!}.
+\end{equation}
+这里的 $N!$ 仍然是粒子全同性的要求。
+
+利用熵和内能的表达式，还可从配分函数获得自由能：
+\begin{equation}
+  F = U-TS = -N\pdv{\beta}\ln Z_1 - NkT \, \qty(\ln Z_1 - \beta\pdv{\beta}\ln Z_1)
+    = -NkT\ln Z_1.
+\end{equation}
+如果在非简并条件下（考虑粒子全同性），则为
+\begin{equation}
+  F = -NkT\ln Z_1 + k\ln N!.
+\end{equation}
+
+\subsection{经典过渡}
+
+在 \ref{subsec:boltzmann-dist-classical}~小节中，我们给出了经典情形下的简并度：
+\begin{equation}
+  \omega_l = \frac{\incr{\omega_l}}{h_0^r}. \tag*{\eqref{eq:degeneracy-classical}}
+\end{equation}
+式中，$h_0$ 为相格尺度，而 $r$ 则为系统自由度。此时，单粒子配分函数可以写为
+\begin{align}
+  Z_1 &= \sum_l \omega_l\ee^{-\beta\varepsilon_l}
+       = \sum_l \ee^{-\beta\varepsilon_l} \cdot \frac{\incr{\omega_l}}{h_0^r} \notag
+  \intertext{相体积很小的时候可将求和化为积分：}
+      &= \int \ee^{-\beta\varepsilon} \cdot \frac{\dd{\omega}}{h_0^r}
+       = \frac{1}{h_0^r} \dotsint \ee^{-\beta\varepsilon(q,\,p)}
+         \dd{q_1}\cdots\dd{q_r}\dd{p_1}\cdots\dd{p_r}.
+\end{align}
+
+在经典情形下，Boltzmann 分布过渡为
+\begin{align}
+  a_l &= \omega_l \, \ee^{-\alpha-\beta\varepsilon_l}
+       = \ee^{-\alpha-\beta\varepsilon_l} \cdot \frac{\incr{\omega_l}}{h_0^r} \notag
+  \intertext{代入 $N=\ee^{-\alpha}Z_1$，有}
+      &= \frac{N}{Z_1} \cdot \ee^{-\beta\varepsilon_l} \cdot \frac{\incr{\omega_l}}{h_0^r}
+       = N \cdot \frac{\ee^{-\beta\varepsilon_l}\incr{\omega_l}}%
+                      {\sum_l\ee^{-\beta\varepsilon_l}\incr{\omega_l}}.
+\end{align}
+注意该表达式与 $h_0$ 无关。
+
+\section{Maxwell 速度分布律}
