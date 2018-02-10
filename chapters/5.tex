@@ -5,7 +5,7 @@
 %% This file may be distributed and/or modified under the
 %% Creative Commons Attribution Share Alike 4.0 license.
 
-\chapter{统计物理学基本概念}
+\chapter{统计物理学基本概念} \label{chap:statistical-physics-basis}
 
 \section{微观态的经典及量子描述}
 
@@ -78,7 +78,7 @@
 \begin{example}[转子]
   如图~\ref{fig:rotator} 所示，质量为 $m$ 的物体被轻杆连接在 $O$ 点处，并可绕该点运动。其 Hamilton
   量为
-  \begin{equation} \label{eq:rotator-hamiltonian-a}
+  \begin{equation} \label{eq:rotator-hamiltonian}
     H = \frac{m}{2} \qty\big(\dot{x}^2+\dot{y}^2+\dot{z}^2).
   \end{equation}
   取球坐标系，则有
@@ -102,7 +102,7 @@
     \dot{x}^2 + \dot{y}^2 + \dot{z}^2
     = \dot{r}^2 + (r\dot{\theta})^2 + (r\dot{\phi})^2 \sin^2\theta.
   \end{equation}
-  代入 \eqref{eq:rotator-hamiltonian-a}~式，得
+  代入 \eqref{eq:rotator-hamiltonian}~式，得
   \begin{align}
     H &= \frac{m}{2} \qty\big(\dot{r}^2 + r^2 \dot{\theta}^2
                               + r^2 \dot{\phi}^2 \sin^2\theta).
@@ -419,7 +419,7 @@ Fermi--Dirac 体系由 Fermi 子组成。根据 Pauli 不相容原理，每个�
   \frac{a_l}{\omega_l} \ll 1,
 \end{equation}
 且 $\omega_l$ 很大时，我们有
-\begin{braced}[\label{eq:bose-and-fermi-dist-under-non-degenerate-condition}]
+\begin{braced}[\label{eq:bose-and-fermi-dist-non-degenerate}]
   \Omega_\text{BE}(\qty{a_l}) &= \prod_l \frac{\qty(a_l+\omega_l-1)!}{a! \, \qty(\omega_l-1)!}
   = \prod_l \frac{\qty(\omega_l+a_l-1) \qty(\omega+a_l-2) \cdots \omega_l}{a_l!}
   \approx \prod_l \frac{{\omega_l}^{a_l}}{a_l!}
@@ -432,8 +432,8 @@ Fermi--Dirac 体系由 Fermi 子组成。根据 Pauli 不相容原理，每个�
 这说明在\kwd{非简并条件}式~\eqref{eq:non-degenerate-condition} 下，Bose--Einstein 分布、Fermi--%
 Dirac 分布与 Maxwell--Boltzmann 分布的差别将逐渐消失。
 
-注意式~\eqref{eq:bose-and-fermi-dist-under-non-degenerate-condition} 最后的结果中有一个 $1/N!$，这反
-映了粒子的全同性要求。
+注意式~\eqref{eq:bose-and-fermi-dist-non-degenerate} 最后的结果中有一个 $1/N!$，这反映了粒子的全同性
+要求。
 
 \section{Maxwell--Boltzmann 分布}
 

@@ -5,3 +5,44 @@
 %% This file may be distributed and/or modified under the
 %% Creative Commons Attribution Share Alike 4.0 license.
 
+\chapter{Boltzmann、Bose 与 Fermi 统计}
+
+本章我们将从第\ref{chap:statistical-physics-basis}章获得的结果出发，推导一些重要的物理结论。
+
+\section{定域子系热力学量的统计表述}
+
+定域子系遵循 Boltzmann 统计。其粒子数和内能由式~\eqref{eq:constraint-condition-of-dist} 给出：
+\begin{braced}
+  N &=     \sum_l a_l = \sum_l \omega_l\ee^{-\alpha-\beta\varepsilon_l}, \\
+  U &= E = \sum_l \varepsilon_l a_l = \sum_l \varepsilon_l\omega_l\ee^{-\alpha-\beta\varepsilon_l}.
+\end{braced}
+定义\kwd{单粒子配分函数}
+\begin{equation}
+  Z_1 \defeq \sum_l \omega_l\ee^{-\beta\varepsilon_l},
+\end{equation}
+则有
+\begin{braced}
+  N &= \sum_l a_l = \ee^{-\alpha} \sum_l \omega_l\ee^{-\beta\varepsilon_l}
+     = \ee^{-\alpha} Z_1, \\
+  U &= \sum_l \varepsilon_l a_l
+     = \ee^{-\alpha} \, \qty(-\pdv{\beta} \sum_l \omega_l\ee^{-\beta\varepsilon_l})
+     = \frac{N}{Z_1} \, \qty(-\pdv{\beta} Z_1) = -N\pdv{\beta} \ln Z_1.
+\end{braced}
+
+广义力 $Y$ 也可根据单粒子配分函数确定：
+% TODO: (2018/01/27) 广义力
+\begin{align}
+  Y &= \sum_l \pdv{\varepsilon_l}{y} a_l
+     = \sum_l \pdv{\varepsilon_l}{y} \omega_l\ee^{-\alpha-\beta\varepsilon_l} \notag \\
+    &= \ee^{-\alpha} \, \qty(-\frac{1}{\beta} \pdv{y} \sum_l \omega_l\ee^{-\beta\varepsilon_l})
+     = \frac{N}{Z_1} \, \qty(-\frac{1}{\beta} \pdv{y} Z_1) = -\frac{N}{\beta} \pdv{y} \ln Z_1.
+\end{align}
+在 $pV$ 系统中，取 $Y=-p$ 和 $y=V$，可得
+\begin{equation}
+  p = \frac{N}{\beta} \pdv{V} \ln Z_1.
+\end{equation}
+
+下面我们来计算熵。根据热力学基本微分方程，我们有
+\begin{equation}
+  T\dd{S} = \dd{U} - Y\dd{y} = -N\pdv{\beta} \ln Z_1 + \frac{N}{\beta} \pdv{y} \ln Z_1.
+\end{equation}
