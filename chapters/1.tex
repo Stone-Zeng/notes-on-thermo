@@ -11,10 +11,9 @@
 
 \subsection{热力学系统}
 
-热力学研究的对象是\kwd{热力学系统}（简称系统）。它是宏观体系，粒子数的量级约为
-\num{e23}。与系统相对应的是\kwd{外界}，也称为环境或热库。按照与外界的关系，
-可将系统分为三种：\emph{孤立系}、\emph{封闭系}和\emph{开放系}，
-见表~\ref{tab:definition-of-systems}。
+热力学研究的对象是\kwd{热力学系统}（简称系统）。它是宏观体系，粒子数的量级约为 \num{e23}。与系统相对
+应的是\kwd{外界}，也称为环境或热库。按照与外界的关系，可将系统分为三种：\kwd{孤立系}、\kwd{封闭系}%
+和\kwd{开放系}，见表~\ref{tab:definition-of-systems}。
 
 \begin{table}[h]
   \centering
@@ -29,46 +28,42 @@
   \caption{三种热力学体系} \label{tab:definition-of-systems}
 \end{table}
 
-以后我们将会了解到，这三种系统，分别对应着\emph{微正则系综}、\emph{正则系综}%
-与\emph{巨正则系综}。
+以后我们将会了解到，这三种系统，分别对应着\kwd{微正则系综}、\kwd{正则系综}与\kwd{巨正则系综}。
 
 \subsection{平衡态}
 
-经典热力学研究\kwd{平衡态}。它有两个要素：状态不随时间变化、孤立系。若不是
-孤立系，但满足状态不随时间变化的条件，则称\emph{稳恒状态}，如日光灯
-（显然有能量交换）。
+经典热力学研究\kwd{平衡态}。它有两个要素：状态不随时间变化、孤立系。若不是孤立系，但满足状态不随时间
+变化的条件，则称为稳恒状态，如日光灯（显然有能量交换）。
 
-平衡态只说明宏观性质不随时间变化，而微观态仍可有变化（微观粒子不断变化）。
-因此称为\kwd{动态平衡}（就微观状态而言，也称为\emph{细致平衡}）。
+平衡态只说明宏观性质不随时间变化，而微观态仍可有变化（微观粒子不断变化）。因此称为\kwd{动态平衡}（就
+微观状态而言，也称为\kwd{细致平衡}）。
 
 \subsection{平衡态的描述} \label{subsec:平衡态的描述}
 
-平衡态可以利用\kwd{状态变量}（可以测量）来描述，如压强 $p$、体积 $V$、温度 $T$
-等。需注意，这些量未必互相独立。因此需要选取\emph{独立}的\kwd{状态参量}。
-当某一状态变量可以用其他状态参量来描述时，则称它为一个\kwd{状态函数}。
+平衡态可以利用\kwd{状态变量}（可以测量）来描述，如压强 $p$、体积 $V$、温度 $T$ 等。需注意，这些量未
+必互相独立。因此需要选取独立的\kwd{状态参量}。当某一状态变量可以用其他状态参量来描述时，则称它为一
+个\kwd{状态函数}。
 
-状态变量可分为两种：\kwd{强度量}，如压强 $p$、温度 $T$、密度 $\rho$ 等，
-它们不随粒子数的增加而增加；\kwd{广延量}，如体积 $V$、内能 $U$、熵 $S$ 等，
-它们随粒子数的增加而增加。
+状态变量可分为两种：\kwd{强度量}，如压强 $p$、温度 $T$、密度 $\rho$ 等，它们不随粒子数的增加而增加；
+\kwd{广延量}，如体积 $V$、内能 $U$、熵 $S$ 等，它们随粒子数的增加而增加。
 
 \section{温度；状态方程}
 
 \subsection{热平衡定律}
 
 \begin{theorem}[热平衡定律（热力学第零定律）]
-  若物体 $A$ 分别与物体 $B$ 和 $C$ 处于热平衡，那么如果让 $B$ 与 $C$ 热接触，
-  它们一定也处于热平衡。
+  若物体 $A$ 分别与物体 $B$ 和 $C$ 处于热平衡，那么如果让 $B$ 与 $C$ 热接触，它们一定也处于热平衡。
 \end{theorem}
 
-该定律是温度测量的基础：互为热平衡的物体存在一个属于其固有属性的物理量，
-即\kwd{温度}。一切互为热平衡的物体温度相等。
+该定律是温度测量的基础：互为热平衡的物体存在一个属于其固有属性的物理量，即\kwd{温度}。一切互为热平衡
+的物体温度相等。
 
-具体确定温度，需要选定\kwd{温标}。除了常见的摄氏、华氏温标，还有热膨胀温标、
-热电阻温标、理想气体温标和热力学温标等。
+具体确定温度，需要选定\kwd{温标}。除了常见的摄氏、华氏温标，还有热膨胀温标、热电阻温标、理想气体温标
+和热力学温标等。
 
 \subsection{物态方程}
 
-温度与其他状态参量 \footnote{即独立的状态变量。} 的函数关系称为\kwd{物态方程}：
+温度与其他状态参量的函数关系称为\kwd{物态方程}：
 \begin{equation}
   T = f(p, \, V)
 \end{equation}
@@ -82,16 +77,14 @@ Boyle 和 Mariotte 分别于 1662 年和 1676 年各自确立了\kwd{Boyle--Mari
   pV = p_0 V_0 \qc\qif* T = \const;
 \end{equation}
 1802年，Gay-Lussac 确立了\kwd{Gay-Lussac定律}
-\footnote{事实上，在 1787 年，Charles 就已经发现了这一定律，只是当时未发表，
-  也未被人注意。}：
+\footnote{事实上，在 1787 年，Charles 就已经发现了这一定律，只是当时未发表，也未被人注意。}：
 \begin{equation}
   \frac{V}{T} = \frac{V_0}{T_0} \qc\qif* p = \const
 \end{equation}
 综合两式，可得
-\footnote{该式中常数的值显然与物质的量 $n$ 有关，故用带引号的
-  $\text{``const.''}$ 表示。}
+\footnote{该式中常数的值显然与物质的量 $n$ 有关，故用带引号的 $\text{``const.''}$ 表示。}
 \begin{equation} \label{eq:ideal-gas-law-a}
-  \frac{p V}{T} = \frac{p_0 V_0}{T_0} = \text{``const.''} = n R,
+  \frac{pV}{T} = \frac{p_0 V_0}{T_0} = \text{``const.''} = nR,
 \end{equation}
 即\kwd{理想气体物态方程}
 \begin{equation} \label{eq:ideal-gas-law-b}
@@ -99,8 +92,7 @@ Boyle 和 Mariotte 分别于 1662 年和 1676 年各自确立了\kwd{Boyle--Mari
 \end{equation}
 
 \begin{proof}
-  式~\eqref{eq:ideal-gas-law-a} 的推导如下。
-  设某气体初状态为 $p_0$、$V_0$、$T_0$，末状态为 $p$、$V$、$T$。
+  式~\eqref{eq:ideal-gas-law-a} 的推导如下。设某气体初状态为 $p_0$、$V_0$、$T_0$，末状态为 $p$、$V$、$T$。
 
   先保持温度 $T_0$ 不变，则有
   \begin{equation} \label{eq:ideal-gas-law-proof}
@@ -120,8 +112,8 @@ Boyle 和 Mariotte 分别于 1662 年和 1676 年各自确立了\kwd{Boyle--Mari
   \end{equation}
 \end{proof}
 
-除了通过统计物理推导，也可通过测量膨胀系数、压强系数和等温压缩系数
-（亦可简称压缩系数）来得到物态方程。
+除了通过统计物理推导，也可通过测量膨胀系数、压强系数和等温压缩系数（亦可简称压缩系数）的方法来得到物
+态方程。
 
 \kwd{膨胀系数} $\alpha$ 定义为
 \begin{equation}
@@ -140,12 +132,11 @@ Boyle 和 Mariotte 分别于 1662 年和 1676 年各自确立了\kwd{Boyle--Mari
 \begin{equation} \label{eq:relation-of-alpha-beta-gamma}
   \alpha = \beta \kappa_T p.
 \end{equation}
-该式说明三者并非独立。通常会直接测量 $\alpha$ 和 $\kappa_T$，而通过计算得到
-$\beta$。
+该式说明三者并非独立。通常会直接测量 $\alpha$ 和 $\kappa_T$，而通过计算得到 $\beta$。
 
 \begin{proof}
-  先证明两个结论。若 $x, \, y, \, z$ 满足 $F(x, y, z) = \const$，其中
-  $F(x, y, z)$ 是一个可微函数。那么
+  先证明两个结论。若 $x, \, y, \, z$ 满足 $F(x, y, z) = \const$，其中 $F(x, y, z)$ 是一个可微函数。
+  那么
   \begin{braced}
     \dd{x} &= \qty(\pdv{x}{y})_z \dd{y} + \qty(\pdv{x}{z})_y \dd{z}, \\
     \dd{z} &= \qty(\pdv{z}{x})_y \dd{x} + \qty(\pdv{z}{y})_x \dd{y}.
@@ -163,8 +154,8 @@ $\beta$。
     \qty[\qty(\pdv{z}{x})_y \qty(\pdv{x}{y})_z + \qty(\pdv{z}{y})_x] \dd{y}
     + \qty[\qty(\pdv{z}{x})_y \qty(\pdv{x}{z})_y - 1] \dd{z} = 0.
   \end{equation}
-  因为 $y$ 与 $z$ 是独立的变量，所以 $\dd{y}$ 与 $\dd{z}$ 也是独立的。这就要求
-  它们的系数均为零。由 $\dd{z}$ 的系数为零，可得到\kwd{倒数关系}：
+  因为 $y$ 与 $z$ 是独立的变量，所以 $\dd{y}$ 与 $\dd{z}$ 也是独立的。这就要求它们的系数均为零。由
+  $\dd{z}$ 的系数为零，可得到\kwd{倒数关系}：
   \begin{equation} \label{eq:reciprocal-relation}
     \qty(\pdv{z}{x})_y \qty(\pdv{x}{z})_y = 1;
   \end{equation}
@@ -187,13 +178,11 @@ $\beta$。
   \end{equation}
 \end{proof}
 
-考虑分子之间的相互作用后，对理想气体进行修正，这就是\kwd{van der Waals 气体}。
-其物态方程为
+考虑分子之间的相互作用后，对理想气体进行修正，这就是\kwd{van der Waals 气体}。其物态方程为
 \begin{equation} \label{eq:van-der-waals-gas}
   \qty(p + \frac{n^2 a}{V^2}) (V - nb) = nRT,
 \end{equation}
-其中 $n^2 a / V^2$ 代表分子之间吸引力所引起的修正，而 $nb$ 则代表排斥力所引起
-的修正。
+其中 $n^2 a / V^2$ 代表分子之间吸引力所引起的修正，而 $nb$ 则代表排斥力所引起的修正。
 
 \section{功；热力学第一定律}
 
@@ -201,27 +190,25 @@ $\beta$。
 
 静态过程即平衡态。
 
-\kwd{准静态过程}指过程中的每一步都是平衡态。这就要求外界的条件变化地足够缓慢。
-令 $\tau$ 为外界条件变化的特征时间，$\incr{t}$ 为系统趋于与外界条件对应的平衡态
-的特征时间（即\kwd{弛豫时间}），那么准静态过程相当于
+\kwd{准静态过程}指过程中的每一步都是平衡态。这就要求外界的条件变化地足够缓慢。令 $\tau$ 为外界条件变
+化的特征时间，$\incr{t}$ 为系统趋于与外界条件对应的平衡态的特征时间（即\kwd{弛豫时间}），那么准静态
+过程相当于
 \begin{equation}
   \frac{\tau}{\incr{t}} \to 0
 \end{equation}
 的极限。
 
-在一个过程中，如果每一步都可以在相反的方向进行而不引起外界的变化，则称为%
-\kwd{可逆过程}。可逆过程的实质是没有耗散。
+在一个过程中，如果每一步都可以在相反的方向进行而不引起外界的变化，则称为\kwd{可逆过程}。可逆过程的实
+质是没有耗散。
 
 下面举两个准静态过程的例子。
 
-第一个例子是 $p$-$\!V$ 系统。考虑盛于带活塞容器内的气体。气体体积变化 $\dd{V}$ 时，
-\emph{外界对系统}做功
+第一个例子是 $p$-$\!V$ 系统。考虑盛于带活塞容器内的气体。气体体积变化 $\dd{V}$ 时，外界对系统做功
 \begin{equation}
   \dbar{W} = -p \dd{V}.
 \end{equation}
-这里的 $p$ 指外界对系统的压强。由于是准静态过程，它又等于容器内气体对器壁的
-压强。外界压力作用下体积减小，$\dd{V} < 0$；而外界却对系统做正功，因此会出现
-负号。如果令 $W'$ 为\emph{系统对外界}做的功，则有
+这里的 $p$ 指外界对系统的压强。由于是准静态过程，它又等于容器内气体对器壁的压强。外界压力作用下体积
+减小，$\dd{V} < 0$；而外界却对系统做正功，因此会出现负号。如果令 $W'$ 为系统对外界做的功，则有
 \begin{equation}
   \dbar{W'} = - \dbar{W} = p \dd{V}.
 \end{equation}
@@ -258,17 +245,16 @@ $\beta$。
 %   \label{fig:pV-diagram}
 % \end{figure}
 
-在 $p$-$\!V$ 图中标出状态 1 和状态 2，则连接它们的曲线就表示一个准静态过程，曲线
-下的面积等于 $-W$，如图~\ref{fig:pV-diagram} 所示。显然，$W$ 与路径有关，即不是
-一个全微分，因此我们用“$\dbar{W}$”表示微功。
+在 $p$-$\!V$ 图中标出状态 1 和状态 2，则连接它们的曲线就表示一个准静态过程，曲线下的面积等于 $-W$，
+如图~\ref{fig:pV-diagram} 所示。显然，$W$ 与路径有关，即不是一个全微分，因此我们用“$\dbar{W}$”表示微
+功。
 
-另一个例子是电介质极化系统。考虑均匀电场 $\V{E}$ 中的均匀电介质。电位移 $\V{D}$
-变化 $\dd{\V{D}}$ 时，电场做功
+另一个例子是电介质极化系统。考虑均匀电场 $\V{E}$ 中的均匀电介质。电位移 $\V{D}$ 变化 $\dd{\V{D}}$
+时，电场做功
 \begin{equation}
   \dbar{W} = V \V{E} \cdot \dd{\V{D}},
 \end{equation}
-其中的 $V$ 表示电介质的体积。这里，$\V{E}$ 是变化的外因，$\V{D}$ 则是内果。
-令 $\V{P}$ 为极化强度，则
+其中的 $V$ 表示电介质的体积。这里，$\V{E}$ 是变化的外因，$\V{D}$ 则是内果。令 $\V{P}$ 为极化强度，则
 \begin{equation}
   \V{D} = \pfs \V{E} + \V{P}.
 \end{equation}
@@ -284,8 +270,8 @@ $\beta$。
   \dbar{W} = Y_1 \dd{y_1} + Y_2 \dd{y_2} + \cdots + Y_n \dd{y_n}
   = \sum_{i=1}^{n} Y_i \dd{y_i}.
 \end{equation}
-这里的 $Y_i$ 是\kwd{广义力}，如压强 $p$、电场强度 $\V{E}$、磁场强度 $\V{H}$ 等；
-$y_i$ 是\kwd{广义坐标}，如体积 $V$、电位移 $\V{D}$、磁感应强度 $\V{B}$ 等。
+这里的 $Y_i$ 是\kwd{广义力}，如压强 $p$、电场强度 $\V{E}$、磁场强度 $\V{H}$ 等；$y_i$ 是\kwd{广义坐
+标}，如体积 $V$、电位移 $\V{D}$、磁感应强度 $\V{B}$ 等。
 
 \subsection{非静态过程}
 
@@ -294,8 +280,7 @@ $y_i$ 是\kwd{广义坐标}，如体积 $V$、电位移 $\V{D}$、磁感应强�
   \dbar{W} = 0.
 \end{equation}
 
-另一种非静态过程是等压过程。由于\emph{外界}压强不变，即 $p_\text{ext}=\const$，
-因此体积从 $V_1$ 变化到 $V_2$ 时外界对系统做功
+另一种非静态过程是等压过程。由于\emph{外界}压强不变，即 $p_\text{ext}=\const$，因此体积从 $V_1$ 变化到 $V_2$ 时外界对系统做功
 \begin{equation}
   W = -p_\text{ext} \qty(V_2 - V_1) = -p_\text{ext} \incr{V}.
 \end{equation}
@@ -307,18 +292,16 @@ $y_i$ 是\kwd{广义坐标}，如体积 $V$、电位移 $\V{D}$、磁感应强�
 \begin{equation} \label{eq:work-fixed-p}
   W = -p \qty(V_2 - V_1) = -p \incr{V}.
 \end{equation}
-这里的 $p$ 指系统内的压强。注意，我们并没有要求\emph{整个过程}中系统内的压强
-都等于 $p$，只需要初、终态压强等于 $p$ 即可。
+这里的 $p$ 指系统内的压强。注意，我们并没有要求\emph{整个过程}中系统内的压强都等于 $p$，只需要初、终
+态压强等于 $p$ 即可。
 
 \subsection{热力学第一定律}
 
-\kwd{热力学第一定律}的主要建立者有 Mayer、Joule、Helmholtz、Carnot 等。它描述
-了\emph{功}、\emph{热量}、\emph{内能}三者之间的关系，是\kwd{能量守恒定律}在宏观
-热现象过程中的表现形式。
+\kwd{热力学第一定律}的主要建立者有 Mayer、Joule、Helmholtz、Carnot 等。它描述了\emph{功}、\emph{热量}、\emph{内能}三者之间的关系，是\kwd{能量守恒定律}在宏观热现象过程中的表现形式。
 
 \begin{theorem}[能量守恒定律]
-  自然界中的一切物质都具有能量。能量有各种不同的形式，能够从一种形式转化为
-  另一种形式，从一个物体传递给另一个物体。在转化和传递中，能量的总量不变。
+  自然界中的一切物质都具有能量。能量有各种不同的形式，能够从一种形式转化为另一种形式，从一个物体传递
+  给另一个物体。在转化和传递中，能量的总量不变。
 \end{theorem}
 
 对绝热过程而言，从状态 1 变化到状态 2 的过程中，只有外界做功，因此
@@ -337,9 +320,8 @@ $y_i$ 是\kwd{广义坐标}，如体积 $V$、电位移 $\V{D}$、磁感应强�
 \end{equation}
 这实际上就是热力学第一定律最常用的表述。
 
-设两个全同系统内能分别为 $U_1$、$U_2$。则总内能 $U_\text{total}$ 除了
-$U_1+U_2$，还需包括由于界面效应所导致的 $U_{12}$。但在热力学中，界面效应基本
-可以忽略，因此近似有
+设两个全同系统内能分别为 $U_1$、$U_2$。则总内能 $U_\text{total}$ 除了 $U_1+U_2$，还需包括由于界面效
+应所导致的 $U_{12}$。但在热力学中，界面效应基本可以忽略，因此近似有
 \begin{equation}
   U_\text{total} = U_1 + U_2.
 \end{equation}
@@ -391,8 +373,8 @@ $U_1+U_2$，还需包括由于界面效应所导致的 $U_{12}$。但在热力�
 \begin{equation}
   H \defeq U + p V.
 \end{equation}
-由于 $U$、$p$ 和 $V$ 均是状态函数，因此焓也是状态函数。利用焓，
-可将式~\eqref{eq:heat-capacity-fixed-p} 改写为
+由于 $U$、$p$ 和 $V$ 均是状态函数，因此焓也是状态函数。利用焓，可将式~%
+\eqref{eq:heat-capacity-fixed-p} 改写为
 \begin{equation} \label{eq:heat-capacity-fixed-p-with-H}
   C_p = \qty(\pdv{H}{T})_p,
 \end{equation}
@@ -402,8 +384,7 @@ $U_1+U_2$，还需包括由于界面效应所导致的 $U_{12}$。但在热力�
 \end{equation}
 这就是说，\emph{在等压过程中，物体吸收的热量等于焓的增加量}。
 
-显然，热容与焓均是广延量。单位质量下的热容称为\kwd{比热容}或\kwd{比热}，
-它是强度量。
+显然，热容与焓均是广延量。单位质量下的热容称为\kwd{比热容}或\kwd{比热}，它是强度量。
 
 \subsection{理想气体的性质} \label{subsec:ideal-gas-property} %\label{subsec:理想气体的性质}
 
@@ -460,15 +441,14 @@ $U_1+U_2$，还需包括由于界面效应所导致的 $U_{12}$。但在热力�
 %   \label{fig-Joule-experiment}
 % \end{figure}
 
-先介绍 Joule 实验（1845 年）。设有一容器，分为 A、B 两个相同的部分。将它们置于
-水槽内，并通过带阀门的细管相连，水温可以通过温度计测量，
-如图~\ref{fig-Joule-experiment} 所示。
+先介绍 Joule 实验（1845 年）。设有一容器，分为 A、B 两个相同的部分。将它们置于水槽内，并通过带阀门的
+细管相连，水温可以通过温度计测量，如图~\ref{fig-Joule-experiment} 所示。
 
-首先，在 A 内充满气体，而使 B 保持真空。然后打开阀门，气体将\emph{自由膨胀}，
-并充满整个容器。Joule 的实验结果是前后水温不变。
+首先，在 A 内充满气体，而使 B 保持真空。然后打开阀门，气体将\emph{自由膨胀}，并充满整个容器。Joule
+的实验结果是前后水温不变。
 
-由于是等容过程，因此 $W=0$；水温不变，说明 $Q=0$。根据热力学第一定律，有
-$\incr{U}=0$。假设内能是温度和体积的函数，即
+由于是等容过程，因此 $W=0$；水温不变，说明 $Q=0$。根据热力学第一定律，有 $\incr{U}=0$。假设内能是温
+度和体积的函数，即
 \begin{equation}
   U = U(T, \, V).
 \end{equation}
@@ -488,9 +468,7 @@ $\incr{U}=0$。假设内能是温度和体积的函数，即
 \end{equation}
 这就说明 $U = U(T)$，即内能只和温度有关。
 
-不过，限于当时的技术水平，Joule 实验较为粗糙。更精确的实验表明，实际气体的内能
-不仅与 $T$ 有关，还与 $V$ 有关。但对于理想气体，以上结论仍然成立，因此理想气体
-具有如下两条性质：
+不过，限于当时的技术水平，Joule 实验较为粗糙。更精确的实验表明，实际气体的内能不仅与 $T$ 有关，还与 $V$ 有关。但对于理想气体，以上结论仍然成立，因此理想气体具有如下两条性质：
 \begin{braced}
   & pV = nRT,  \label{eq:ideal-gas-property-equation-of-state}\\
   & U  = U(T). \label{eq:ideal-gas-property-internal-energy}
@@ -523,8 +501,7 @@ $\gamma$ 为 $C_p$ 与 $C_V$ 之比：
   \gamma = \gamma(T).
 \end{equation}
 
-由式~\eqref{eq:C_p-C_V-for-ideal-gas} 和 \eqref{eq:heat-capacity-ratio}，
-可以解得
+由式~\eqref{eq:C_p-C_V-for-ideal-gas} 和 \eqref{eq:heat-capacity-ratio}，可以解得
 \begin{braced}
   C_V &= \frac{1}{\gamma-1} nR,      \label{eq:C_V-in-heat-capacity-ratio} \\
   C_p &= \frac{\gamma}{\gamma-1} nR. \label{eq:C_p-in-heat-capacity-ratio}
@@ -579,8 +556,7 @@ $\gamma$ 为 $C_p$ 与 $C_V$ 之比：
 的形式。
 
 \begin{example}[海拔与气温的关系]
-  下面推导气温垂直递减率。首先考虑干燥空气的温度\emph{绝热}递减率。假设空气是
-  理想气体。
+  下面推导气温垂直递减率。首先考虑干燥空气的温度\emph{绝热}递减率。假设空气是理想气体。
 
   因为是绝热过程，我们有
   \begin{equation}
@@ -604,14 +580,13 @@ $\gamma$ 为 $C_p$ 与 $C_V$ 之比：
   \begin{equation}
     \rho = \frac{m}{V} = \frac{nM}{nRT/p} = \frac{pM}{RT},
   \end{equation}
-  这里，$M$ 是空气的平均摩尔质量，$m$、$V$ 则分别是一定量空气的质量和体积。
-  代入 \eqref{eq:dT-over-dp-in-example-of-lapse-rate}~式，可得
+  这里，$M$ 是空气的平均摩尔质量，$m$、$V$ 则分别是一定量空气的质量和体积。代入
+  \eqref{eq:dT-over-dp-in-example-of-lapse-rate}~式，可得
   \begin{equation}
     \dv{T}{z} = -\frac{1-\gamma}{\gamma} \frac{\rho gT}{p}
     = -\frac{1-\gamma}{\gamma} \frac{Mg}{R}.
   \end{equation}
-  代入空气的热容比 $\gamma=1.4$、平均摩尔质量 $M=\SI{28.8e-3}{\kg\per\mol}$
-  等数值，可得
+  代入空气的热容比 $\gamma=1.4$、平均摩尔质量 $M=\SI{28.8e-3}{\kg\per\mol}$ 等数值，可得
   \begin{equation}
     \dv{T}{z} = \SI{-9.7}{\kelvin\per\km}.
   \end{equation}
@@ -768,12 +743,11 @@ $V_4 < V_3$。
 
 \subsection{热力学第二定律}
 
-\kwd{热力学第二定律}解决了有关过程\emph{方向性}的问题，它的主要建立者有
-Carnot、Clausius、Kelvin 等。
+\kwd{热力学第二定律}解决了有关过程\emph{方向性}的问题，它的主要建立者有 Carnot、Clausius、Kelvin
+等。
 
 \begin{theorem}[热力学第二定律（Kelvin 表述）]
-  不可能从单一热源吸热使之完全变为有用的功，而不产生其他影响。即第二类永动机
-  不可能实现。
+  不可能从单一热源吸热使之完全变为有用的功，而不产生其他影响。即第二类永动机不可能实现。
 \end{theorem}
 
 \begin{theorem}[热力学第二定律（Clausius 表述）]
@@ -880,20 +854,18 @@ $\theta_\text{C}$ 之间
   \item \emph{温度标准点}的选定。
 \end{enumerate}
 
-常用的经验温标有摄氏温标、华氏温标等。利用理想气体状态方程，可以定义%
-\kwd{理想气体温标}：
+常用的经验温标有摄氏温标、华氏温标等。利用理想气体状态方程，可以定义\kwd{理想气体温标}：
 \begin{equation}
   T \defeq \frac{1}{nR} \lim_{p \to 0} pV,
 \end{equation}
 同时需要规定水的三相点温度 $T_\text{tr} \defeq \SI{273.16}{\kelvin}$。
 
-在 \S\ref{sec:ideal-gas-carnot-cycle-and-second-law}
-第\ref{subsec:carnot-cycle}小节中，我们使用 $T$ 表示温度。实际上，那里的
-“温度”正是用理想气体温标表示的值。
+在 \S\ref{sec:ideal-gas-carnot-cycle-and-second-law} 第\ref{subsec:carnot-cycle}小节中，我们使用
+$T$ 表示温度。实际上，那里的“温度”正是用理想气体温标表示的值。
 
-根据 Carnot 定理，可逆热机的效率只与两个热源的温度有关，而与工作物质的性质、
-吸放热多少、做功多少均无关。换句话说，可逆热机的效率是两个温度
-$\theta_\text{H}$、$\theta_\text{C}$ 的\emph{普适函数}。根据定义，热机的效率
+根据 Carnot 定理，可逆热机的效率只与两个热源的温度有关，而与工作物质的性质、吸放热多少、做功多少均无
+关。换句话说，可逆热机的效率是两个温度 $\theta_\text{H}$、$\theta_\text{C}$ 的\emph{普适函数}。根据
+定义，热机的效率
 \begin{equation}
   \eta = \frac{W}{Q_\text{H}} = 1 - \frac{Q_\text{C}}{Q_\text{H}}.
 \end{equation}
@@ -911,14 +883,12 @@ $\theta_\text{C}$ 的普适函数。
 \end{equation}
 其中的 $f$ 是另一个普适函数。%TODO：20160322 热力学温标证明
 
-由式~\eqref{eq:efficiency-of-carnot-cycle-for-ideal-gas}，以理想气体为工作物质的
-Carnot 热机效率为
+由式~\eqref{eq:efficiency-of-carnot-cycle-for-ideal-gas}，以理想气体为工作物质的 Carnot 热机效率为
 \begin{equation}
   \eta = 1 - \frac{T^*_\text{C}}{T^*_\text{H}},
 \end{equation}
-这里用 $T^*$ 表示理想气体温标下的温度。这与式 是相同的，即温度尺度相同。
-又因为理想气体温标也规定在水的三相点处 $T^*_\text{tr} = \SI{273.16}{\kelvin}$，
-因此，理想气体温标与热力学温标是相同的。
+这里用 $T^*$ 表示理想气体温标下的温度。这与式 是相同的，即温度尺度相同。又因为理想气体温标也规定在水
+的三相点处 $T^*_\text{tr} = \SI{273.16}{\kelvin}$，因此，理想气体温标与热力学温标是相同的。
 
 \subsection{Clausius 不等式}
 
@@ -938,8 +908,8 @@ Carnot 热机效率为
 \begin{equation}
   \frac{Q_1}{T_1} + \frac{Q_2}{T_2} \leqslant 0.
 \end{equation}
-假设系统先后与温度分别为 $T_1, \, T_2 \, \dots, \, T_n$ 的 $n$ 个热源接触，
-又分别吸热 $Q_1, \, Q_2 \, \dots, \, Q_n$，则可以证明 \kwd{Clausius 不等式}：
+假设系统先后与温度分别为 $T_1, \, T_2 \, \dots, \, T_n$ 的 $n$ 个热源接触，又分别吸热
+$Q_1, \, Q_2 \, \dots, \, Q_n$，则可以证明 \kwd{Clausius 不等式}：
 \begin{equation}
   \sum_{i=1}^n \frac{Q_i}{T_i} \leqslant 0.
 \end{equation}
@@ -971,8 +941,7 @@ Carnot 热机效率为
   \underset{C_1\phantom{M}}{\int_{(P_0)}^{(P)}} \, \frac{\dbar{Q_\text{rev}}}{T}
   = \underset{C_2\phantom{M}}{\int_{(P_0)}^{(P)}} \, \frac{\dbar{Q_\text{rev}}}{T} = \const
 \end{equation}
-可以看出，$\dbar{Q_\text{rev}}/T$ 是一个与路径无关的量。由此，定义一个新的
-状态函数——\kwd{熵}：
+可以看出，$\dbar{Q_\text{rev}}/T$ 是一个与路径无关的量。由此，定义一个新的状态函数——\kwd{熵}：
 \begin{equation}
   S - S_0 = \int_{(P_0)}^{(P)} \, \frac{\dbar{Q_\text{rev}}}{T}.
 \end{equation}
